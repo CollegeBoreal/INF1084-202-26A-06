@@ -1,4 +1,5 @@
-# INF1084-201-26A-04 (📅 Mercredi 9h-13h, 🚪 Salle 207 ) 
-INF 1085-201 Administration Linux
+# INF1084-201-26A-04 (📅 Mardi 9h-13h, 🚪 Salle 208 ) 
+
+INF 1084-201 Administration Windows
 
 <image src=images/image.jpeg width=% height=% > </image>
