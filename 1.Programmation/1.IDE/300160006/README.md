@@ -6,5 +6,5 @@
 
 
 
-!\[images alt](images/windows11.webp)
+<image src=images/SSH.gif width='50%' height='50%' />
 
