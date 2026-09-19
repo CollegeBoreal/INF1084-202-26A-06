@@ -6,5 +6,5 @@
 
 
 
-<image src=images/SSH.gif width='50%' height='50%' />
+<img src="images/windows11.webp" width="50%" height="50%" />
 
