@@ -9,7 +9,7 @@ Fais Next → Role-based or feature-based installation → Next → sélectionne
 
 Coche Active Directory Domain Services, puis Add Features → Next → Next → Install.
 
-Quand l’installation termine, clique sur le drapeau jaune ⚠️ en haut, puis Promote this server to a domain controller.
+Quand l’installation termine,
 Choisis Add a new forest et écris :
 
 				DC300157606-0.local
@@ -27,10 +27,11 @@ Cela ouvre Active Directory Users and Computers.
 Va dans DC300157606-0.local → Users, puis fais clic droit → New → User.
 
 Entre :
-	First name: Ouahiba
-	Last name: Bouzidi
-	User logon name: ouahiba
-	Puis Next, crée un mot de passe et fais Finish.
+
+				First name: Ouahiba
+				Last name: Bouzidi
+				User logon name: ouahiba
+				Puis Next, crée un mot de passe et fais Finish.
 
 Trouve Ouahiba Bouzidi → clic droit → Properties → Member Of → Add. Écris :
 Domain Admins
@@ -39,7 +40,8 @@ Puis Check Names → OK → Apply → OK.
 Pour vérifier, retourne dans Properties → Member Of. Tu dois voir Domain Admins.
 
 le résultat final :
-	Domaine : DC300157606-0.local
-	Utilisateur : Ouahiba Bouzidi
-	Login : ouahiba
-	Droits : Domain Admins
+
+				Domaine : DC300157606-0.local
+				Utilisateur : Ouahiba Bouzidi
+				Login : ouahiba
+				Droits : Domain Admins
