@@ -253,7 +253,7 @@ Start-Process dsa.msc
 > 📋 Cette console permet de gérer utilisateurs, groupes, ordinateurs et unités d’organisation (OU).
 
 
-# :abacus: Laboratoires
+# :abacus: Laboratoire
 
 
 Créer un utilisateur :id: ayant les droits d'administration **Windows Server 2022** documenter la solution (utiliser `PowerShell`).
