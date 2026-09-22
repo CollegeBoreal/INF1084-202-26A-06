@@ -256,13 +256,19 @@ Start-Process dsa.msc
 # :abacus: Laboratoires
 
 
-Créer un utilisateur ayant les droits d'administration **Windows Server 2022**.
+Créer un utilisateur :id: ayant les droits d'administration **Windows Server 2022**.
 
 ## 🗄️ Rack 2️⃣ - 📇 42U
 
 | Rack | U#️⃣| 🏙️ Serveurs | 🏷️  | S/N #️⃣        | Host IP                    | RAM  | CPU | HD      | Comments              |
 | ---- | -:| ------------| --- | ------------ | --------------------------- | ---: | ---:| ------- | ----------------------- |
 | 2️⃣   | 33 | 🅰️ G6️⃣      | S19 | MXQ00309PP✅ | 10.7.237.7 | 64GB | 16  | 273.4G  | 🪟 2022 DC $\color{blue}\text{1TBNVMe}$ |
+
+### :gear: Configuration
+
+| Windows Server 2022 Datacenter            | User/Pwd                   |
+|-------------------------------------------|----------------------------|
+| 10.7.237.7                                | Administrator/Boreal@2️⃣02️⃣6 |
 
 ---
 
