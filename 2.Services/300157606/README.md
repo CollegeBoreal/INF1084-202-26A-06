@@ -1,7 +1,7 @@
 
 
 
-Ouvre ta machine Windows Server 2022 et connecte-toi avec Administrator.
+Ouvre ma machine Windows Server 2022 et je connecte avec Administrator.
 
 Ouvre Server Manager → Manage → Add Roles and Features.
 
