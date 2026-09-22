@@ -5,32 +5,62 @@
 
 ## Objectif
 
-Créer un utilisateur Active Directory avec mon ID étudiant et lui donner les droits d’administration sur Windows Server 2022 en utilisant PowerShell.
+Créer un utilisateur ayant les droits d’administration sur Windows Server 2022 en utilisant PowerShell.
+
+## Configuration du serveur
+
+Le serveur Windows Server 2022 est configuré en mode `WORKGROUP`.
+
+La vérification PowerShell a donné :
+
+```text
+Domaine : WORKGROUP
+DomainRole : 2
+```
+
+Le serveur n'étant pas un contrôleur de domaine Active Directory, un utilisateur local a été créé.
 
 ## Commandes PowerShell utilisées
 
 ```powershell
-$domain = Get-ADDomain
+$ID = "300151722"
+$Nom = "Islam Oustani"
 
-$password = Read-Host "Entrez le mot de passe pour 300151722" -AsSecureString
+$password = Read-Host "Entrez le mot de passe pour $ID" -AsSecureString
 
-New-ADUser `
-    -Name "300151722" `
-    -SamAccountName "300151722" `
-    -UserPrincipalName "300151722@$($domain.DNSRoot)" `
-    -AccountPassword $password `
-    -Enabled $true
+New-LocalUser `
+    -Name $ID `
+    -FullName $Nom `
+    -Password $password
 
-$domainAdminSID = "$($domain.DomainSID)-512"
+$adminGroup = Get-LocalGroup -SID "S-1-5-32-544"
 
-Add-ADGroupMember `
-    -Identity $domainAdminSID `
-    -Members "300151722"
+Add-LocalGroupMember `
+    -Group $adminGroup.Name `
+    -Member $ID
+```
 
-Get-ADUser `
-    -Identity "300151722" `
-    -Properties Enabled,MemberOf
+## Vérification
 
-Get-ADGroupMember `
-    -Identity $domainAdminSID |
-    Where-Object {$_.SamAccountName -eq "300151722"}
+```powershell
+Get-LocalUser -Name "300151722"
+
+$adminGroup = Get-LocalGroup -SID "S-1-5-32-544"
+
+Get-LocalGroupMember -Group $adminGroup.Name |
+    Where-Object {$_.Name -match "300151722"}
+```
+
+## Résultat
+
+L'utilisateur local `300151722` a été créé et activé avec succès sur Windows Server 2022.
+
+L'utilisateur a également été ajouté au groupe des administrateurs du serveur.
+
+## Preuve
+
+(images/verification.png)
+
+## Conclusion
+
+Ce laboratoire m'a permis de créer un utilisateur local avec PowerShell et de lui attribuer les droits d'administration sur Windows Server 2022.
