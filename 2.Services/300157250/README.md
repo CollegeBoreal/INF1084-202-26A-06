@@ -1,7 +1,7 @@
 # CREATION DE L'UTILISATEUR
 
 Définir le mot de passe
-$Password = ConvertTo-SecureString "Ngoran225@" -AsPlainText -Force
+$Password = ConvertTo-SecureString "Ngoran225@" -AsPlainText -Force<br>
 Créer l'utilisateur
 New-LocalUser `
 -Name "300157250" `
