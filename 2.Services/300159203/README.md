@@ -7,7 +7,7 @@ $Password = Read-Host -Prompt "Entrer le mot de passe pour 300159203" -AsSecureS
 
 New-LocalUser -Name "300159203" `
     -Password $Password `
-    -FullName "Administrateur local - ID 300159203" `
+    -FullName "Riadh Sahraoui (ID 300159203)" `
     -Description "Compte admin pour Windows Server 2022 (Rack 2, U13)" `
     -PasswordNeverExpires:$true `
     -UserMayNotChangePassword:$true
@@ -17,3 +17,4 @@ Add-LocalGroupMember -Group "Administrators" -Member "300159203"
 
 4-Vérifier l’ajout
 Get-LocalGroupMember -Group "Administrators"
+
