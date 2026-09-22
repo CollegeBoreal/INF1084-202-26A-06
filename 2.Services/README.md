@@ -256,7 +256,7 @@ Start-Process dsa.msc
 # :abacus: Laboratoires
 
 
-Créer un utilisateur :id: ayant les droits d'administration **Windows Server 2022**.
+Créer un utilisateur :id: ayant les droits d'administration **Windows Server 2022** documenter la solution (utiliser `PowerShell`).
 
 ## 🗄️ Rack 2️⃣ - 📇 42U
 
