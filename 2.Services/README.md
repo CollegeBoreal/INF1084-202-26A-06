@@ -261,8 +261,8 @@ Créer un utilisateur :id: ayant les droits d'administration **Windows Server 20
 ## 🗄️ Rack 2️⃣ - 📇 42U
 
 | Rack | U#️⃣| 🏙️ Serveurs | 🏷️  | S/N #️⃣        | Host IP                    | RAM  | CPU | HD      | Comments              |
-| ---- | -:| ------------| --- | ------------ | --------------------------- | ---: | ---:| ------- | ----------------------- |
-| 2️⃣   | 33 | 🅰️ G6️⃣      | S19 | MXQ00309PP✅ | 10.7.237.7 | 64GB | 16  | 273.4G  | 🪟 2022 DC $\color{blue}\text{1TBNVMe}$ |
+| ---- | -:| ------------| --- | ------------- | --------------------------- | ---: | ---:| ------- | ----------------------- |
+| 2️⃣   | 13 | 🅰️ G7️⃣      | S28 | MXQ1370MCG✅  | 10.7.237.7 | 64GB | 16  | 273.4G  | 🪟 2022 DC $\color{blue}\text{1TBNVMe}$ |
 
 ### :gear: Configuration
 
