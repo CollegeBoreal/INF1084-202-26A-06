@@ -1,0 +1,25 @@
+Amadou Barry
+300147891
+
+Step 1 :
+J'ai ouvert PowerShell en mode Administrateur Sur le serveur Windows Server 2022, puis j'ai lancez PowerShell ou Windows PowerShell ISE en tant qu'administrateur. 
+
+Step 2 : 
+J'ai executé la séquence de commandes PowerShell, Remplacez "mon NomUtilisateur" et "mon MotDePasse" par mes identifiants souhaités.
+1. Définir le mot de passe sécurisé pour le nouvel utilisateur
+$Password = ConvertTo-SecureString "MotDePasse" -AsPlainText -Force
+
+2. Créer le compte utilisateur local
+New-LocalUser -Name "monNomUtilisateur" -Password $Password -FullName "Nom Complet" -Description "Compte Administrateur du Lab"
+
+3. Ajouter l'utilisateur au groupe Administrateurs local
+Add-LocalGroupMember -Group "Administrateurs" -Member "NomUtilisateur"
+
+Step 3 : Vérification de la configuration
+Afin de confirmer la création de l'utilisateur et l'attribution des droits administrateur, j'ai exécuter les commandes suivantes :
+PowerShell# Vérifier la création de l'utilisateur
+Get-LocalUser -Name "NomUtilisateur"
+
+Vérifier la liste des membres du groupe Administrateurs
+Get-LocalGroupMember -Group "Administrator"
+Résumé des paramètres du serveur (Rappel du Lab)   Système d'exploitation : Windows Server 2022 Datacenter   Adresse IP hôte : 10.7.237.7   Outil requis : PowerShell   
