@@ -2,10 +2,6 @@
 # STUDENTS
 # --------------------------------------
 
-param(
-    [int]$GroupSize = 8   # default if not provided
-)
-
 $STUDENTS = @(
 "300124366|rb0980h-dot|261495945"
 "300147253|octocat|583231"
@@ -40,38 +36,6 @@ $STUDENTS = @(
 "300160733|octocat|583231"
 "300160862|cherifyamna|261494322"
 )
-
-# --------------------------------------
-# CONFIG
-# --------------------------------------
-
-$GROUP_SIZE = $GroupSize
-
-# --------------------------------------
-# FUNCTION - Dynamic grouping
-# --------------------------------------
-
-function New-Groups {
-    param (
-        [array]$Items,
-        [int]$Size
-    )
-
-    $groups = @()
-
-    for ($i = 0; $i -lt $Items.Count; $i += $Size) {
-        $end = [Math]::Min($i + $Size - 1, $Items.Count - 1)
-        $groups += ,@($Items[$i..$end])
-    }
-
-    return $groups
-}
-
-# --------------------------------------
-# BUILD STUDENT GROUPS
-# --------------------------------------
-
-$GROUPS = New-Groups -Items $STUDENTS -Size $GROUP_SIZE
 
 # --------------------------------------
 # SERVERS
@@ -110,34 +74,7 @@ $SERVERS = @(
 "10.7.237.230"
 "10.7.237.231"
 "10.7.237.232"
-"10.7.237.233"
 )
-
-$SERVER_GROUPS = New-Groups -Items $SERVERS -Size $GROUP_SIZE
-
-# --------------------------------------
-# WINDOWS SERVERS (1 per group)
-# --------------------------------------
-
-$WINDOWS_SERVERS = @(
-"10.7.237.7"
-"10.7.237.35"
-"10.7.237.24"
-"10.7.237.28"
-)
-
-# --------------------------------------
-# OPTIONAL: MERGED LAB OBJECT (🔥 recommandé)
-# --------------------------------------
-
-$LAB_GROUPS = for ($i = 0; $i -lt $GROUPS.Count; $i++) {
-    [PSCustomObject]@{
-        Id        = $i + 1
-        Students  = $GROUPS[$i]
-        Servers   = $SERVER_GROUPS[$i]
-        Proxmox   = $WINDOWS_SERVERS[$i]
-    }
-}
 
 # --------------------------------------
 # PROF / LMS
