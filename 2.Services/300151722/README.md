@@ -59,6 +59,8 @@ L'utilisateur a également été ajouté au groupe des administrateurs du serveu
 
 ## Preuve
 
+<img width="1022" height="618" alt="Image Codex 23 sept  2026, 19_05_56" src="https://github.com/user-attachments/assets/6e86d3b9-c0c7-40a3-b411-0ecd9e40e85a" />
+
 <img width="3955" height="2448" alt="Document numérisé 7_page-0001" src="https://github.com/user-attachments/assets/077c36d0-1c8a-4859-a63b-4a09fe7bd383" />
 
 
