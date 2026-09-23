@@ -17,4 +17,6 @@ Add-LocalGroupMember -Group "Administrators" -Member "300159203"
 
 4-Vérifier l’ajout
 Get-LocalGroupMember -Group "Administrators"
+<img width="1536" height="2048" alt="image" src="https://github.com/user-attachments/assets/22812d60-e2fe-43a7-9398-1cbd8c08556a" />
+<img width="2048" height="1536" alt="image" src="https://github.com/user-attachments/assets/ccf2eac7-a1d7-4219-8968-7d97ea448eb6" />
 
