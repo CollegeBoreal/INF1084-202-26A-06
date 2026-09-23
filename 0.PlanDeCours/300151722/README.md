@@ -1,3 +1,5 @@
-Hello
+# Hello tout le monde 👋
 
-<img width="1557" height="1003" alt="image" src="https://github.com/user-attachments/assets/829bbaa0-2cac-44ff-8514-3800d20a856d" />
+Bienvenue sur mon projet !
+
+<img width="684" height="685" alt="unnamed" src="https://github.com/user-attachments/assets/f9547faf-e4b1-4fd2-bfd0-118f4d8aaba8" />
