@@ -59,7 +59,8 @@ L'utilisateur a également été ajouté au groupe des administrateurs du serveu
 
 ## Preuve
 
-(images/verification.png)
+<img width="3955" height="2448" alt="Document numérisé 7_page-0001" src="https://github.com/user-attachments/assets/077c36d0-1c8a-4859-a63b-4a09fe7bd383" />
+
 
 ## Conclusion
 
