@@ -1,10 +1,10 @@
 # 300160006
 
-``Rename-Computer -NewName "DC300160006" -Restart``
+``Rename-Computer -NewName "SRV300160006" -Restart``
 
 
 ``PS C:\Users\Administrator> hostname
-DC300160006``
+SRV300160006``
 
 
 ``Install-WindowsFeature AD-Domain-Services -IncludeManagementTools``
