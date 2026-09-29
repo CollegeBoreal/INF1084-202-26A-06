@@ -25,7 +25,7 @@ hostname
 
 Résultat obtenu : `DC300159195`.
 
-![Vérification du nom du serveur](images/01_hostname_dc300159195.jpg) 
+![Vérification du nom du serveur](images/01_hostname_dc300159195.jpg)
 
 **Résultat :** le serveur a bien été renommé en `DC300159195`.
 
@@ -187,6 +187,27 @@ ainsi que les conteneurs Active Directory principaux, notamment :
 
 ---
 
+
+## 9. Vérifier le service DNS
+
+La console **DNS Manager** a été ouverte afin de vérifier que le service DNS a bien été installé avec Active Directory.
+
+```powershell
+dnsmgmt.msc
+```
+
+![Vérification du service DNS](images/08_dns_manager.jpg)
+
+La console DNS affiche le serveur :
+
+```text
+SRV300159195
+```
+
+**Résultat :** le rôle DNS est installé et le serveur DNS est disponible sur le contrôleur de domaine.
+
+---
+
 ## Résultat final
 
 L’installation et la configuration d’Active Directory ont été réalisées avec succès.
@@ -201,4 +222,4 @@ DNS                  : Installé
 Contrôleur de domaine: Fonctionnel
 ```
 
-Les commandes `Get-ADDomain`, `Get-ADForest` et la console `dsa.msc` confirment que l’environnement Active Directory est opérationnel.
+Les commandes `Get-ADDomain`, `Get-ADForest`, la console `dsa.msc` et la console DNS confirment que l’environnement Active Directory est opérationnel.
