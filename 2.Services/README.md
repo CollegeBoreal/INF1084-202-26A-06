@@ -14,15 +14,6 @@
   - [🏛️ 1.3 Concepts et composants clés d’Active Directory](#-13-concepts-et-composants-clés-dactive-directory)  
   - [🔗 1.4 Approbations Active Directory (Trusts)](#-14-approbations-active-directory-trusts)  
   - [🧠 À retenir](#-à-retenir)  
-- [:scroll: Installation et configuration d’un domaine Active Directory](#scroll-installation-et-configuration-dun-domaine-active-directory)  
-  - [1️⃣ Qu’est-ce qu’un domaine dans Active Directory ?](#1️⃣-quest-ce-quun-domaine-dans-active-directory-)  
-  - [2️⃣ Quel est le rôle principal d’un contrôleur de domaine ?](#2️⃣-quel-est-le-rôle-principal-dun-contrôleur-de-domaine-)  
-  - [3️⃣ Pourquoi le DNS est-il indispensable à Active Directory ?](#3️⃣-pourquoi-le-dns-est-il-indispensable-à-active-directory-)  
-  - [4️⃣ Quelle est la différence entre une forêt et un arbre ?](#4️⃣-quelle-est-la-différence-entre-une-forêt-et-un-arbre-)  
-  - [5️⃣ Que contient le dossier SYSVOL ?](#5️⃣-que-contient-le-dossier-sysvol-)  
-  - [6️⃣ Quel service gère les connexions et l’authentification au domaine ?](#6️⃣-quel-service-gère-les-connexions-et-lauthentification-au-domaine-)  
-  - [7️⃣ Que fait le mot de passe DSRM ?](#7️⃣-que-fait-le-mot-de-passe-dsrm-)  
-  - [8️⃣ Quelle commande permet d’ouvrir la console “Active Directory Users and Computers” ?](#8️⃣-quelle-commande-permet-douvrir-la-console-active-directory-users-and-computers-)  
 - [:abacus: Laboratoires](#abacus-laboratoires)  
 
 </details>
