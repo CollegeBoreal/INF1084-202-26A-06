@@ -25,7 +25,7 @@ hostname
 
 Résultat obtenu : `DC300159195`.
 
-![Vérification du nom du serveur](images/01_hostname_dc300159195.jpg)
+<img width="1536" height="1152" alt="01_hostname_dc300159195" src="https://github.com/user-attachments/assets/2d59d1dc-c960-4a25-aeeb-3bc4bd113bc1" />
 
 **Résultat :** le serveur a bien été renommé en `DC300159195`.
 
@@ -39,7 +39,7 @@ Le rôle **AD DS** et les outils de gestion ont été installés avec la command
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
 
-![Installation du rôle AD DS](images/02_installation_ad_ds.jpg)
+<img width="1536" height="1152" alt="02_installation_ad_ds" src="https://github.com/user-attachments/assets/b5315574-9802-44b4-9d1f-64c64d203597" />
 
 **Résultat :** l’installation s’est terminée avec `Success : True`.
 
@@ -64,7 +64,7 @@ La vérification des prérequis a retourné l’erreur suivante :
 The NetBIOS name DC300159195 is already in use.
 ```
 
-![Erreur de conflit NetBIOS](images/03_erreur_netbios.jpg)
+<img width="1536" height="1152" alt="03_erreur_netbios" src="https://github.com/user-attachments/assets/b5740bb5-80de-4a84-aa9e-b32ce5fa5a73" />
 
 **Explication :** le nom de la machine et le nom NetBIOS du domaine étaient identiques. Windows Server a donc détecté un conflit.
 
@@ -84,7 +84,7 @@ Après le redémarrage, la commande suivante a été exécutée :
 hostname
 ```
 
-![Vérification du nouveau nom du serveur](images/04_hostname_srv300159195.jpg)
+<img width="1536" height="1152" alt="04_hostname_srv300159195" src="https://github.com/user-attachments/assets/7f0f9e73-7fef-4f54-a5e6-90c56e99a49f" />
 
 **Résultat :** le nom de la machine est maintenant `SRV300159195`.
 
@@ -117,7 +117,7 @@ Cette commande :
 - configure le mot de passe DSRM ;
 - transforme le serveur en contrôleur de domaine.
 
-![Création du domaine Active Directory](images/05_creation_domaine_reussie.jpg)
+<img width="1536" height="1152" alt="05_creation_domaine_reussie" src="https://github.com/user-attachments/assets/09b49b8c-15bd-4c93-9343-6b2f18b0c5ff" />
 
 **Résultat :** l’opération s’est terminée avec le statut `Success` et le serveur a redémarré automatiquement.
 
@@ -146,7 +146,7 @@ Get-ADDomain
 Get-ADForest
 ```
 
-![Vérification du domaine et de la forêt](images/06_verification_domaine_foret.jpg)
+<img width="1536" height="1152" alt="06_verification_domaine_foret" src="https://github.com/user-attachments/assets/43634666-db4c-4dc7-888d-69cb1f7d6b44" />
 
 Les informations obtenues confirment notamment :
 
@@ -168,7 +168,7 @@ La console **Active Directory Users and Computers** a été ouverte avec :
 Start-Process dsa.msc
 ```
 
-![Active Directory Users and Computers](images/07_active_directory_users_computers.jpg)
+<img width="1152" height="1536" alt="07_active_directory_users_computers" src="https://github.com/user-attachments/assets/da0ecb5c-d45f-45bb-a500-f943cb4f4f75" />
 
 La console affiche correctement le domaine :
 
@@ -196,7 +196,7 @@ La console **DNS Manager** a été ouverte afin de vérifier que le service DNS 
 dnsmgmt.msc
 ```
 
-![Vérification du service DNS](images/08_dns_manager.jpg)
+<img width="709" height="1536" alt="08_dns_manager" src="https://github.com/user-attachments/assets/0b94b8fe-defb-4b75-a58a-fdd0b16f79ed" />
 
 La console DNS affiche le serveur :
 
