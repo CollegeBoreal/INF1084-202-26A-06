@@ -46,5 +46,5 @@ Cette commande permet de créer la forêt et le domaine Active Directory et de t
 Après le redémarrage, j’ai vérifié la configuration du domaine avec la commande suivante :
 
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/2ec4fd4c2f3e93e19c3d4fa6c68705d262dce22d/3.AD/300160006/images/Screenshot%202026-09-29%20183351.png)
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/8bdb7e4faae7a7190ab961e2daa6f45455a28248/3.AD/300160006/images/Screenshot%202026-09-29%20183316.png)
 ![images alt](
