@@ -245,3 +245,9 @@ Get-ADForest
 ## 🎯 Résultat
 
 Avec seulement **3 commandes PowerShell**, tu crées un **contrôleur de domaine Active Directory** complet avec DNS intégré.
+
+### :gear: Configuration
+
+| Windows Server 2022 Datacenter            | User/Pwd                   |
+|-------------------------------------------|----------------------------|
+| [Participation](.scripts/Participation.md)| Administrator/Infra@2️⃣02️⃣4  |
