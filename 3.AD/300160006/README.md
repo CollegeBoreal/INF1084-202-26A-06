@@ -1,7 +1,8 @@
 # 300160006
 
-`Rename-Computer -NewName "SRV300160006" -Restart
-`
+`` powershell
+Rename-Computer -NewName "SRV300160006" -Restart
+``
 
 
 ``PS C:\Users\Administrator> hostname
