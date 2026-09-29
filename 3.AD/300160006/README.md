@@ -44,3 +44,7 @@ Install-ADDSForest `
 Cette commande permet de créer la forêt et le domaine Active Directory et de transformer le serveur SRV300160006 en contrôleur de domaine. Le serveur redémarre ensuite afin de terminer la configuration.
 
 Après le redémarrage, j’ai vérifié la configuration du domaine avec la commande suivante :
+
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/2ec4fd4c2f3e93e19c3d4fa6c68705d262dce22d/3.AD/300160006/images/Screenshot%202026-09-29%20183351.png)
+![images alt](
+![images alt](
