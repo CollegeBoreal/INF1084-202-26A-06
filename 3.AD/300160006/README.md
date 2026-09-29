@@ -14,9 +14,11 @@ Après le redémarrage du serveur, j’ai vérifié son nom avec la commande hos
 ```powershell
  hostname
 ```
-Le nom du serveur est maintenant ``text
+Le nom du serveur est maintenant 
+```text
 SRV300160006
 ```
+
 Ensuite, j’ai installé le rôle Active Directory Domain Services (AD DS) ainsi que les outils de gestion nécessaires à l’aide de la commande suivante.
 
 ```powershell
