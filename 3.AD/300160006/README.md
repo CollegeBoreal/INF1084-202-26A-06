@@ -1,5 +1,7 @@
 # 300160006
 
+## Laboratoire 3 - Active Directory
+### But
 Dans ce travail pratique, je vais installer et configurer Active Directory sur un serveur Windows Server 2022. L’objectif est de créer un domaine Active Directory, de configurer le serveur comme contrôleur de domaine et de mettre en place le service DNS nécessaire au fonctionnement du domaine. Pour réaliser cette configuration, j’utiliserai principalement des commandes PowerShell afin d’installer les rôles nécessaires, créer la forêt Active Directory et vérifier que la configuration fonctionne correctement.
 
 Pour commencer, j’ai renommé le serveur avec le nom demandé en utilisant la commande suivante. Le serveur sera nommé SRV300160006.
