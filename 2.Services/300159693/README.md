@@ -30,5 +30,7 @@ La liste doit afficher **300159693**. Cela confirme que l’utilisateur a bien �
 ### Conclusion
 
 Le compte **300159693** a été créé avec succès et possède maintenant les droits administrateur sur **Windows Server 2022 Datacenter**
+<img width="2048" height="1536" alt="e923befb-03bd-4935-a634-8ec3c4505845" src="https://github.com/user-attachments/assets/0faa79ca-1ca6-4f06-aaf5-2e81ad0d361b" />
+<img width="2048" height="1536" alt="1fe3aba9-282d-4fb6-a650-fab06a379d1a" src="https://github.com/user-attachments/assets/1d7838a7-e7c5-4c30-8893-935a742e55bd" />
 
  
