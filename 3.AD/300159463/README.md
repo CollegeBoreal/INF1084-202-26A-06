@@ -56,7 +56,8 @@ Le contrôleur srv300159463.dc300159463.local est correctement retourné avec l'
 Cette vérification confirme que le DNS permet aux clients de localiser les services Active Directory.
 
 
-Conclusion
+Conclusion:
+
 Les différentes vérifications effectuées montrent que le domaine DC300159463.local a été correctement installé et configuré sur Windows Server 2022.
 Le contrôleur de domaine SRV300159463, les services AD DS, DNS et Netlogon, la résolution DNS ainsi que le dossier SYSVOL fonctionnent correctement.
 L'environnement Active Directory est donc prêt pour les prochaines étapes du laboratoire, telles que la création d'utilisateurs, de groupes et d'unités d'organisation (OU).
