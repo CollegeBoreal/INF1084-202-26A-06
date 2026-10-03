@@ -6,7 +6,6 @@ for i in {201..232}; do; ping -c 1 -W 1 10.7.237.$i >/dev/null && echo "10.7.237
 <details><summary>🔗 IP Addr </summary>
 
 ```lua
-10.7.237.200 UP
 10.7.237.201 UP
 10.7.237.202 UP
 10.7.237.203 UP
