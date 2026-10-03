@@ -22,7 +22,8 @@ Le rôle AD DS ainsi que les outils d'administration RSAT (dont la console MMC e
 Étape 3 : Promotion du serveur et création de la forêt Active Directory  
 <img width="1233" height="488" alt="image" src="https://github.com/user-attachments/assets/598caaf6-3843-4f18-b000-5ceb0d93e3e8" />  
 Résultat : Validation de l'environnement réussie ("All tests completed successfully"), création du domaine racine DC300159203.local et redémarrage automatique du système.  
-Analyse : Le serveur est promu au rang de premier contrôleur de domaine de la forêt avec le rôle DNS intégré.
+Analyse : Le serveur est promu au rang de premier contrôleur de domaine de la forêt avec le rôle DNS intégré.  
+
 Étape 4 : Vérification de la configuration du domaine et de la forêt  
 <img width="984" height="898" alt="image" src="https://github.com/user-attachments/assets/7b96cee1-e51a-4dab-9108-c7d90beb4dc1" />  
 La base de données Active Directory est pleinement opérationnelle et héberge l'ensemble des 5 rôles FSMO.  
