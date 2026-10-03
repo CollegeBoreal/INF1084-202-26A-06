@@ -1,8 +1,6 @@
 # :link: Services
 
-| #️⃣ | Participations |
-|-|-|
-| 1️⃣ | [:tada: Participation](.scripts/Participation.md) |
+[:tada: Participation](.scripts/Participation.md)
 
 <details>
 <summary>📚 Table des matières</summary>
