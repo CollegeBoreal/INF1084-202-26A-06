@@ -55,8 +55,3 @@ Get-ADForest
 - La forêt et le domaine `DC300159672.local` sont créés.
 - Le serveur `SRV300159672.DC300159672.local` est le contrôleur de domaine : il détient les rôles de maître de schéma et de maître de nommage des domaines, et il héberge le catalogue global.
 - La forêt fonctionne au niveau `Windows2016Forest`.
-
-### Notes techniques
-- Le mot de passe DSRM est saisi avec `Read-Host -AsSecureString` : il n'apparaît ni dans la commande ni dans l'historique. Il sert au mode de restauration d'Active Directory.
-- Les avertissements jaunes pendant l'installation sont normaux : l'un concerne la délégation DNS (aucune zone parente, car c'est le premier domaine du réseau), l'autre les algorithmes de chiffrement par défaut de Windows Server 2022.
-- Le serveur est renommé avant la promotion en contrôleur de domaine, car changer le nom d'un contrôleur de domaine est compliqué.
