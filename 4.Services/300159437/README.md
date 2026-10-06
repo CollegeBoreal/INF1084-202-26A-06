@@ -33,6 +33,8 @@ Cela permet d’obtenir des informations comme :
 - la source ;
 - le message associé.
 
+ <img src="images/Screenshot%202026-10-06%20122810.png" width="50%" height="50%">
+
 Ces informations sont utiles pour diagnostiquer les problèmes d’Active Directory.
 
 ### `services3.ps1` – Exportation des événements AD
