@@ -3,6 +3,16 @@
 
 Créer l'utilisateur 300159437 sur Windows Server 2022 et lui attribuer les droits d'administration à l'aide de PowerShell.
 
+## Résumé
+
+Ce laboratoire consiste à créer un nouvel utilisateur nommé **300159437** sur **Windows Server 2022** à l’aide de **PowerShell**.
+
+La première étape permet de créer un mot de passe sécurisé avec la commande `Read-Host` et l’option `-AsSecureString`.
+
+Ensuite, la commande `New-LocalUser` est utilisée pour créer le compte **300159437** avec le mot de passe défini précédemment et la description **« Compte administrateur du laboratoire »**.
+
+L’objectif final est de donner à cet utilisateur les **droits d’administration** afin qu’il puisse effectuer des tâches administratives sur le serveur.
+
 # 1. Créer le mot de passe
 $password = Read-Host "Entrer le mot de passe" -AsSecureString
 # 2. Créer l'utilisateur
