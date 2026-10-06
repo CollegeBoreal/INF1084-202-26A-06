@@ -26,8 +26,9 @@ Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 
 
 **3. Saisie sécurisée du mot de passe DSRM**
-```powershell
+ powershell
 $DSRM = Read-Host -AsSecureString -Prompt "Mot de passe DSRM"
+
 
 <img width="1192" height="152" alt="Capture d’écran 2026-10-06 à 14 04 24" src="https://github.com/user-attachments/assets/de08cdaf-47f4-429b-8838-10e38a11ff66" />
 
@@ -44,8 +45,6 @@ Le serveur redémarre automatiquement à la fin de l'installation. Je me reconne
 **5. Vérification de la forêt**
   powershell
 Get-ADForest
-
-
 
 <img width="943" height="767" alt="Capture d’écran 2026-10-06 à 13 54 48" src="https://github.com/user-attachments/assets/92d5c2f3-6422-4b06-801e-2df4cd1f4a10" />
 
