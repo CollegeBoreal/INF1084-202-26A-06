@@ -246,11 +246,11 @@ Le travail est organisé dans le dossier personnel suivant :
     ├── services3.ps1
     ├── services4.ps1
     └── images/
-        ├── 01_services_ad_etat.jpg
-        ├── 02_logs_services_ad.jpg
-        ├── 03_export_logs_csv.jpg
-        ├── 04_contenu_adlogs_csv.jpg
-        └── 05_dfsr_stop_start.jpg
+        ├── WhatsApp Image 2026-10-06 at 12.51.06 PM.jpeg
+        ├── WhatsApp Image 2026-10-06 at 12.52.39 PM.jpeg
+        ├── WhatsApp Image 2026-10-06 at 12.54.46 PM.jpeg
+        ├── WhatsApp Image 2026-10-06 at 12.56.58 PM.jpeg
+        └── WhatsApp Image 2026-10-06 at 12.59.28 PM.jpeg
 ```
 
 ---
