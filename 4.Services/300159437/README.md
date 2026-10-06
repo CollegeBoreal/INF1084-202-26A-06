@@ -12,6 +12,8 @@ Ce premier script permet d’identifier et de vérifier l’état des principaux
 - `KDC` – Kerberos Key Distribution Center
 - `Netlogon` – Service d’authentification du domaine
 
+- <img src="images/Screenshot%202026-10-06%20114202.png" width="50%" height="50%">
+
 La commande `Get-Service` permet de déterminer si ces services sont en cours d’exécution (`Running`) ou arrêtés (`Stopped`).
 
 ### `services2.ps1` – Consultation des journaux d’événements
