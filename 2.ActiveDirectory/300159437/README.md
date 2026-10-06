@@ -19,6 +19,7 @@ Get-LocalGroupMember -Group "Administrators"
 L'utilisateur 300159437 doit apparaître dans la liste des membres du groupe Administrators.
 
 ✅ Résultat
-![WhatsApp Image](WhatsApp%20Image%202026-09-26%20at%2020.45.06%20%281%29.jpeg)
+
+![WhatsApp Image](WhatsApp%20Image%202026-09-26%20at%2020.45.06%20(1).jpeg)
 
 L'utilisateur 300159437 a été créé sur Windows Server 2022 et ajouté au groupe Administrators. Il possède maintenant les privilèges administratifs locaux sur le serveur.
