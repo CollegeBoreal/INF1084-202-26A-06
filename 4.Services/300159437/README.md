@@ -16,6 +16,9 @@ Ce premier script permet d’identifier et de vérifier l’état des principaux
 
 La commande `Get-Service` permet de déterminer si ces services sont en cours d’exécution (`Running`) ou arrêtés (`Stopped`).
 
+
+<img src="images/Screenshot%202026-10-06%20122810.png" width="50%" height="50%">
+
 ### `services2.ps1` – Consultation des journaux d’événements
 
 Le deuxième script permet de consulter les événements associés à **Active Directory et Netlogon**.
