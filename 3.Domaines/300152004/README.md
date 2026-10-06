@@ -9,7 +9,7 @@ J'ai lancé Install-WindowsFeature AD-Domain-Services -IncludeManagementTools. L
 
 Étape 2 : Création de la forêt 
 
-<img width="3895" height="2597" alt="961154" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/3.AD/300152004/image/WhatsApp%20Image%202026-10-05%20at%2011.54.352%20PM.jpeg" /> 
+<img width="3895" height="2597" alt="961154" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/3.Domaines/300152004/image/WhatsApp%20Image%202026-10-05%20at%2011.54.352%20PM.jpeg?raw=true" /> 
 
 J'ai exécuté Install-ADDSForest avec le domaine DCB300152004.local, le nom NetBIOS DCB300152004, l'installation du DNS, le mot de passe DSRM et l'option -Force. 
 
