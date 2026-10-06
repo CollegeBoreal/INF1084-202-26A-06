@@ -59,6 +59,9 @@ Le script effectue les opérations suivantes :
 4. Redémarrer le service avec `Start-Service`.
 5. Vérifier que son état final est `Running`.
 
+   <img src="images/Screenshot%202026-10-06%20123335.png" width="50%" height="50%">
+   
+
 DFSR est notamment important dans un environnement Active Directory puisqu’il participe à la réplication de **SYSVOL entre les contrôleurs de domaine**.
 
 ## Conclusion
