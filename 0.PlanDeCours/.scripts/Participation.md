@@ -31,7 +31,7 @@
 | 12 | [300157307](../300157307/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261494517?s=460&v=4' width=20 height=20></image>](https://github.com/amaradjida7-hub) | :2nd_place_medal: | :heavy_check_mark: |
 | 13 | [300157423](../300157423/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261497291?s=460&v=4' width=20 height=20></image>](https://github.com/gaya-994) | :1st_place_medal: | :heavy_check_mark: |
 | 14 | [300157606](../300157606/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261497731?s=460&v=4' width=20 height=20></image>](https://github.com/ouahiba1994) | :x: | :x: |
-| 15 | [300157727](../300157727/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/262933367?s=460&v=4' width=20 height=20></image>](https://github.com/rayan23082001) | :x: | :x: |
+| 15 | [300157727](../300157727/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/262933367?s=460&v=4' width=20 height=20></image>](https://github.com/rayan23082001) | :2nd_place_medal: | :heavy_check_mark: |
 | 16 | [300157733](../300157733/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261491303?s=460&v=4' width=20 height=20></image>](https://github.com/albachiralmouhamad) | :1st_place_medal: | :heavy_check_mark: |
 | 17 | [300158085](../300158085/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/258312358?s=460&v=4' width=20 height=20></image>](https://github.com/kevinmayele-ai) | :1st_place_medal: | :heavy_check_mark: |
 | 18 | [300159180](../300159180/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261489848?s=460&v=4' width=20 height=20></image>](https://github.com/abdenourzourane-cpu) | :x: | :x: |
@@ -47,4 +47,4 @@
 | 28 | [300160504](../300160504/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 29 | [300160733](../300160733/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261489188?s=460&v=4' width=20 height=20></image>](https://github.com/belhadiyanis200-a11y) | :1st_place_medal: | :heavy_check_mark: |
 | 30 | [300160862](../300160862/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261494322?s=460&v=4' width=20 height=20></image>](https://github.com/cherifyamna) | :x: | :x: |
-| :abacus: | \$\frac{18}{31}\$ = 58.06% | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 18 |
+| :abacus: | \$\frac{19}{31}\$ = 61.29% | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 19 |
