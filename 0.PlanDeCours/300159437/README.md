@@ -1,2 +1,3 @@
 Ceci est un essai du README.md
-![Image](images/Screenshot-2026-07-05.png)
+Et je confirme que j a lu mon plan de cours 
+<img src="images/nom-image.png" alt="Capture du projet" width="80%">
