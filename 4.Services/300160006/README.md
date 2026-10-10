@@ -105,7 +105,7 @@ Get-ChildItem .\services[1-4].ps1
 Le résultat confirme que les fichiers `services1.ps1`, `services2.ps1`, `services3.ps1` et `services4.ps1` sont présents dans le répertoire `C:\Users\Administrator`.
 
 ### 5. 
-![images alt}(https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/951a79e6611948e786c4c9f7da9a9fae3d8eab53/4.Services/300160006/images/Screenshot%202026-10-06%20115257.png)
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/951a79e6611948e786c4c9f7da9a9fae3d8eab53/4.Services/300160006/images/Screenshot%202026-10-06%20115257.png)
 
 ### 6. Résultats du laboratoire
 
