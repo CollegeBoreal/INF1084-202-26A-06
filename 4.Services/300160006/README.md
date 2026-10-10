@@ -49,7 +49,7 @@ Format-Table TimeCreated, Id, LevelDisplayName, Message -AutoSize
 
 **Vérification et exécution :**
 
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/e69a44bba16f9230a142548687d6a739c5ff562b/4.Services/300160006/images/Screenshot%202026-10-06%20121939.png)
 
 
 Les résultats permettent de consulter les événements du journal Directory Service, notamment leur date, leur identifiant, leur niveau et leur message. Les événements affichés sont de niveau Information. La recherche des événements Netlogon n’a retourné aucun résultat parmi les 20 derniers événements du journal System.
