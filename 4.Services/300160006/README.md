@@ -73,7 +73,7 @@ Export-Csv -Path "C:\Logs\ADLogs.csv" -NoTypeInformation
 
 **Vérification et exécution :**
 
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/b1f07120817f360757b59d2f8b0570c73afcf62b/4.Services/300160006/images/Screenshot%202026-10-06%20121959.png)
 
 L’exécution du script a permis de créer le fichier `ADLogs.csv` dans le dossier `C:\Logs`. La commande de vérification confirme que le fichier existe et que sa taille est de 38 080 octets. L’exportation permet de conserver les événements et de les consulter ultérieurement.
 
