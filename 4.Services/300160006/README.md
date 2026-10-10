@@ -104,7 +104,13 @@ Get-ChildItem .\services[1-4].ps1
 
 Le résultat confirme que les fichiers `services1.ps1`, `services2.ps1`, `services3.ps1` et `services4.ps1` sont présents dans le répertoire `C:\Users\Administrator`.
 
-### 5. 
+### 5. Rechercher les fichiers journaux (.log)
+
+J’ai recherché les fichiers journaux afin de consulter les informations enregistrées par le système. Ces fichiers permettent notamment de retrouver des événements, des avertissements et des erreurs.
+
+La commande Get-ChildItem permet de rechercher les fichiers, -Filter "*.log" permet de sélectionner les fichiers portant l’extension .log, et -Recurse permet d’effectuer la recherche dans les sous-dossiers.
+
+Cette recherche permet de repérer les fichiers journaux présents dans le répertoire Windows. Les fichiers trouvés peuvent ensuite être consultés pour examiner les informations qu’ils contiennent.
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/951a79e6611948e786c4c9f7da9a9fae3d8eab53/4.Services/300160006/images/Screenshot%202026-10-06%20115257.png)
 
 ### 6. Résultats du laboratoire
