@@ -22,7 +22,7 @@ Get-Service -Name NTDS, ADWS, DFSR
 ```
 
 **Vérification et exécution :**
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/8cde807b6454d01132b21caa625720cda5add0f7/4.Services/300160006/images/Screenshot%202026-10-06%20121920.png)
 
 Le résultat montre les services liés à Active Directory ainsi que leur état. Les six services affichés, soit NTDS, ADWS, DFSR, IsmServ, Kdc et Netlogon, sont à l’état `Running`, ce qui signifie qu’ils sont en cours d’exécution.
 
