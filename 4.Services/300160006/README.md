@@ -91,7 +91,7 @@ Start-Service -Name DFSR
 
 **Vérification et exécution :**
 
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/4a15a701d188c6959ce01b0313c3171d7df85947/4.Services/300160006/images/Screenshot%202026-10-06%20122016.png)
 
 
 Le résultat montre que le service DFSR passe à l’état `Stopped` après son arrêt, puis revient à l’état `Running` après son démarrage. La dernière commande permet de confirmer qu’il fonctionne de nouveau.
