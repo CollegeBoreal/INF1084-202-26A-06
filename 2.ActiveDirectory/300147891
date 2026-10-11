@@ -2,7 +2,7 @@ Amadou Barry
 300147891
 
 Step 1 :
-J'ai ouvert PowerShell en mode Administrateur Sur le serveur Windows Server 2022, puis j'ai lancez PowerShell ou Windows PowerShell ISE en tant qu'administrateur. 
+J'ai ouvert PowerShell en mode Administrateur Sur le serveur Windows Server 2022, puis j'ai lancez PowerShell ISE en tant qu'administrateur. 
 
 Step 2 : 
 J'ai executé la séquence de commandes PowerShell, Remplacez "mon NomUtilisateur" et "mon MotDePasse" par mes identifiants souhaités.
@@ -22,4 +22,7 @@ Get-LocalUser -Name "NomUtilisateur"
 
 Vérifier la liste des membres du groupe Administrateurs
 Get-LocalGroupMember -Group "Administrator"
-Résumé des paramètres du serveur (Rappel du Lab)   Système d'exploitation : Windows Server 2022 Datacenter   Adresse IP hôte : 10.7.237.7   Outil requis : PowerShell   
+Résumé des paramètres du serveur (Rappel du Lab)   
+Système d'exploitation : Windows Server 2022 Datacenter  
+Adresse IP hôte : 10.7.237.7   
+Outil requis : PowerShell   
