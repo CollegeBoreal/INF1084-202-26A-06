@@ -32,6 +32,21 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
   "cmid": 61,
   "name": "0.PlanDeCours"
 }
+{
+  "id": 57,
+  "cmid": 67,
+  "name": "2.ActiveDirectory"
+}
+{
+  "id": 58,
+  "cmid": 68,
+  "name": "3.Domaines"
+}
+{
+  "id": 59,
+  "cmid": 69,
+  "name": "4.Services"
+}
 
 ```
 
