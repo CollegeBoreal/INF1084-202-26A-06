@@ -118,6 +118,8 @@ Système             : Windows Server 2022
 Service             : Active Directory Domain Services
 DNS                 : Installé
 Rôle                 : Contrôleur de domaine
+
+<img src="images/WhatsApp%20Image%202026-09-29%20at%2011.55.30.jpeg" width="50%" height="50%">
 ```
 
 L'installation d'Active Directory permet maintenant de gérer de manière centralisée les utilisateurs, les ordinateurs, les groupes et les différentes ressources du domaine.
