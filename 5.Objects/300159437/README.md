@@ -1,4 +1,4 @@
-Laboratoire Windows Server 2022 — Active Directory, SMB et GPO
+# Laboratoire Windows Server 2022 — Active Directory, SMB et GPO
 Collège Boréal — Techniques des systèmes informatiques
 Identifiant étudiant : 300159437
 Serveur : SRV300159437
