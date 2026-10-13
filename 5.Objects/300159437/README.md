@@ -36,7 +36,7 @@ $DomainDN = (Get-ADDomain).DistinguishedName
 New-ADOrganizationalUnit `
     -Name "Students" `
     -Path $DomainDN
-
+<img src="images/01-verification-domaine.png" width="50%" height="50%">
 
 Pour vérifier la création :
 Get-ADOrganizationalUnit -Filter * |
@@ -81,7 +81,7 @@ New-ADUser `
     -Path $OU `
     -AccountPassword $Password2 `
     -Enabled $true
-
+<img src="images/02-controleur-fsmo.png" width="50%" height="50%">
 
 Les utilisateurs ont ensuite été ajoutés au groupe :
 Add-ADGroupMember `
