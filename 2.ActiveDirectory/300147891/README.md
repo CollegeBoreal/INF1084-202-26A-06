@@ -26,3 +26,11 @@ Résumé des paramètres du serveur (Rappel du Lab)
 Système d'exploitation : Windows Server 2022 Datacenter  
 Adresse IP hôte : 10.7.237.7   
 Outil requis : PowerShell   
+Mes Captures d'ecran
+
+<img width="1023" height="266" alt="image" src="https://github.com/user-attachments/assets/659cb127-a388-4197-8986-40473f4d776e" />
+
+<img width="1138" height="382" alt="image" src="https://github.com/user-attachments/assets/646fc74e-21d3-4003-88b7-cd2a72903ade" />
+<img width="1008" height="1055" alt="image" src="https://github.com/user-attachments/assets/b5a5662c-e12f-482a-a14c-8b7e0d01c2db" />
+
+
