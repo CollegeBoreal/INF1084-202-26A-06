@@ -50,7 +50,7 @@ $md += "|--------|-------------|-----------------------------|------------------
 # ------------------------------
 # Boucle sur chaque étudiant
 # ------------------------------
-for ($i = 0; $i -lt $ETUDIANTS.Count; $i++) {
+for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
     $URL = "[<image src='https://avatars0.githubusercontent.com/u/$($AVATARS[$i])?s=460&v=4' width=20 height=20></image>](https://github.com/$($IDS[$i]))"    
     $id = $ETUDIANTS[$i]

@@ -1,12 +1,10 @@
 #!/usr/bin/env pwsh
 # --------------------------------------
-# PowerShell equivalent of:
-# bash .scripts/participation.sh > .scripts/Participation.md 2>/dev/null
+# Dynamic Participation Generator
 # --------------------------------------
 
-# Run the participation script and redirect its output
-# Standard output -> .scripts/Participation.md
-# Errors -> $null (discarded)
+# Load students + compute groups
+. ../.scripts/students.ps1
 
 pwsh .scripts/participation.ps1 > .scripts/Participation.md 2>$null
 
