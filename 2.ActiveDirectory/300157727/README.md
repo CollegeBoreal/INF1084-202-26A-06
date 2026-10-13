@@ -1,1 +1,4 @@
+La première commande permet de vérifier que le serveur est un contrôleur de domaine Active Directory. Le résultat obtenu est 5. La deuxième commande permet de vérifier que l’utilisateur 300157727 existe et que son compte est activé<img width="737" height="141" alt="Capture d&#39;écran 2026-10-13 113954" src="https://github.com/user-attachments/assets/3bab4bcd-d458-4bdd-8087-c76dfc059e92" />
+La troisième commande permet de vérifier les groupes auxquels appartient l’utilisateur 300157727. Le résultat montre qu’il appartient aux groupes Domain Users, Administrators et Domain Admins. La quatrième commande confirme que le compte existe dans Active Directory et qu’il est activé, avec la valeur True.<img width="743" height="266" alt="Capture d&#39;écran 2026-10-13 114046" src="https://github.com/user-attachments/assets/c50bd342-e6a9-4d48-9340-75feaad5ddab" />
+
 
