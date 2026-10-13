@@ -1,6 +1,28 @@
-# 🚀 INF1084 - Scripts PowerShell pour les laboratoires AD DS
+# 🚀 INF1084 - Scripts PowerShell pour les laboratoires AD DS (OU Ségréguées par étudiant)
 
-## 🎯 Exercice 1 - Installer Active Directory
+## 🎯 Convention obligatoire
+
+Remplacez toujours :
+
+```text
+300123456
+```
+
+par votre numéro étudiant.
+
+Exemple :
+
+| Élément | Configuration |
+|----------|----------|
+| 🖥️ Serveur | `DC300123456` |
+| 🌳 Domaine | `DC300123456.local` |
+| 🏢 NetBIOS | `DC300123456` |
+| 📂 OU Racine | `OU300123456` |
+| 🌐 Réseau interne | `172.16.X.0/24` |
+
+---
+
+# 🎯 Exercice 1 - Installer Active Directory
 
 ```powershell
 Install-WindowsFeature `
@@ -16,13 +38,11 @@ Get-WindowsFeature AD-Domain-Services
 
 ---
 
-## 🌲 Exercice 2 - Créer une forêt Active Directory
-
-Remplacez par votre numéro étudiant.
+# 🌲 Exercice 2 - Créer une forêt Active Directory
 
 ```powershell
 Install-ADDSForest `
-    -DomainName "300123456.local"
+    -DomainName "DC300123456.local"
 ```
 
 ✅ Vérifier :
@@ -34,11 +54,13 @@ Get-ADDomain
 
 ---
 
-# 🏢 Exercice 3 - Créer une OU
+# 🏢 Exercice 3 - Créer des OU ségréguées
+
+Créer l'OU racine de l'étudiant :
 
 ```powershell
 New-ADOrganizationalUnit `
-    -Name "INF1084"
+    -Name "OU300123456"
 ```
 
 Créer les sous-OU :
@@ -46,15 +68,23 @@ Créer les sous-OU :
 ```powershell
 New-ADOrganizationalUnit `
     -Name "Students" `
-    -Path "OU=INF1084,DC=300123456,DC=local"
+    -Path "OU=OU300123456,DC=DC300123456,DC=local"
 
 New-ADOrganizationalUnit `
     -Name "Servers" `
-    -Path "OU=INF1084,DC=300123456,DC=local"
+    -Path "OU=OU300123456,DC=DC300123456,DC=local"
 
 New-ADOrganizationalUnit `
     -Name "Groups" `
-    -Path "OU=INF1084,DC=300123456,DC=local"
+    -Path "OU=OU300123456,DC=DC300123456,DC=local"
+
+New-ADOrganizationalUnit `
+    -Name "Workstations" `
+    -Path "OU=OU300123456,DC=DC300123456,DC=local"
+
+New-ADOrganizationalUnit `
+    -Name "ServiceAccounts" `
+    -Path "OU=OU300123456,DC=DC300123456,DC=local"
 ```
 
 ---
@@ -67,7 +97,7 @@ New-ADUser `
     -GivenName "Alice" `
     -Surname "Martin" `
     -SamAccountName "alice.martin" `
-    -Path "OU=Students,OU=INF1084,DC=300123456,DC=local" `
+    -Path "OU=Students,OU=OU300123456,DC=DC300123456,DC=local" `
     -AccountPassword (
         ConvertTo-SecureString `
         "P@ssw0rd123!" `
@@ -85,7 +115,7 @@ Créer plusieurs utilisateurs :
     New-ADUser `
         -Name "Student$_" `
         -SamAccountName "student$_" `
-        -Path "OU=Students,OU=INF1084,DC=300123456,DC=local" `
+        -Path "OU=Students,OU=OU300123456,DC=DC300123456,DC=local" `
         -AccountPassword (
             ConvertTo-SecureString `
             "P@ssw0rd123!" `
@@ -93,6 +123,7 @@ Créer plusieurs utilisateurs :
             -Force
         ) `
         -Enabled $true
+
 }
 ```
 
@@ -107,7 +138,7 @@ New-ADGroup `
     -Name GG_Developers `
     -GroupScope Global `
     -GroupCategory Security `
-    -Path "OU=Groups,OU=INF1084,DC=300123456,DC=local"
+    -Path "OU=Groups,OU=OU300123456,DC=DC300123456,DC=local"
 ```
 
 ## 🌎 Groupe Universal
@@ -117,7 +148,7 @@ New-ADGroup `
     -Name UG_ContentEditors `
     -GroupScope Universal `
     -GroupCategory Security `
-    -Path "OU=Groups,OU=INF1084,DC=300123456,DC=local"
+    -Path "OU=Groups,OU=OU300123456,DC=DC300123456,DC=local"
 ```
 
 ## 🏢 Groupe Domain Local
@@ -127,7 +158,7 @@ New-ADGroup `
     -Name DL_ProjectFolder_Modify `
     -GroupScope DomainLocal `
     -GroupCategory Security `
-    -Path "OU=Groups,OU=INF1084,DC=300123456,DC=local"
+    -Path "OU=Groups,OU=OU300123456,DC=DC300123456,DC=local"
 ```
 
 ---
@@ -240,8 +271,6 @@ $acl.AddAccessRule($rule)
 Set-Acl C:\ProjectFolder $acl
 ```
 
----
-
 ## ✏️ Modification
 
 ```powershell
@@ -279,7 +308,7 @@ Install-WindowsFeature `
 Pour l'étudiant utilisant :
 
 ```text
-SRV17
+DC300123456
 ```
 
 Réseau recommandé :
@@ -317,28 +346,51 @@ New-NetNat `
 
 # 💾 Exercice 12 - Créer un DC imbriqué
 
-Créer la VM :
-
 ```powershell
 New-VM `
-    -Name DC01 `
+    -Name DC300123456 `
     -Generation 2 `
     -MemoryStartupBytes 4GB `
-    -NewVHDPath "D:\VMs\DC01.vhdx" `
+    -NewVHDPath "D:\VMs\DC300123456.vhdx" `
     -NewVHDSizeBytes 60GB `
     -SwitchName LAB
+```
+
+Configuration réseau :
+
+```text
+Nom : DC300123456
+
+IP :
+172.16.17.10
+
+DNS :
+172.16.17.10
+
+Domaine :
+DC300123456.local
 ```
 
 ---
 
 # 💻 Exercice 13 - Joindre un client au domaine
 
-Dans CLIENT01 :
+CLIENT01 :
+
+```text
+IP :
+172.16.17.20
+
+DNS :
+172.16.17.10
+```
+
+Joindre le domaine :
 
 ```powershell
 Add-Computer `
-    -DomainName 300123456.local `
-    -Credential Administrator `
+    -DomainName DC300123456.local `
+    -Credential DC300123456\Administrator `
     -Restart
 ```
 
@@ -347,7 +399,7 @@ Add-Computer `
 # 🏗️ Architecture finale
 
 ```text
-🖥️ SRV17
+🖥️ DC300123456
 10.7.237.218
 │
 ├─ ⚙️ Hyper-V
@@ -357,11 +409,58 @@ Add-Computer `
     ▼
 172.16.17.0/24
 │
-├─ 🏢 DC01
+├─ 🏢 DC300123456
 │   172.16.17.10
-│   300123456.local
+│   DC300123456.local
 │
 └─ 💻 CLIENT01
     172.16.17.20
 ```
 
+---
+
+# 🏢 Structure Active Directory finale
+
+```text
+DC300123456.local
+│
+└── OU300123456
+    │
+    ├── Students
+    ├── Servers
+    ├── Groups
+    ├── Workstations
+    └── ServiceAccounts
+```
+
+---
+
+# 🎓 Compétences développées
+
+✅ Forêt Active Directory personnelle 🌲
+
+✅ Domaine AD DS personnalisé 🏢
+
+✅ DNS intégré 🌐
+
+✅ OU ségréguées par étudiant 📂
+
+✅ Utilisateurs 👥
+
+✅ Groupes 🌍🌎🏢
+
+✅ AGDLP 🔗
+
+✅ AGUDLP 🏗️
+
+✅ Hyper‑V imbriqué ⚙️
+
+✅ VM clientes 💻
+
+✅ GPO 📜
+
+✅ Partages réseau 📁
+
+✅ Permissions NTFS 🔒
+
+✅ Environnement totalement isolé pour chaque étudiant 🎯
