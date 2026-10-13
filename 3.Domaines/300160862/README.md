@@ -13,7 +13,7 @@ Ce laboratoire consiste à installer et configurer un domaine Active Directory s
 
 La commande Get-ADForest affiche les informations de la forêt DC300160862.local, notamment le domaine racine et le catalogue global.
 
-![Vérification de la forêt](images/foret.png)
+
 
 ## 2. Vérification du domaine
 
