@@ -99,7 +99,7 @@ Get-ADForest
 
 Ces commandes permettent de vérifier les informations concernant le domaine et la forêt Active Directory.
 
-![Vérification Active Directory](images/photo3.jpeg)
+)
 
 ---
 
