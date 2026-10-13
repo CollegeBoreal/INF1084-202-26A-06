@@ -52,11 +52,12 @@ Cette commande permet de :
 
 ### Installation de la forêt
 
-
+<img src="WhatsApp%20Image%202026-09-29%20at%2011.55.30%20%281%29.jpeg" width="50%" alt="WhatsApp Image">
 
 ---
 
 ## 3. Vérification des prérequis
+
 
 Pendant l'installation, Windows Server vérifie automatiquement les prérequis nécessaires à la création du contrôleur de domaine.
 
