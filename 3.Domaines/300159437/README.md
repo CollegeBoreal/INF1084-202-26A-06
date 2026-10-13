@@ -71,7 +71,7 @@ Starting
 
 Certains avertissements concernant la configuration DNS et les paramètres de sécurité de Windows Server 2022 peuvent également apparaître. Ils n'empêchent pas l'installation de continuer dans le cadre de ce laboratoire.
 
-![Vérification des prérequis](images/photo2.jpeg)
+
 
 ---
 
