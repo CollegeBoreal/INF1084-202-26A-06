@@ -52,7 +52,7 @@ Cette commande permet de :
 
 ### Installation de la forêt
 
-<img src="WhatsApp%20Image%202026-09-29%20at%2011.56.18.jpeg" width="50%" height="50%"><img/>
+<img src="images/WhatsApp%20Image%202026-09-29%20at%2011.56.18.jpeg" width="50%" height="50%">
 
 ---
 
