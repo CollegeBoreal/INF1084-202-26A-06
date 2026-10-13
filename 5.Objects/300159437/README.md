@@ -81,7 +81,7 @@ New-ADUser `
     -Path $OU `
     -AccountPassword $Password2 `
     -Enabled $true
-
+<img src="images/ChatGPT%20Image%20Oct%2013%2C%202026%2C%2001_07_32%20PM.png" width="50%" height="50%">
 
 Les utilisateurs ont ensuite été ajoutés au groupe :
 Add-ADGroupMember `
