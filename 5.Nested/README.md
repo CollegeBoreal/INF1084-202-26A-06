@@ -39,14 +39,14 @@ Chaque étudiant crée un réseau privé dans sa VM Hyper‑V.
 Exemple :
 
 ```text
-Étudiant : 300151722
+Étudiant : 🆔
 
 Serveur parent :
-SRV17
-10.7.237.218
+SRV🆔
+10.7.237.#️⃣
 
 Réseau privé :
-172.16.17.0/24
+172.16.#️⃣.0/24
 ```
 
 ---
@@ -55,25 +55,14 @@ Réseau privé :
 
 | Élément | Configuration |
 |----------|----------|
-| 🖥️ Serveur parent | SRV17 |
-| 🌐 Réseau privé | 172.16.17.0/24 |
-| 🚪 Passerelle NAT | 172.16.17.1 |
-| 🏢 Contrôleur de domaine | DC300151722 |
-| 📍 Adresse IP du DC | 172.16.17.10 |
+| 🖥️ Serveur parent | SRV🆔 |
+| 🌐 Réseau privé | 172.16.#️⃣.0/24 |
+| 🚪 Passerelle NAT | 172.16.#️⃣.1 |
+| 🏢 Contrôleur de domaine | DC🆔 |
+| 📍 Adresse IP du DC | 172.16.#️⃣.10 |
 | 💻 Client | CLIENT01 |
-| 📍 Adresse IP du client | 172.16.17.20 |
-| 🌲 Domaine AD DS | DC300151722.local |
-
----
-
-# ⚙️ Exercice 1 - Installer Hyper‑V
-
-```powershell
-Install-WindowsFeature `
-    Hyper-V `
-    -IncludeManagementTools `
-    -Restart
-```
+| 📍 Adresse IP du client | 172.16.#️⃣.20 |
+| 🌲 Domaine AD DS | DC🆔.local |
 
 ---
 
@@ -95,7 +84,7 @@ Créer l'adresse IP du réseau interne :
 
 ```powershell
 New-NetIPAddress `
-    -IPAddress 172.16.17.1 `
+    -IPAddress 172.16.#️⃣.1 `
     -PrefixLength 24 `
     -InterfaceAlias "vEthernet (LAB)"
 ```
@@ -105,7 +94,7 @@ Créer le NAT :
 ```powershell
 New-NetNat `
     -Name LABNAT `
-    -InternalIPInterfaceAddressPrefix 172.16.17.0/24
+    -InternalIPInterfaceAddressPrefix 172.16.#️⃣.0/24
 ```
 
 ---
