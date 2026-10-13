@@ -12,7 +12,7 @@ Remplacez toujours :
 
 `172.16.X.0/24`
 
-- [ ] X par votre numéro séquentiel dans [🎉 Participation](../0.PlanDeCours/.scripts/Participation.md) .
+- [ ] X par votre numéro séquentiel #️⃣ dans [🎉 Participation](../0.PlanDeCours/.scripts/Participation.md) .
 
 Exemple :
 
