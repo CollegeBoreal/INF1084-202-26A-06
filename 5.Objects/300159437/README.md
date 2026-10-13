@@ -36,7 +36,7 @@ $DomainDN = (Get-ADDomain).DistinguishedName
 New-ADOrganizationalUnit `
     -Name "Students" `
     -Path $DomainDN
-<img src="images/01-verification-domaine.png" width="50%" height="50%">
+<img src="images/ChatGPT%20Image%20Oct%2013%2C%202026%2C%2001_07_15%20PM.png" width="50%" height="50%">
 
 Pour vérifier la création :
 Get-ADOrganizationalUnit -Filter * |
