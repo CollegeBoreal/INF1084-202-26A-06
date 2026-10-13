@@ -171,7 +171,7 @@ Label	SharedResources
 8. Tests et vérifications
 Nous avons vérifié l'accès au dossier partagé :
 Test-Path "\\SRV300159437\SharedResources"
-
+<img src="images/ChatGPT%20Image%20Oct%2013%2C%202026%2C%2001_08_37%20PM.png" width="50%" height="50%">
 
 Lors du premier test, le système a affiché :
 Access is denied
