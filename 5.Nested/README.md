@@ -8,7 +8,11 @@ Remplacez toujours :
 300123456
 ```
 
-par votre numéro étudiant.
+- [ ] par votre numéro étudiant :id: .
+
+`172.16.X.0/24`
+
+- [ ] X par votre numéro séquentiel dans [🎉 Participation] .
 
 Exemple :
 
