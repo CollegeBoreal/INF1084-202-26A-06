@@ -1,1 +1,22 @@
-
+Objectif du laboratoire :
+Apprendre à gérer les services Windows et Active Directory avec PowerShell, vérifier leur état, consulter et exporter les journaux d’événements, ainsi que démarrer et arrêter un service.
+Cette capture montre l’exécution de la commande Get-Service -Name DFSR dans PowerShell. Le résultat indique que le service DFSR (DFS Replication) est en cours d’exécution (Running). Ce service permet la réplication des dossiers entre les serveurs, notamment le dossier SYSVOL utilisé par Active Directory.
+<img width="2048" height="1536" alt="3294b857-3dec-4927-82e1-1eea7e9fedfb" src="https://github.com/user-attachments/assets/040d3733-02e3-497c-9447-555cb24593a0" />
+Cette capture montre l’exécution du script services1.ps1 dans PowerShell. Le script permet de lister les principaux services liés à Active Directory et de vérifier leur état. Les services affichés sont en cours d’exécution (Running), ce qui indique qu’ils fonctionnent correctement.
+<img width="2048" height="1536" alt="5c680b35-509e-43aa-9d66-93975740e489" src="https://github.com/user-attachments/assets/9fe4ca17-1474-4cd0-8bae-834a8b0a3725" />
+Cette capture montre l’exécution du script services2.ps1 dans PowerShell. Il permet de consulter les journaux d’événements de Windows liés à Active Directory (NTDS). Les résultats affichent principalement des informations sur le fonctionnement du service, ainsi que quelques avertissements qui peuvent nécessiter une vérification.
+<img width="2048" height="1536" alt="249627a1-ec5c-4317-aafe-1cee35748946" src="https://github.com/user-attachments/assets/8e68cf5e-abb1-4ba5-8f3f-7586e5afe88f" />
+Cette capture montre la vérification du fichier services3.ps1 dans le dossier C:\TP_ServicesAD à l’aide de la commande dir. Le résultat confirme que le script existe dans le dossier et qu’il est prêt à être utilisé pour exporter les journaux d’événements dans un fichier CSV.
+<img width="2048" height="1536" alt="7e1ac359-e9cd-404f-9703-aa9413e8657a" src="https://github.com/user-attachments/assets/d31eb835-c8ce-4e3f-81c0-0219743e959c" />
+montre l’exécution du script services3.ps1 dans PowerShell. La commande dir C:\Logs permet de vérifier que le fichier ADLogs.csv a bien été créé. Ce fichier contient les événements exportés du journal Directory Service pour faciliter leur consultation.
+<img width="2048" height="1536" alt="25b903fe-757e-4524-9f1d-dd26375c123c" src="https://github.com/user-attachments/assets/542a9d8e-4fb5-4443-81b2-97e670d3c37a" />
+Cette capture montre l’exécution du script services4.ps1 dans PowerShell. Le script arrête le service DFSR et vérifie son état (Stopped), puis le redémarre. Le résultat final (Running) confirme que le service fonctionne de nouveau.
+<img width="2048" height="1536" alt="80da504f-6392-4bc0-8148-3a765b617da0" src="https://github.com/user-attachments/assets/345f2fd8-cb5f-4a23-966a-c62de392de2d" />
+Cette capture montre l’exécution de la commande dir .\services*.ps1 dans PowerShell. Elle permet de lister les quatre scripts du laboratoire (services1.ps1, services2.ps1, services3.ps1 et services4.ps1) et de vérifier qu’ils sont présents dans le dossier C:\TP_ServicesAD.
+<img width="2048" height="1536" alt="3c4e25a5-63d2-40e1-8ee9-8b27bcb95af3" src="https://github.com/user-attachments/assets/8bbe1747-7d1a-45f3-9f9f-0227587aabdb" />
+: Cette capture montre la vérification du fichier ADLogs.csv dans le dossier C:\Logs, puis l’importation de son contenu avec la commande Import-Csv. Le résultat affiche un événement enregistré dans le fichier, ce qui permet de vérifier que les journaux ont été exportés et peuvent être consultés.
+<img width="2048" height="1536" alt="4ea4311a-b61e-4a33-b9d4-b28ee126faa9" src="https://github.com/user-attachments/assets/576c4717-f728-4175-a896-2473086abbb7" />
+Cette capture montre l’affichage des 10 premiers événements du fichier ADLogs.csv à l’aide de la commande Import-Csv dans PowerShell. Les résultats présentent les détails des événements du journal Directory Service, notamment leur identifiant, leur date et leur message. Cela permet de vérifier le contenu du fichier exporté et de consulter les informations enregistrées.
+<img width="2048" height="1536" alt="20bb3416-c68a-4bfc-99a6-6a49c0e6fe21" src="https://github.com/user-attachments/assets/e6c95345-2e0c-40d3-9046-48406f52ab0b" />
+Conclusion :
+Ce laboratoire m’a permis d’apprendre à gérer les services Windows liés à Active Directory à l’aide de PowerShell. J’ai pu vérifier l’état des services, consulter les journaux d’événements, exporter les données dans un fichier CSV et arrêter puis redémarrer le service DFSR. Ces exercices m’ont aidé à mieux comprendre l’importance des services AD DS dans le fonctionnement et la gestion d’un réseau Windows.
