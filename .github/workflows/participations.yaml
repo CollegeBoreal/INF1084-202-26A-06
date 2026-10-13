@@ -26,6 +26,7 @@ jobs:
             "2.ActiveDirectory"
             "3.Domaines"
             "4.Services"
+            "5.Objects"
           )
 
           foreach ($chapter in $chapters) {
