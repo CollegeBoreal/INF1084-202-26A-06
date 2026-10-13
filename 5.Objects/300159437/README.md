@@ -129,7 +129,7 @@ Grant-SmbShareAccess `
     -AccessRight Full `
     -Force
 
-
+<img src="images/ChatGPT%20Image%20Oct%2013%2C%202026%2C%2001_11_16%20PM.png" width="50%" height="50%">
 Vérification :
 Get-SmbShareAccess -Name "SharedResources"
 
