@@ -1,28 +1,31 @@
 # --------------------------------------
-# Script pour tester les partages SMB étudiants + RDP GUI
+# Script pour accéder aux AD DS des étudiants et générer README.md
 # --------------------------------------
 
-# Forcer UTF-8 pour les accents
+# Forcer UTF-8 dans tout le script
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $PSDefaultParameterValues['Set-Content:Encoding'] = 'utf8'
 
-# Charger la liste des étudiants et serveurs depuis students.ps1
-. ../.scripts/students.ps1
+# Autorise toutes les IP pour les connexions WinRM
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "10.7.236.*" -Force
 
-# Charger la fonction si ce n'est pas déjà fait
-. .\.scripts\Test-RDPSession.ps1
+# Charger la liste des VMs depuis students.ps1
+. ../.scripts/students.ps1 # le point suivi d'espace permet d'importer les variables
 
-if (-not $SERVERS -or -not $ETUDIANTS) {
-    Write-Host "Les variables `$SERVERS ou `$ETUDIANTS n'ont pas été trouvées dans students.ps1" -ForegroundColor Red
+# Vérifier que $SERVERS existe
+if (-not $SERVERS) {
+    Write-Host "La variable `$SERVERS n'a pas été trouvée dans students.ps1" -ForegroundColor Red
     exit
 }
 
-# Mot de passe commun pour les étudiants (adapter si nécessaire)
-$plainPassword = "Pass123!"
-$Password = ConvertTo-SecureString $plainPassword -AsPlainText -Force
-$timestamp = Get-Date -Format "dd-MM-yyyy HH:mm"
+# Identifiants administrateur (local ou domaine)
+$User = "Administrator"
+# $Password = Read-Host -AsSecureString "Mot de passe de $User"
+$plain = 'Boreal@2026'
+$Password = ConvertTo-SecureString $plain -AsPlainText -Force
 
-# Préparer le Markdown
+# Préparer le contenu Markdown
+$timestamp = Get-Date -Format "dd-MM-yyyy HH:mm"
 $md = @()
 $md += "# Precision au $timestamp"
 $md += ""
@@ -31,77 +34,63 @@ $md += "|-------------------------------|---------------------------------------
 $md += "| :a: [Presence](#a-presence)   | L'etudiant.e a fait son travail    :heavy_check_mark:   |"
 $md += "| :b: [Precision](#b-precision) | L'etudiant.e a reussi son travail  :tada:               |"
 $md += ""
-$md += ":bulb: Le mot de passe de ***Etudiant1*** est ***$plainPassword***"
+$md += ":bulb: Le mot de passe Administrateur (en Anglais) de la VM est **Infra@2024**"
 $md += ""
 $md += "## Legende"
 $md += ""
-$md += "| Signe              | Signification                    |"
-$md += "|--------------------|----------------------------------|"
-$md += "| :heavy_check_mark: | Acces OK                          |"
-$md += "| :x:                | Service desactive / ressource off |"
-$md += "| :no_entry:         | Acces refuse / host down          |"
-$md += "| :warning:          | Mot de passe a changer            |"
+$md += "| Signe              | Signification                 |"
+$md += "|--------------------|-------------------------------|"
+$md += "| :heavy_check_mark: | AD DS a ete installe          |"
+$md += "| :x:                | AD DS est inexistant          |"
+$md += "| :no_entry:         | Acces refuse                  |"
 $md += ""
 $md += "## :b: Precision"
 $md += ""
-$md += "| :hash: | Boreal :id: | :roll_of_paper: Partage SMB | :toilet: Statut SMB  | :hiking_boot: netbios | :skateboard: RDP GUI |"
-$md += "|--------|-------------|-----------------------------|----------------------|-----------------------|----------------------|"
+$md += "| :hash: | Boreal :id: | :slot_machine: VM   | :tada:   |"
+$md += "|--------|-------------|---------------------|----------|"
 
-# ------------------------------
-# Boucle sur chaque étudiant
-# ------------------------------
-for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
+# Boucle sur chaque VM
+$i = 0
+$s = 0
+$counter = 1
 
+foreach ($VM in $SERVERS) {
     $URL = "[<image src='https://avatars0.githubusercontent.com/u/$($AVATARS[$i])?s=460&v=4' width=20 height=20></image>](https://github.com/$($IDS[$i]))"    
     $id = $ETUDIANTS[$i]
     $FILE = "$id/README.md"
-    $vm = $SERVERS[$i]
+    $server = $SERVERS[$i]
 
-    Write-Host "Test pour $id sur $vm..." -ForegroundColor Cyan
-
-    # ------------------------------
-    # Test RDP GUI avec Test-RDPSession
-    # ------------------------------
-    $rdpIcon = ":x:"   # valeur par défaut
+    Write-Host "Connexion à $VM ..." -ForegroundColor Cyan
     try {
-        if (Test-RDPSession -ComputerName $vm -Username "$($NETBIOS[$i])\Etudiant1" -Password $plainPassword) {
-            $rdpIcon = ":heavy_check_mark:"
-        } else {
-            $rdpIcon = ":x:"
+        $Session = New-PSSession -ComputerName $VM -Credential (New-Object PSCredential ($User, $Password))
+        
+        # Vérifier le service AD DS (NTDS)
+        $ADStatus = Invoke-Command -Session $Session -ScriptBlock {
+            $svc = Get-Service -Name NTDS -ErrorAction SilentlyContinue
+            if ($svc) { $svc.Status } else { -1 }
         }
+
+        $statusIcon = if ($ADStatus -eq 4) { ":heavy_check_mark:"; $s++ } else { ":x:" }
+
+        # Ajouter la ligne Markdown
+        $md += "| $counter | [$id](../$FILE) $URL | $VM | $statusIcon |"
+
+        # Fermer la session
+        Remove-PSSession $Session
     }
     catch {
-        $rdpIcon = ":no_entry:"
-        Write-Host "Erreur RDP pour $id@$vm" -ForegroundColor Red
+        Write-Host "Échec de connexion à $VM : $($_.Exception.Message)" -ForegroundColor Red
+        $md += "| $counter | [$id](../$FILE) $URL | $VM | :no_entry: |"
     }
-
-    # ------------------------------
-    # Test SMB
-    # ------------------------------
-    $sharePath = "\\$vm\SharedResources"
-    $CredsSMB = New-Object System.Management.Automation.PSCredential ("Etudiant1", $Password)
-    $driveName = "S"
-    $statusIcon = ":x:"
-    try {
-        New-PSDrive -Name $driveName -PSProvider FileSystem -Root $sharePath -Credential $CredsSMB -ErrorAction Stop | Out-Null
-        if (Test-Path "$($driveName):\") { $statusIcon = ":heavy_check_mark:" }
-        Remove-PSDrive -Name $driveName -ErrorAction SilentlyContinue
-    }
-    catch {
-        if ($_.Exception.Message -match "password is not correct|incorrect") { $statusIcon = ":no_entry:" }
-        elseif ($_.Exception.Message -match "must be changed") { $statusIcon = ":warning:" }
-        elseif ($_.Exception.Message -match "cannot be found") { $statusIcon = ":x:" }
-        else { $statusIcon = ":no_entry:" }
-    }
-
-    # ------------------------------
-    # Ligne Markdown
-    # ------------------------------
-    $md += "| $i | [$id](../$FILE) $URL | \\\\$vm\\SharedResources | $statusIcon | $($NETBIOS[$i]) | $rdpIcon |"
+    $i++
+    $counter++
+    $COUNT = "\$\\frac{$s}{$i}$"
+    $STATS = [math]::Round(($s * 100) / $i, 2)
+    $SUM = "\$\displaystyle\sum_{i=1}^{$i} s_i$"
 }
 
-# ------------------------------
-# Exporter le Markdown dans Check.md
-# ------------------------------
+$md += "| :abacus: | $COUNT = $STATS% | | $SUM = $s |"
+
+# Exporter le README.md
 $md | Set-Content -Path ".scripts/Check.md" -Encoding UTF8
-Write-Host "Check.md généré avec succès !" -ForegroundColor Green
+Write-Host "README.md généré avec succès !" -ForegroundColor Green
