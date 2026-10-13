@@ -52,7 +52,7 @@ Cette commande permet de :
 
 ### Installation de la forêt
 
-![Installation ADDS Forest](images/photo1.jpeg)
+
 
 ---
 
