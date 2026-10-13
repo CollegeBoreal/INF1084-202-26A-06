@@ -51,7 +51,6 @@ Résultat :
 
 Le service DFSR a été arrêté puis redémarré correctement.
 
-📸 Capture 4 : Arrêt et redémarrage du service DFSR.
 
 Conclusion
 
