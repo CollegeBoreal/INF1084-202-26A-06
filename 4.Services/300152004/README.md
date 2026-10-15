@@ -22,6 +22,7 @@ Get-Service | Where-Object {
 } | Sort-Object DisplayName
 #Vérifier l'état d'un service spécifique
 Get-Service -Name NTDS, ADWS, DFSR
+
 le premier bloc filtre les services dont le nom d'affichage contient « Directory » ou dont le nom correspond à NTDS, ADWS, DFSR, kdc, Netlogon ou IsmServ, puis les trie par nom d'affichage. Le second bloc affiche l'état de NTDS, ADWS et DFSR.
 
 Contenu de `services2.ps1` :
@@ -33,6 +34,7 @@ Get-EventLog -LogName "Directory Service" -Newest 20
 Get-EventLog -LogName "System" -Newest 20 | Where-Object {$_.Source -eq "Netlogon"}
 #Afficher les logs via le journal moderne (Event Viewer v2)
 Get-WinEvent -LogName "Directory Service" -MaxEvents 20 | Format-Table TimeCreated, Id, LevelDisplayName, Message -AutoSize
+
 la commande affiche les 20 derniers événements du journal Directory Service (source NTDS : *General* et *ISAM*), puis les événements système de la source Netlogon. La dernière commande présente les mêmes événements avec `Get-WinEvent`, sous forme de tableau
 
 Contenu de `services3.ps1` :
