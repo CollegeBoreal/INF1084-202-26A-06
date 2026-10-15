@@ -16,6 +16,7 @@ New-Item services4.ps1 -ItemType File
 Contenu de `services1.ps1` :
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/4.Services/300152004/images/01-creation-scripts-et-services1.jpeg?raw=true" />
 powershell
+
 #Lister tous les services liés à AD
 Get-Service | Where-Object {
     $_.DisplayName -like "*Directory*" -or $_.Name -match "NTDS|ADWS|DFSR|kdc|Netlogon|IsmServ"
@@ -28,6 +29,7 @@ le premier bloc filtre les services dont le nom d'affichage contient « Director
 Contenu de `services2.ps1` :
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/4.Services/300152004/images/02-evenements-services2.jpeg?raw=true" />
 powershell
+
 #Afficher les 20 derniers événements liés à NTDS
 Get-EventLog -LogName "Directory Service" -Newest 20
 #Afficher les logs du système
@@ -40,6 +42,7 @@ la commande affiche les 20 derniers événements du journal Directory Service (s
 Contenu de `services3.ps1` :
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/4.Services/300152004/images/03-export-csv-et-arret-redemarrage.jpeg?raw=true" />
 powershell
+
 Get-WinEvent -LogName "Directory Service" -MaxEvents 50 | Export-Csv -Path "C:\Logs\ADLogs.csv" -NoTypeInformation
 Test-Path C:\Logs\ADLogs.csv
 
@@ -49,6 +52,7 @@ Le résultat est True, donc le fichier a bien été créé.
 Contenu de `services4.ps1` :
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/4.Services/300152004/images/03-export-csv-et-arret-redemarrage.jpeg?raw=true" />
 powershell
+
 Stop-Service -Name DFSR
 (Get-Service -name DFSR).status
 Start-Service -Name DFSR
