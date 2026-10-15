@@ -24,6 +24,6 @@ Ce laboratoire m’a permis de mieux comprendre le fonctionnement d’Active Dir
 
 Les captures d’écran des commandes PowerShell et de leurs résultats servent à démontrer les étapes réalisées et à confirmer la configuration finale.
 
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/423b67dd1040cb829eac01b7e40c0cc38e449a37/2.ActiveDirectory/300160006/images/WhatsApp%20Image%202026-10-15%20at%2010.48.00.jpeg)
 ![images alt](
 
