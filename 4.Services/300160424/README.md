@@ -22,6 +22,7 @@ Get-Service | Where-Object {
 } | Sort-Object DisplayName
 Get-Service -Name NTDS, ADWS, DFSR
 Exécution : .\services1.ps1
+
  <img width="787" height="855" alt="image" src="https://github.com/user-attachments/assets/58042df7-cbae-4a63-b02c-69e14b6367e2" />
 
 Capture du résultat obtenu dans Windows PowerShell
@@ -35,6 +36,7 @@ Get-EventLog -LogName "System" -Newest 20 |
     Where-Object {$_.Source -eq "Netlogon"}
 Get-WinEvent -LogName "Directory Service" -MaxEvents 20 |
     Format-Table TimeCreated, Id, LevelDisplayName, Message -AutoSize
+    
 Exécution : .\services2.ps1
  <img width="754" height="855" alt="image" src="https://github.com/user-attachments/assets/a374ea9c-6292-4a0a-87d4-3dbc4916c34c" />
 
@@ -47,6 +49,7 @@ Script services3.ps1
 New-Item -Path "C:\Logs" -ItemType Directory -Force
 Get-WinEvent -LogName "Directory Service" -MaxEvents 50 |
     Export-Csv -Path "C:\Logs\ADLogs.csv" -NoTypeInformation -Encoding UTF8
+    
 Exécution : .\services3.ps1
  <img width="771" height="855" alt="image" src="https://github.com/user-attachments/assets/145292c0-d266-4ed3-8b2f-dfffd1498cd6" />
 
@@ -60,6 +63,7 @@ Stop-Service -Name DFSR
 (Get-Service -Name DFSR).Status
 Start-Service -Name DFSR
 (Get-Service -Name DFSR).Status
+
 Exécution : .\services4.ps1
  <img width="758" height="855" alt="image" src="https://github.com/user-attachments/assets/e7faaf7f-21b8-44f3-a1cb-e8cf4ad45abf" />
 
