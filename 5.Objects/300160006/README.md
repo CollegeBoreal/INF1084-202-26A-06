@@ -37,3 +37,7 @@ Les règles TCP et UDP affichées sont activées et configurées pour tous les p
 
 Le script `utilisateurs1.ps1` permet de vérifier et de configurer les éléments nécessaires au partage de ressources. Il vérifie l’existence du dossier partagé, du groupe Active Directory `Students` et des comptes `Etudiant1` et `Etudiant2`. Il s’assure également que les utilisateurs appartiennent au groupe et que les permissions SMB et NTFS sont configurées. L’exécution du script s’est terminée avec succès.
 
+Le script `utilisateurs2.ps1` permet de vérifier la configuration de la stratégie de groupe `MapSharedFolder`. Il vérifie l’existence de la GPO, son lien avec l’unité d’organisation `Students` et la configuration du lecteur réseau `Z:` vers le dossier partagé `\\SRV300160006\SharedResources`. L’exécution du script s’est terminée avec succès.
+
+Le script `utilisateurs3.ps1` configure le Bureau à distance sur le serveur. Il active les connexions RDP, active les règles du pare-feu Windows et vérifie l’appartenance du groupe `Students` au groupe local `Remote Desktop Users`. Le service `TermService` est en cours d’exécution et la valeur `fDenyTSConnections` est égale à 0. L’exécution du script corrigé s’est terminée sans erreur.
+
