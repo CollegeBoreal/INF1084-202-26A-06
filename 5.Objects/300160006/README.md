@@ -34,3 +34,6 @@ J’ai vérifié l’ajout avec la commande net localgroup "Remote Desktop Users
 
 J’ai vérifié les règles du pare-feu Windows associées au Bureau à distance avec Get-NetFirewallRule. 
 Les règles TCP et UDP affichées sont activées et configurées pour tous les profils réseau (Any).
+
+Le script `utilisateurs1.ps1` permet de vérifier et de configurer les éléments nécessaires au partage de ressources. Il vérifie l’existence du dossier partagé, du groupe Active Directory `Students` et des comptes `Etudiant1` et `Etudiant2`. Il s’assure également que les utilisateurs appartiennent au groupe et que les permissions SMB et NTFS sont configurées. L’exécution du script s’est terminée avec succès.
+
