@@ -1,3 +1,6 @@
+# 300160006
+## Objets gérables par Active Directory
+
 J’ai commencé par importer les modules ActiveDirectory et GroupPolicy dans PowerShell afin de pouvoir gérer les utilisateurs, 
 les groupes et les GPO. Ensuite, j’ai récupéré les informations de mon domaine Active Directory, dont le nom NetBIOS `DC300160006` et le nom DNS `DC300160006.local`. 
 J’ai également créé trois variables PowerShell : `$netbiosName`, `$domainDN` et `$StudentsOU`, pour faciliter la configuration du domaine et définir le chemin de l’unité d’organisation Students.
