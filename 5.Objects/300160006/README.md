@@ -45,4 +45,33 @@ J'ai testé l'accès à distance avec le compte Etudiant1. Depuis mon ordinateur
 
 Dans la session, la commande whoami affiche dc300160006\etudiant1, la commande net use montre le lecteur Z: relié à \\SRV300160006\SharedResources avec le statut OK, et l'Explorateur de fichiers affiche le lecteur SharedResources (Z:). Le test confirme que le lecteur réseau est mappé pour un membre du groupe Students et que l'accès RDP fonctionne.
 
+## Tableau récapitulatif
+
+| Élément | Configuration | Vérification |
+|---|---|---|
+| Domaine | DC300160006.local | `Get-ADDomain` |
+| Serveur | SRV300160006 (10.7.237.228) | `hostname` |
+| Unité d'organisation | Students | `Get-ADOrganizationalUnit` |
+| Groupe AD | Students (global, sécurité) | `Get-ADGroup` |
+| Utilisateurs | Etudiant1 et Etudiant2, activés et membres de Students | `Get-ADUser`, `Get-ADGroupMember` |
+| Dossier partagé | C:\SharedResources | `Test-Path` |
+| Partage SMB | SharedResources, contrôle total pour Students | `Get-SmbShareAccess` |
+| Permissions NTFS | Modification pour Students | `icacls` |
+| GPO | MapSharedFolder, liée à l'OU Students | `Get-GPInheritance` |
+| Lecteur réseau | Z: vers `\\SRV300160006\SharedResources` | `net use` (statut OK) |
+| Bureau à distance | Activé (fDenyTSConnections = 0) | Registre, service TermService |
+| Pare-feu | Règles Remote Desktop activées | `Get-NetFirewallRule` |
+| Groupe Remote Desktop Users | Students ajouté | `Get-ADGroupMember` |
+| Droit RDP sur le DC | Students et Administrators dans Default Domain Controllers Policy | `secedit` (SeRemoteInteractiveLogonRight) |
+| Test RDP | Connexion réussie avec DC300160006\Etudiant1 | `whoami` |
+| Test lecteur Z: | SharedResources (Z:) visible dans l'Explorateur | Capture d'écran |
+
+## Conclusion
+
+Ce laboratoire m'a permis de manipuler plusieurs objets Active Directory uniquement avec PowerShell : une unité d'organisation, un groupe de sécurité, des comptes utilisateurs, un dossier partagé SMB, une GPO et l'accès Bureau à distance.
+
+Le test final avec le compte Etudiant1 a montré que l'ensemble fonctionne : la connexion RDP réussit, `whoami` confirme l'identité de l'utilisateur et le lecteur réseau Z: est relié au partage `\\SRV300160006\SharedResources`.
+
+J'ai aussi appris qu'un contrôleur de domaine se comporte différemment d'un serveur membre. Ajouter le groupe Students à Remote Desktop Users ne suffisait pas : il a fallu accorder le droit « Allow log on through Remote Desktop Services » dans la stratégie Default Domain Controllers Policy. J'ai également compris qu'il faut utiliser le nom du serveur (SRV300160006) dans le chemin du partage, et non celui du domaine.
+
 
