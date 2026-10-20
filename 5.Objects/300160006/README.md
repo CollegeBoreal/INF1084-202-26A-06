@@ -34,6 +34,7 @@ J’ai ensuite vérifié le lien avec la commande Get-GPInheritance. Les résult
 
 J’ai créé et configuré une stratégie de groupe nommée MapSharedFolder, liée à l’unité d’organisation Students. 
 Cette stratégie permet de mapper automatiquement le partage réseau \\SRV300160006\SharedResources comme lecteur Z: pour les utilisateurs concernés.
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/fbd50ba2f19867299d06f86d5f770d166bd9992a/5.Objects/300160006/images/Screenshot%202026-10-19%20143018.png)
 
 J’ai vérifié que le Bureau à distance (RDP) était activé sur le serveur SRV300160006 et que le service TermService était en cours d’exécution. Ensuite, j’ai ajouté le groupe Active Directory Students au groupe local Remote Desktop Users.
 J’ai vérifié l’ajout avec la commande net localgroup "Remote Desktop Users".
