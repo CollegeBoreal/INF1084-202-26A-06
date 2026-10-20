@@ -12,6 +12,8 @@ J’ai créé le groupe de sécurité Students dans l’unité d’organisation 
 J’ai choisi une portée globale et une catégorie de sécurité afin de pouvoir utiliser ce groupe pour gérer les permissions d’accès au dossier partagé et à la connexion à distance RDP. 
 J’ai ensuite vérifié sa création avec PowerShell et confirmé que son nom, sa portée, sa catégorie et son emplacement sont corrects.
 
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/17c48c9bc3b08f52d5b360f4e57dcfc2f4e96905/5.Objects/300160006/images/Screenshot%202026-10-19%20143040.png)
+
 J’ai créé les comptes utilisateurs Etudiant1 et Etudiant2 dans Active Directory. 
 Après avoir rencontré une erreur liée à la complexité du mot de passe, j’ai défini un nouveau mot de passe conforme à la stratégie de sécurité du domaine, puis j’ai activé les deux comptes. Je les ai ensuite ajoutés au groupe de sécurité Students.
 Enfin, j’ai vérifié avec PowerShell que les deux comptes sont activés et membres du groupe.
