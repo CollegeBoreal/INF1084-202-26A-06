@@ -125,7 +125,7 @@ L'interface réseau utilisée était `Ethernet`.
 ```powershell
 New-NetIPAddress `
     -InterfaceAlias "Ethernet" `
-    -IPAddress 172.16.22.20 `
+    -IPAddress 172.16.22.224`
     -PrefixLength 24 `
     -DefaultGateway 172.16.22.1
 ```
