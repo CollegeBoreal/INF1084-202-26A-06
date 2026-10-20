@@ -16,6 +16,8 @@ J’ai créé les comptes utilisateurs Etudiant1 et Etudiant2 dans Active Direct
 Après avoir rencontré une erreur liée à la complexité du mot de passe, j’ai défini un nouveau mot de passe conforme à la stratégie de sécurité du domaine, puis j’ai activé les deux comptes. Je les ai ensuite ajoutés au groupe de sécurité Students.
 Enfin, j’ai vérifié avec PowerShell que les deux comptes sont activés et membres du groupe.
 
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/3548bd4d4247a8440493a80d1f2eecd1e0b53ba7/5.Objects/300160006/images/Screenshot%202026-10-19%20155805.png)
+
 J’ai créé le dossier C:\SharedResources sur mon serveur Windows Server 2022 et vérifié son existence avec la commande Test-Path, qui a retourné True. Ensuite,
 j’ai créé un partage réseau SMB nommé SharedResources et accordé le contrôle total au groupe DC300160006\Students au niveau du partage. 
 J’ai vérifié que le partage pointe vers le bon dossier.
@@ -43,6 +45,7 @@ Le script `utilisateurs3.ps1` configure le Bureau à distance sur le serveur. Il
 
 J'ai testé l'accès à distance avec le compte Etudiant1. Depuis mon ordinateur, j'ai ouvert une connexion Bureau à distance (mstsc) vers l'adresse 10.7.237.228 avec le compte DC300160006\Etudiant1. La première tentative a été refusée, car le serveur est un contrôleur de domaine et le simple ajout du groupe Students à Remote Desktop Users ne suffisait pas. J'ai donc accordé le droit « Allow log on through Remote Desktop Services » aux groupes Students et Administrators dans la stratégie Default Domain Controllers Policy, puis j'ai vérifié avec secedit que la ligne SeRemoteInteractiveLogonRight contenait bien Students. Après cette modification, la connexion RDP avec Etudiant1 a réussi.
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/d0e1bea32c38d6efef8d74f87cde02e7fbec34b7/5.Objects/300160006/images/Screenshot%202026-10-19%20201219.png)
+
 Dans la session, la commande whoami affiche dc300160006\etudiant1, la commande net use montre le lecteur Z: relié à \\SRV300160006\SharedResources avec le statut OK, et l'Explorateur de fichiers affiche le lecteur SharedResources (Z:). Le test confirme que le lecteur réseau est mappé pour un membre du groupe Students et que l'accès RDP fonctionne.
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/59dd364e81e980de85dc0eb2bb580b5597e46578/5.Objects/300160006/images/Screenshot%202026-10-19%20201327.png)
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/9e775b94b04e3f6097fcdfa9008b415e3a718fb1/5.Objects/300160006/images/Screenshot%202026-10-19%20201459.png)
