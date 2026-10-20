@@ -44,6 +44,7 @@ Le script `utilisateurs3.ps1` configure le Bureau à distance sur le serveur. Il
 J'ai testé l'accès à distance avec le compte Etudiant1. Depuis mon ordinateur, j'ai ouvert une connexion Bureau à distance (mstsc) vers l'adresse 10.7.237.228 avec le compte DC300160006\Etudiant1. La première tentative a été refusée, car le serveur est un contrôleur de domaine et le simple ajout du groupe Students à Remote Desktop Users ne suffisait pas. J'ai donc accordé le droit « Allow log on through Remote Desktop Services » aux groupes Students et Administrators dans la stratégie Default Domain Controllers Policy, puis j'ai vérifié avec secedit que la ligne SeRemoteInteractiveLogonRight contenait bien Students. Après cette modification, la connexion RDP avec Etudiant1 a réussi.
 
 Dans la session, la commande whoami affiche dc300160006\etudiant1, la commande net use montre le lecteur Z: relié à \\SRV300160006\SharedResources avec le statut OK, et l'Explorateur de fichiers affiche le lecteur SharedResources (Z:). Le test confirme que le lecteur réseau est mappé pour un membre du groupe Students et que l'accès RDP fonctionne.
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/9e775b94b04e3f6097fcdfa9008b415e3a718fb1/5.Objects/300160006/images/Screenshot%202026-10-19%20201459.png)
 
 ## Tableau récapitulatif
 
