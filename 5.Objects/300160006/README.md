@@ -11,6 +11,7 @@ La création a réussi et le chemin de l’OU correspond à celui de mon domaine
 J’ai créé le groupe de sécurité Students dans l’unité d’organisation Students de mon domaine Active Directory.
 J’ai choisi une portée globale et une catégorie de sécurité afin de pouvoir utiliser ce groupe pour gérer les permissions d’accès au dossier partagé et à la connexion à distance RDP. 
 J’ai ensuite vérifié sa création avec PowerShell et confirmé que son nom, sa portée, sa catégorie et son emplacement sont corrects.
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/9f35aea6c37539fa36b8f8515890761099298c1a/5.Objects/300160006/images/Screenshot%202026-10-19%20143001.png)
 
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/17c48c9bc3b08f52d5b360f4e57dcfc2f4e96905/5.Objects/300160006/images/Screenshot%202026-10-19%20143040.png)
 
