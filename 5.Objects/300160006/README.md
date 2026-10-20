@@ -2,7 +2,7 @@ J’ai commencé par importer les modules ActiveDirectory et GroupPolicy dans Po
 les groupes et les GPO. Ensuite, j’ai récupéré les informations de mon domaine Active Directory, dont le nom NetBIOS `DC300160006` et le nom DNS `DC300160006.local`. 
 J’ai également créé trois variables PowerShell : `$netbiosName`, `$domainDN` et `$StudentsOU`, pour faciliter la configuration du domaine et définir le chemin de l’unité d’organisation Students.
 Les résultats obtenus montrent que les variables sont correctement définies.
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/18a6c45cd23b2e3245c6c2c76e696a605104c317/5.Objects/300160006/images/Screenshot%202026-10-19%20142849.png)
 
 J’ai créé l’unité d’organisation Students dans mon domaine Active Directory DC300160006.local. 
 Cette unité d’organisation permettra d’organiser les comptes des étudiants et d’appliquer des stratégies de groupe (GPO) aux objets qu’elle contient. 
