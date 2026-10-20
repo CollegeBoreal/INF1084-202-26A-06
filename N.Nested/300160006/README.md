@@ -1,7 +1,9 @@
 # INF1084 : Architecture Active Directory avec Hyper-V
 
 **Numéro étudiant** : 300160006
+
 **Cours** : INF1084, Administration Windows
+
 **Environnement** : Windows Server 2022, Hyper-V, PowerShell, Active Directory Domain Services
 
 ## Plan d'adressage
@@ -128,8 +130,6 @@ J'ai demandé les détails du lecteur D:. C'est un DVD-ROM virtuel Microsoft d'�
 | Passerelle 172.16.27.1 | Réussi |
 | NAT LABNAT | Réussi |
 | Média d'installation | Disponible sur D: |
-
-## Conclusion
 
 J'ai préparé l'infrastructure réseau de mon laboratoire : Hyper-V est prêt, un réseau privé isolé (172.16.27.0/24) existe avec sa passerelle et son NAT, et j'ai identifié la source d'installation de Windows. La prochaine étape sera de créer la VM du contrôleur de domaine **DC300160006**.
 Média d’installation	Disponible sur D:
