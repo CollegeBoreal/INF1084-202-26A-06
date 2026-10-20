@@ -7,6 +7,7 @@ Les résultats obtenus montrent que les variables sont correctement définies.
 J’ai créé l’unité d’organisation Students dans mon domaine Active Directory DC300160006.local. 
 Cette unité d’organisation permettra d’organiser les comptes des étudiants et d’appliquer des stratégies de groupe (GPO) aux objets qu’elle contient. 
 La création a réussi et le chemin de l’OU correspond à celui de mon domaine.
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/c3dbee118084f63761fc96f2ca67c0511597631b/5.Objects/300160006/images/Screenshot%202026-10-19%20142908.png)
 
 J’ai créé le groupe de sécurité Students dans l’unité d’organisation Students de mon domaine Active Directory.
 J’ai choisi une portée globale et une catégorie de sécurité afin de pouvoir utiliser ce groupe pour gérer les permissions d’accès au dossier partagé et à la connexion à distance RDP. 
