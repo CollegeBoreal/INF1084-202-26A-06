@@ -1,7 +1,9 @@
 # INF1084 : Architecture Active Directory avec Hyper-V
 
 **Numéro étudiant** : 300160006
+
 **Cours** : INF1084, Administration Windows
+
 **Environnement** : Windows Server 2022, Hyper-V, PowerShell, Active Directory Domain Services
 
 ## Plan d'adressage
@@ -198,8 +200,6 @@ Test-NetConnection 8.8.8.8 -Port 53
 
 ---
 
-## Bilan
-
 | Étape | Résultat |
 |---|---|
 | Hyper-V installé | Réussi |
@@ -216,7 +216,5 @@ Test-NetConnection 8.8.8.8 -Port 53
 | Forêt DC300160006.local | À faire |
 | OU OU300160006 et sous-OU | À faire |
 | CLIENT01 et jonction au domaine | À faire |
-
-## Conclusion
 
 J'ai préparé l'infrastructure réseau de mon laboratoire (commutateur LAB, passerelle, NAT) puis créé la machine virtuelle **DC300160006** sous Windows Server 2022. Elle est configurée avec l'adresse 172.16.27.10, joint la passerelle et sort vers l'extérieur grâce au NAT. La prochaine étape consiste à installer le rôle AD DS et à créer la forêt **DC300160006.local**.
