@@ -199,6 +199,7 @@ Test-NetConnection 8.8.8.8 -Port 53
 - `Test-NetConnection 8.8.8.8 -Port 53` renvoie `TcpTestSucceeded : True` avec `SourceAddress : 172.16.27.10`, ce qui confirme que mon NAT **LABNAT** fonctionne.
 
 ---
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/6a44038fcc882cee4243162412c08cc2fd89c22b/N.Nested/300160006/images/Screenshot%202026-10-20%20222115.png)
 
 | Étape | Résultat |
 |---|---|
