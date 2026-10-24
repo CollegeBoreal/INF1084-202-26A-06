@@ -23,7 +23,8 @@ J'ai vérifié les permissions du partage avec :
 Get-SmbShareAccess -Name "SharedResources"
 ```
 
-![Vérification du partage](images/capture1.png)
+<img width="477" height="520" alt="Capture514" src="https://github.com/user-attachments/assets/8ab95bf2-4929-4a60-abff-dcac8d54e5b9" />
+
 
 ## 4. Permissions NTFS
 
@@ -39,13 +40,15 @@ J'ai ensuite vérifié les permissions avec :
 icacls "C:\SharedResources"
 ```
 
-![Permissions NTFS](images/capture2.png)
+<img width="478" height="520" alt="Capture 513" src="https://github.com/user-attachments/assets/beab65f0-0fff-4417-99a8-d0d0ec76534e" />
+
 
 ## 5. Création de la stratégie de groupe
 
 J'ai créé une GPO appelée `MapSharedFolder` et je l'ai liée à l'unité d'organisation `Students`.
 
-![GPO MapSharedFolder](images/capture3.png)
+<img width="477" height="516" alt="Capture 512" src="https://github.com/user-attachments/assets/ae55c511-c089-4995-a066-d98e927cf579" />
+
 
 ## 6. Configuration du lecteur réseau Z:
 
@@ -60,7 +63,8 @@ Paramètres utilisés :
 - **Chemin :** `\\SRV300157423\SharedResources`
 - **Reconnexion :** activée
 
-![Configuration du lecteur Z](images/capture4.png)
+<img width="919" height="487" alt="Capture 511" src="https://github.com/user-attachments/assets/d267390a-248f-4832-aaab-0b8ad4efaa32" />
+
 
 ## 7. Vérification de la GPO
 
@@ -70,7 +74,8 @@ J'ai vérifié que la stratégie `MapSharedFolder` est liée à l'unité d'organ
 Get-GPInheritance -Target "OU=Students,DC=DC300157423-0,DC=local"
 ```
 
-![Vérification de la GPO](images/capture5.png)
+<img width="744" height="425" alt="Capture 510" src="https://github.com/user-attachments/assets/6616aabf-7fca-4bd7-bb8e-f01062c2bb01" />
+
 
 Le lecteur `Z:` a été configuré dans la GPO. Son fonctionnement dans une session étudiante reste à vérifier.
 
