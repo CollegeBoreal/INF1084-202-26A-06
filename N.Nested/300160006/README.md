@@ -32,6 +32,7 @@ J'ai vérifié que le rôle Hyper-V était installé sur mon serveur. Le résult
 Get-VMHost
 ```
 J'ai consulté les ressources de mon serveur SRV300160006 : 4 processeurs logiques et environ 14 Go de RAM. C'est suffisant pour faire tourner deux VM de 4 Go (le contrôleur de domaine et le client).
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/03b90247d0b9845bb2044a0925553339678d2bc1/N.Nested/300160006/images/Screenshot%202026-10-20%20221945.png)
 
 ## 2. Choix de l'emplacement des machines virtuelles
 
