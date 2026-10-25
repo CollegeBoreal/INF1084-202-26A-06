@@ -68,6 +68,7 @@ Get-VMSwitch
 Get-NetAdapter
 ```
 J'ai vérifié que le commutateur LAB existe (type Internal) et que la carte virtuelle `vEthernet (LAB)` a bien été créée, avec le nom exact dont j'avais besoin pour la commande suivante.
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/ecda88d1628cf6a6525ba15275a6079da6dfe4e4/N.Nested/300160006/images/Screenshot%202026-10-20%20222024.png)
 
 ## 4. Configuration de la passerelle (exercice 3)
 
