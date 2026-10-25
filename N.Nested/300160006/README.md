@@ -56,6 +56,7 @@ J'ai regardé le contenu de D: pour comprendre. J'y ai trouvé les dossiers `boo
 New-Item -ItemType Directory -Path C:\VMs -Force
 ```
 J'ai donc créé le dossier `C:\VMs` à la place. La commande a réussi. C'est là que sont stockés les disques virtuels de mes VM.
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/65a1c5c41e4d50bd9d73b995f9e4e73bcdc7af67/N.Nested/300160006/images/Screenshot%202026-10-20%20222005.png)
 
 ## 3. Création du réseau privé (exercice 2)
 
