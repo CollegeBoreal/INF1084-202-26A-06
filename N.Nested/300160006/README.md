@@ -164,6 +164,7 @@ Get-VMIntegrationService -VMName DC300160006 -Name Heartbeat | Select-Object Nam
 Get-Item C:\VMs\DC300160006.vhdx | Select-Object @{n='Go';e={[math]::Round($_.Length/1GB,2)}}
 ```
 Le heartbeat affiche `OK` et le disque virtuel est passé à environ 10,5 Go : Windows est installé et démarré.
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/016a678f1dd74a0376f1db06845a27dcdefc03ed/N.Nested/300160006/images/Screenshot%202026-10-20%20213427.png)
 
 ## 11. Configuration du réseau de la VM avec PowerShell Direct
 
