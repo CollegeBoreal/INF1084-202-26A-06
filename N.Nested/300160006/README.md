@@ -475,4 +475,4 @@ $acl.AddAccessRule($modify)
 Set-Acl C:\ProjectFolder $acl
 
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/41b1458f6e661f79af7dbebcead33cd34747a638/N.Nested/300160006/images/Screenshot%202026-10-25%20204905.png)
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/cd76f9920fc6ce3d52ca31b14f640596499681fc/N.Nested/300160006/images/Screenshot%202026-10-25%20204920.png)
