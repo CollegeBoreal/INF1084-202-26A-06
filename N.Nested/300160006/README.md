@@ -563,6 +563,8 @@ Le `whoami` en `ad300160006\...` confirme que CLIENT01 appartient au domaine de 
 | VM CLIENT01 (172.16.27.20) | Réussi |
 | CLIENT01 membre du domaine | Réussi |
 
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/5dd8c2b7cf0a1459373666657f0c08e56c6a4cd6/N.Nested/300160006/images/Screenshot%202026-10-25%20213548.png)
+
 ## Conclusion
 
 J'ai construit un environnement Active Directory isolé dans Hyper-V : un réseau privé 172.16.27.0/24 avec NAT, un contrôleur de domaine Windows Server 2022 pour la forêt `DC300160006.local`, une structure d'OU, des utilisateurs, des groupes (AGDLP et AGUDLP), un dossier partagé avec permissions NTFS et un client CLIENT01 joint au domaine. Deux écarts par rapport au devoir : les VM sont stockées dans `C:\VMs` (D: est un DVD en lecture seule) et le nom NetBIOS du domaine est `AD300160006`, car mon serveur SRV27 est déjà contrôleur du domaine `DC300160006.local` avec le NetBIOS `DC300160006`. La vérification finale (`PartOfDomain = True`) confirme que l'architecture fonctionne.
