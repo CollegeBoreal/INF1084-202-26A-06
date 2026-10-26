@@ -354,3 +354,95 @@ Get-Service NTDS, ADWS, DNS, KDC, Netlogon | Select-Object Name, Status
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/ecf29722ef9fd2b05d89701cf9a3532cbca4ea05/N.Nested/300160006/images/Screenshot%202026-10-25%20201018.png)
 
 J'ai préparé l'infrastructure réseau de mon laboratoire (commutateur LAB, passerelle, NAT), créé la machine virtuelle **DC300160006** sous Windows Server 2022, puis installé le rôle AD DS et créé la forêt **DC300160006.local**. Un conflit de nom NetBIOS entre la machine et le domaine m'a obligé à utiliser `AD300160006` comme nom NetBIOS du domaine. Les cinq services AD fonctionnent. La prochaine étape consiste à créer les unités d'organisation, les utilisateurs et les groupes, puis à créer CLIENT01 et à le joindre au domaine.
+
+## 17. Création des unités d'organisation (exercice 3)
+
+J'ai ouvert une session PowerShell Direct dans la VM avec le compte du domaine, puis créé l'OU racine de mon environnement :
+
+```powershell
+New-ADOrganizationalUnit -Name "OU300160006"
+```
+
+J'ai ensuite créé les 5 sous-OU avec une boucle, ce qui évite de répéter la commande cinq fois :
+
+```powershell
+"Students","Servers","Groups","Workstations","ServiceAccounts" | ForEach-Object {
+    New-ADOrganizationalUnit -Name $_ -Path "OU=OU300160006,DC=DC300160006,DC=local"
+}
+```
+
+Le paramètre `-Path` indique l'OU parente : chaque sous-OU est créée à l'intérieur de `OU300160006`.
+
+J'ai vérifié la structure :
+
+```powershell
+Get-ADOrganizationalUnit -Filter * | Select-Object Name, DistinguishedName
+```
+
+La sortie affiche 7 lignes : l'OU `Domain Controllers` (créée par défaut), `OU300160006` et ses 5 sous-OU. Voici la hiérarchie obtenue :
+
+```
+DC300160006.local
+|
++-- OU300160006
+    |
+    +-- Students
+    +-- Servers
+    +-- Groups
+    +-- Workstations
+    +-- ServiceAccounts
+```
+![images alt](
+
+## 18. Création des utilisateurs (exercice 4)
+
+Pour ne pas écrire de mot de passe en clair dans mes commandes, je l'ai saisi une seule fois sous forme sécurisée :
+
+```powershell
+$motDePasse = Read-Host "Mot de passe des utilisateurs" -AsSecureString
+```
+
+J'ai d'abord créé l'utilisateur `alice.martin` dans l'OU Students. Elle me servira d'exemple pour les groupes (AGDLP et AGUDLP) :
+
+```powershell
+New-ADUser `
+    -Name "Alice Martin" `
+    -GivenName "Alice" `
+    -Surname "Martin" `
+    -SamAccountName "alice.martin" `
+    -UserPrincipalName "alice.martin@DC300160006.local" `
+    -Path "OU=Students,OU=OU300160006,DC=DC300160006,DC=local" `
+    -AccountPassword $motDePasse `
+    -Enabled $true
+```
+
+Puis j'ai créé 10 comptes (`student1` à `student10`) avec une boucle :
+
+```powershell
+1..10 | ForEach-Object {
+    New-ADUser `
+        -Name "Student$_" `
+        -SamAccountName "student$_" `
+        -UserPrincipalName "student$_@DC300160006.local" `
+        -Path "OU=Students,OU=OU300160006,DC=DC300160006,DC=local" `
+        -AccountPassword $motDePasse `
+        -Enabled $true
+}
+```
+
+- `-SamAccountName` : nom de connexion du compte.
+- `-UserPrincipalName` : permet la connexion sous la forme `nom@DC300160006.local`.
+- `-AccountPassword` : mot de passe fourni sous forme sécurisée.
+- `-Enabled $true` : le compte est actif dès sa création.
+
+J'ai vérifié les comptes :
+
+```powershell
+Get-ADUser -Filter * -SearchBase "OU=Students,OU=OU300160006,DC=DC300160006,DC=local" |
+    Select-Object Name, SamAccountName, Enabled | Sort-Object SamAccountName
+
+(Get-ADUser -Filter * -SearchBase "OU=Students,OU=OU300160006,DC=DC300160006,DC=local").Count
+```
+
+La liste affiche `alice.martin` et `student1` à `student10`, tous avec `Enabled = True`, et le compte est de **11 utilisateurs**.
+![images alt](
