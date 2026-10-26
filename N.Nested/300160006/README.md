@@ -225,3 +225,130 @@ Test-NetConnection 8.8.8.8 -Port 53
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/43eea708bd6954587da3f9c8297e8e88c304a320/N.Nested/300160006/images/Screenshot%202026-10-24%20194452.png)
 
 J'ai préparé l'infrastructure réseau de mon laboratoire (commutateur LAB, passerelle, NAT) puis créé la machine virtuelle **DC300160006** sous Windows Server 2022. Elle est configurée avec l'adresse 172.16.27.10, joint la passerelle et sort vers l'extérieur grâce au NAT. La prochaine étape consiste à installer le rôle AD DS et à créer la forêt **DC300160006.local**.
+
+## 13. Réinitialisation du mot de passe Administrator
+
+J'avais oublié le mot de passe Administrator de la VM. Comme j'étais encore connecté à la VM, je l'ai simplement réinitialisé depuis PowerShell au lieu de recréer la machine :
+
+```powershell
+Set-LocalUser -Name "Administrator" -Password (Read-Host "Nouveau mot de passe" -AsSecureString)
+```
+
+J'ai ensuite testé le nouveau mot de passe depuis SRV27 avec PowerShell Direct :
+
+```powershell
+$cred = Get-Credential -UserName ".\Administrator" -Message "Compte de la VM"
+Enter-PSSession -VMName DC300160006 -Credential $cred
+```
+
+La session s'est ouverte (le prompt est devenu `[DC300160006]: PS ...`), ce qui confirme que le mot de passe fonctionne. J'ai aussi vérifié la configuration réseau de la VM :
+
+```powershell
+hostname
+Get-NetIPAddress -InterfaceAlias "Ethernet" -AddressFamily IPv4 | Select-Object IPAddress, PrefixLength
+Get-NetRoute -DestinationPrefix 0.0.0.0/0
+```
+
+Résultat : nom `DC300160006`, IP `172.16.27.10/24`, et route par défaut vers `172.16.27.1`.
+
+## 14. Installation du rôle Active Directory (exercice 5)
+
+```powershell
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+Get-WindowsFeature AD-Domain-Services
+```
+
+J'ai installé le rôle **AD DS** avec ses outils de gestion dans la VM. La vérification affiche `[X] Active Directory Domain Services` à l'état `Installed`.
+
+## 15. Création de la forêt (exercice 6)
+
+Ma première tentative de promotion a échoué :
+
+```powershell
+Install-ADDSForest `
+    -DomainName "DC300160006.local" `
+    -DomainNetbiosName "DC300160006" `
+    -InstallDns:$true `
+    -SafeModeAdministratorPassword (Read-Host "Mot de passe DSRM" -AsSecureString) `
+    -Force
+```
+
+Erreur : `Verification of prerequisites for Domain Controller promotion failed. The NetBIOS name DC300160006 is already in use.`
+
+La cause est que ma VM s'appelle déjà `DC300160006`. Le nom NetBIOS du domaine ne peut pas être identique à celui de la machine. Je l'ai confirmé avec :
+
+```powershell
+hostname
+nbtstat -n
+```
+
+Le nom `DC300160006 <20> UNIQUE Registered` est déjà enregistré par la machine. L'erreur étant détectée avant toute modification, il n'y avait rien à nettoyer. J'ai relancé la commande avec un nom NetBIOS différent :
+
+```powershell
+Install-ADDSForest `
+    -DomainName "DC300160006.local" `
+    -DomainNetbiosName "AD300160006" `
+    -InstallDns:$true `
+    -SafeModeAdministratorPassword (Read-Host "Mot de passe DSRM" -AsSecureString) `
+    -Force
+```
+
+- `-DomainName` : nom DNS du domaine.
+- `-DomainNetbiosName` : nom court du domaine (maximum 15 caractères). J'ai utilisé `AD300160006`.
+- `-InstallDns:$true` : installe le DNS en même temps.
+- `-SafeModeAdministratorPassword` : mot de passe du mode de restauration DSRM, saisi sans l'afficher.
+- `-Force` : évite les confirmations.
+
+La commande s'est terminée avec `Operation completed successfully` et `Status : Success`. Les avertissements sur la cryptographie NT 4.0 et sur la délégation DNS sont normaux pour une forêt isolée : il n'y a pas de zone parente à laquelle déléguer. La VM a ensuite redémarré automatiquement, ce qui a coupé ma session PowerShell Direct.
+
+## 16. Vérification du domaine
+
+Après le redémarrage, je me suis reconnecté avec le compte du domaine, car le compte local a été remplacé par celui du domaine :
+
+```powershell
+$cred = Get-Credential -UserName "Administrator@DC300160006.local" -Message "Compte du domaine"
+Enter-PSSession -VMName DC300160006 -Credential $cred
+```
+
+```powershell
+whoami
+Get-ADForest
+Get-ADDomain | Select-Object Name, NetBIOSName, DNSRoot, DomainMode, PDCEmulator
+Get-Service NTDS, ADWS, DNS, KDC, Netlogon | Select-Object Name, Status
+```
+
+| Vérification | Résultat |
+|---|---|
+| `whoami` | `ad300160006\administrator` |
+| Forêt | `DC300160006.local` (mode `Windows2016Forest`) |
+| Domaine | `DC300160006.local`, NetBIOS `AD300160006` (mode `Windows2016Domain`) |
+| Catalogue global | `DC300160006.DC300160006.local` |
+| Rôles FSMO | Tous détenus par mon DC (un seul contrôleur) |
+| Services NTDS, ADWS, DNS, KDC, Netlogon | Tous à l'état `Running` |
+
+---
+
+## Bilan
+
+| Étape | Résultat |
+|---|---|
+| Hyper-V installé | Réussi |
+| Dossier C:\VMs | Réussi (D: étant un DVD en lecture seule) |
+| Commutateur LAB | Réussi |
+| Passerelle 172.16.27.1 | Réussi |
+| NAT LABNAT | Réussi |
+| ISO créé depuis D: (5,17 Go) | Réussi |
+| VM DC300160006 créée | Réussi |
+| Windows Server 2022 installé | Réussi |
+| IP 172.16.27.10, passerelle et DNS | Réussi |
+| Ping de la passerelle et sortie par le NAT | Réussi |
+| Mot de passe Administrator réinitialisé | Réussi |
+| Installation d'AD DS | Réussi |
+| Forêt DC300160006.local (NetBIOS AD300160006) | Réussi |
+| Services AD (NTDS, ADWS, DNS, KDC, Netlogon) | Réussi |
+| OU OU300160006 et sous-OU | À faire |
+| Utilisateurs, groupes, AGDLP et AGUDLP | À faire |
+| Partage et permissions NTFS | À faire |
+| CLIENT01 et jonction au domaine | À faire |
+
+J'ai préparé l'infrastructure réseau de mon laboratoire (commutateur LAB, passerelle, NAT), créé la machine virtuelle **DC300160006** sous Windows Server 2022, puis installé le rôle AD DS et créé la forêt **DC300160006.local**. Un conflit de nom NetBIOS entre la machine et le domaine m'a obligé à utiliser `AD300160006` comme nom NetBIOS du domaine. Les cinq services AD fonctionnent. La prochaine étape consiste à créer les unités d'organisation, les utilisateurs et les groupes, puis à créer CLIENT01 et à le joindre au domaine.
