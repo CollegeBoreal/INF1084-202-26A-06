@@ -355,7 +355,7 @@ Get-Service NTDS, ADWS, DNS, KDC, Netlogon | Select-Object Name, Status
 
 J'ai préparé l'infrastructure réseau de mon laboratoire (commutateur LAB, passerelle, NAT), créé la machine virtuelle **DC300160006** sous Windows Server 2022, puis installé le rôle AD DS et créé la forêt **DC300160006.local**. Un conflit de nom NetBIOS entre la machine et le domaine m'a obligé à utiliser `AD300160006` comme nom NetBIOS du domaine. Les cinq services AD fonctionnent. La prochaine étape consiste à créer les unités d'organisation, les utilisateurs et les groupes, puis à créer CLIENT01 et à le joindre au domaine.
 
-## 17. Création des unités d'organisation (exercice 3)
+##  Création des unités d'organisation 
 
 J'ai ouvert une session PowerShell Direct dans la VM avec le compte du domaine, puis créé l'OU racine de mon environnement :
 
@@ -476,3 +476,93 @@ Set-Acl C:\ProjectFolder $acl
 
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/41b1458f6e661f79af7dbebcead33cd34747a638/N.Nested/300160006/images/Screenshot%202026-10-25%20204905.png)
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/cd76f9920fc6ce3d52ca31b14f640596499681fc/N.Nested/300160006/images/Screenshot%202026-10-25%20204920.png)
+
+##  Création de CLIENT01 
+
+```powershell
+New-VM -Name CLIENT01 -Generation 2 -MemoryStartupBytes 4GB `
+    -NewVHDPath "C:\VMs\CLIENT01.vhdx" -NewVHDSizeBytes 60GB -SwitchName LAB
+Set-VMProcessor -VMName CLIENT01 -Count 2
+Add-VMDvdDrive -VMName CLIENT01 -Path "C:\ISO\WS2022.iso"
+$dvd = Get-VMDvdDrive -VMName CLIENT01
+Set-VMFirmware -VMName CLIENT01 -FirstBootDevice $dvd
+Start-VM CLIENT01
+```
+
+J'ai créé la VM **CLIENT01** (génération 2, 4 Go de RAM, disque de 60 Go, commutateur LAB) et installé Windows Server 2022 Standard Evaluation (Desktop Experience) à partir du même ISO que pour le DC. J'ai ensuite retiré l'ISO et ouvert une session PowerShell Direct, puis renommé la machine :
+
+```powershell
+Set-VMDvdDrive -VMName CLIENT01 -Path $null
+Enter-PSSession -VMName CLIENT01 -Credential $credClient
+Rename-Computer -NewName CLIENT01 -Restart
+```
+
+Après le redémarrage, j'ai configuré le réseau :
+
+```powershell
+New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 172.16.27.20 -PrefixLength 24 -DefaultGateway 172.16.27.1
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 172.16.27.10
+```
+
+Une erreur de ma part : après le redémarrage, ma session était coupée et ces commandes se sont exécutées sur SRV27 au lieu de CLIENT01. Je l'ai remarqué grâce au nom de machine `SRV300160006` dans la sortie, puis j'ai remis la carte de SRV27 dans son état d'origine (adresse `10.7.237.228`, route par défaut `10.7.237.1`, DNS `127.0.0.1`). J'ai ensuite relancé les commandes dans la session `[CLIENT01]`.
+
+J'ai vérifié le réseau du client avant la jonction :
+
+```powershell
+Test-Connection 172.16.27.10 -Count 2
+Resolve-DnsName DC300160006.local
+Get-NetRoute -DestinationPrefix 0.0.0.0/0 | Select-Object InterfaceAlias, NextHop
+```
+
+- Le ping vers le DC répond en 0 et 1 ms.
+- `Resolve-DnsName` renvoie uniquement `172.16.27.10`.
+- La route par défaut pointe vers `172.16.27.1`.
+
+Le DNS du client ne doit résoudre que mon DC, car mon serveur SRV27 est lui-même contrôleur d'un domaine du même nom (`DC300160006.local`, `DomainRole = 5`).
+
+##  Intégration de CLIENT01 au domaine
+
+```powershell
+Add-Computer -DomainName DC300160006.local -Credential Administrator@DC300160006.local -Restart
+```
+
+J'ai utilisé `Administrator@DC300160006.local` plutôt que `DC300160006\Administrator`, car le nom NetBIOS de mon domaine est `AD300160006`. Après le redémarrage, je me suis reconnecté avec le compte du domaine et j'ai vérifié :
+
+```powershell
+Get-CimInstance Win32_ComputerSystem | Select-Object Name, Domain, PartOfDomain
+whoami
+nltest /dsgetdc:DC300160006.local
+```
+
+| Vérification | Résultat |
+|---|---|
+| Nom de la machine | `CLIENT01` |
+| Domaine | `DC300160006.local` |
+| `PartOfDomain` | `True` |
+| `whoami` | `ad300160006\administrator` |
+| Contrôleur de domaine | `\\DC300160006.DC300160006.local` (172.16.27.10) |
+
+Le `whoami` en `ad300160006\...` confirme que CLIENT01 appartient au domaine de mon DC imbriqué et non à celui de SRV27.
+
+---
+
+## Bilan final
+
+| Étape | Résultat |
+|---|---|
+| Hyper-V, C:\VMs, commutateur LAB | Réussi |
+| Passerelle 172.16.27.1 et NAT LABNAT | Réussi |
+| VM DC300160006 et Windows Server 2022 | Réussi |
+| Réseau du DC (172.16.27.10) et test du NAT | Réussi |
+| Installation d'AD DS | Réussi |
+| Forêt DC300160006.local (NetBIOS AD300160006) | Réussi |
+| OU OU300160006 et 5 sous-OU | Réussi |
+| Utilisateurs (alice.martin, student1 à student10) | Réussi |
+| Groupes, AGDLP et AGUDLP | Réussi |
+| Dossier partagé ProjectFolder et permissions NTFS | Réussi |
+| VM CLIENT01 (172.16.27.20) | Réussi |
+| CLIENT01 membre du domaine | Réussi |
+
+## Conclusion
+
+J'ai construit un environnement Active Directory isolé dans Hyper-V : un réseau privé 172.16.27.0/24 avec NAT, un contrôleur de domaine Windows Server 2022 pour la forêt `DC300160006.local`, une structure d'OU, des utilisateurs, des groupes (AGDLP et AGUDLP), un dossier partagé avec permissions NTFS et un client CLIENT01 joint au domaine. Deux écarts par rapport au devoir : les VM sont stockées dans `C:\VMs` (D: est un DVD en lecture seule) et le nom NetBIOS du domaine est `AD300160006`, car mon serveur SRV27 est déjà contrôleur du domaine `DC300160006.local` avec le NetBIOS `DC300160006`. La vérification finale (`PartOfDomain = True`) confirme que l'architecture fonctionne.
