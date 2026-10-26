@@ -445,4 +445,4 @@ Get-ADUser -Filter * -SearchBase "OU=Students,OU=OU300160006,DC=DC300160006,DC=l
 ```
 
 La liste affiche `alice.martin` et `student1` à `student10`, tous avec `Enabled = True`, et le compte est de **11 utilisateurs**.
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/6c0ebaf64c179bad90e367e3be56eb35e3dc9ff6/N.Nested/300160006/images/Screenshot%202026-10-25%20204039.png)
