@@ -351,4 +351,6 @@ Get-Service NTDS, ADWS, DNS, KDC, Netlogon | Select-Object Name, Status
 | Partage et permissions NTFS | À faire |
 | CLIENT01 et jonction au domaine | À faire |
 
+![images alt](
+
 J'ai préparé l'infrastructure réseau de mon laboratoire (commutateur LAB, passerelle, NAT), créé la machine virtuelle **DC300160006** sous Windows Server 2022, puis installé le rôle AD DS et créé la forêt **DC300160006.local**. Un conflit de nom NetBIOS entre la machine et le domaine m'a obligé à utiliser `AD300160006` comme nom NetBIOS du domaine. Les cinq services AD fonctionnent. La prochaine étape consiste à créer les unités d'organisation, les utilisateurs et les groupes, puis à créer CLIENT01 et à le joindre au domaine.
