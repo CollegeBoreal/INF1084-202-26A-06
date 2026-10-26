@@ -392,7 +392,7 @@ DC300160006.local
     +-- Workstations
     +-- ServiceAccounts
 ```
-![images alt](
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/2761c6e45f9a96715a7afd4c78cfd96f2740f6a4/N.Nested/300160006/images/Screenshot%202026-10-25%20204024.png)
 
 ## 18. Création des utilisateurs (exercice 4)
 
