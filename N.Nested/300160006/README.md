@@ -21,7 +21,7 @@
 
 ---
 
-## 1. Vérification de Hyper-V
+##  Vérification de Hyper-V
 
 ```powershell
 Get-WindowsFeature Hyper-V
@@ -34,7 +34,7 @@ Get-VMHost
 J'ai consulté les ressources de mon serveur SRV300160006 : 4 processeurs logiques et environ 14 Go de RAM. C'est suffisant pour faire tourner deux VM de 4 Go (le contrôleur de domaine et le client).
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/03b90247d0b9845bb2044a0925553339678d2bc1/N.Nested/300160006/images/Screenshot%202026-10-20%20221945.png)
 
-## 2. Choix de l'emplacement des machines virtuelles
+##  Choix de l'emplacement des machines virtuelles
 
 ```powershell
 Get-Volume
@@ -58,7 +58,7 @@ New-Item -ItemType Directory -Path C:\VMs -Force
 J'ai donc créé le dossier `C:\VMs` à la place. La commande a réussi. C'est là que sont stockés les disques virtuels de mes VM.
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/65a1c5c41e4d50bd9d73b995f9e4e73bcdc7af67/N.Nested/300160006/images/Screenshot%202026-10-20%20222005.png)
 
-## 3. Création du réseau privé (exercice 2)
+##  Création du réseau privé 
 
 ```powershell
 New-VMSwitch -Name LAB -SwitchType Internal
@@ -72,21 +72,21 @@ Get-NetAdapter
 J'ai vérifié que le commutateur LAB existe (type Internal) et que la carte virtuelle `vEthernet (LAB)` a bien été créée, avec le nom exact dont j'avais besoin pour la commande suivante.
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/ecda88d1628cf6a6525ba15275a6079da6dfe4e4/N.Nested/300160006/images/Screenshot%202026-10-20%20222024.png)
 
-## 4. Configuration de la passerelle (exercice 3)
+##  Configuration de la passerelle 
 
 ```powershell
 New-NetIPAddress -IPAddress 172.16.27.1 -PrefixLength 24 -InterfaceAlias "vEthernet (LAB)"
 ```
 J'ai attribué l'adresse **172.16.27.1/24** à la carte `vEthernet (LAB)`. Cette adresse est la passerelle de mes VM. Au premier affichage, l'état était `Tentative` : Windows vérifiait que l'adresse n'était pas déjà utilisée.
 
-## 5. Création du NAT (exercice 3)
+## Création du NAT 
 
 ```powershell
 New-NetNat -Name LABNAT -InternalIPInterfaceAddressPrefix 172.16.27.0/24
 ```
 J'ai créé le NAT **LABNAT** pour le réseau 172.16.27.0/24. Il permet à mes VM d'accéder à l'extérieur en utilisant l'adresse de SRV27, car les adresses 172.16.x.x ne sont pas routables sur le réseau du collège.
 
-## 6. Vérification de la configuration
+##  Vérification de la configuration
 
 ```powershell
 Get-NetIPAddress -InterfaceAlias "vEthernet (LAB)"
@@ -94,7 +94,7 @@ Get-NetNat
 ```
 J'ai confirmé que l'adresse 172.16.27.1/24 est à l'état `Preferred` et que LABNAT est actif (`Active : True`) sur 172.16.27.0/24.
 
-## 7. Recherche du média d'installation de Windows
+## Recherche du média d'installation de Windows
 
 ```powershell
 Get-ChildItem C:\ -Recurse -Filter *.iso -ErrorAction SilentlyContinue | Select-Object FullName
@@ -110,7 +110,7 @@ Le lecteur D: est un DVD-ROM virtuel Microsoft d'étiquette `SSS_X64FREE_EN-US_D
 
 ---
 
-## 8. Création de la VM du contrôleur de domaine (exercice 4)
+##  Création de la VM du contrôleur de domaine 
 
 ```powershell
 New-VM -Name DC300160006 -Generation 2 -MemoryStartupBytes 4GB `
@@ -126,7 +126,7 @@ Get-VMHardDiskDrive -VMName DC300160006 | Select-Object Path
 ```
 J'ai vérifié la configuration : génération 2, 2 processeurs, 4 Go de RAM, switch `LAB` et disque `C:\VMs\DC300160006.vhdx`.
 
-## 9. Préparation du média d'installation
+##  Préparation du média d'installation
 
 Mon serveur SRV27 est lui-même une machine virtuelle, et son lecteur D: est un DVD virtuel. Hyper-V ne propose donc pas l'option « Physical CD/DVD drive » : seule l'option « Image file » est disponible. J'ai créé un fichier ISO à partir du lecteur D: :
 
@@ -143,7 +143,7 @@ Get-Item C:\ISO\WS2022.iso | Select-Object Name, @{n='Go';e={[math]::Round($_.Le
 ```
 Le fichier `C:\ISO\WS2022.iso` fait 5,17 Go, la même taille que le lecteur D:, donc la copie est complète.
 
-## 10. Démarrage de la VM et installation de Windows
+##  Démarrage de la VM et installation de Windows
 
 ```powershell
 Add-VMDvdDrive -VMName DC300160006 -Path "C:\ISO\WS2022.iso"
@@ -168,7 +168,7 @@ Get-Item C:\VMs\DC300160006.vhdx | Select-Object @{n='Go';e={[math]::Round($_.Le
 Le heartbeat affiche `OK` et le disque virtuel est passé à environ 10,5 Go : Windows est installé et démarré.
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/016a678f1dd74a0376f1db06845a27dcdefc03ed/N.Nested/300160006/images/Screenshot%202026-10-20%20213427.png)
 
-## 11. Configuration du réseau de la VM avec PowerShell Direct
+##  Configuration du réseau de la VM avec PowerShell Direct
 
 Le copier-coller ne fonctionnant pas dans la fenêtre de la VM, j'ai utilisé PowerShell Direct depuis SRV27 :
 
@@ -191,7 +191,7 @@ New-NetRoute -DestinationPrefix 0.0.0.0/0 -InterfaceAlias "Ethernet" -NextHop 17
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 172.16.27.10
 ```
 
-## 12. Tests de connectivité depuis la VM
+##  Tests de connectivité depuis la VM
 
 ```powershell
 Get-DnsClientServerAddress -InterfaceAlias "Ethernet" -AddressFamily IPv4
@@ -226,7 +226,7 @@ Test-NetConnection 8.8.8.8 -Port 53
 
 J'ai préparé l'infrastructure réseau de mon laboratoire (commutateur LAB, passerelle, NAT) puis créé la machine virtuelle **DC300160006** sous Windows Server 2022. Elle est configurée avec l'adresse 172.16.27.10, joint la passerelle et sort vers l'extérieur grâce au NAT. La prochaine étape consiste à installer le rôle AD DS et à créer la forêt **DC300160006.local**.
 
-## 13. Réinitialisation du mot de passe Administrator
+## Réinitialisation du mot de passe Administrator
 
 J'avais oublié le mot de passe Administrator de la VM. Comme j'étais encore connecté à la VM, je l'ai simplement réinitialisé depuis PowerShell au lieu de recréer la machine :
 
@@ -251,7 +251,7 @@ Get-NetRoute -DestinationPrefix 0.0.0.0/0
 
 Résultat : nom `DC300160006`, IP `172.16.27.10/24`, et route par défaut vers `172.16.27.1`.
 
-## 14. Installation du rôle Active Directory (exercice 5)
+##  Installation du rôle Active Directory 
 
 ```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
@@ -260,7 +260,7 @@ Get-WindowsFeature AD-Domain-Services
 
 J'ai installé le rôle **AD DS** avec ses outils de gestion dans la VM. La vérification affiche `[X] Active Directory Domain Services` à l'état `Installed`.
 
-## 15. Création de la forêt (exercice 6)
+## Création de la forêt 
 
 Ma première tentative de promotion a échoué :
 
@@ -301,7 +301,7 @@ Install-ADDSForest `
 
 La commande s'est terminée avec `Operation completed successfully` et `Status : Success`. Les avertissements sur la cryptographie NT 4.0 et sur la délégation DNS sont normaux pour une forêt isolée : il n'y a pas de zone parente à laquelle déléguer. La VM a ensuite redémarré automatiquement, ce qui a coupé ma session PowerShell Direct.
 
-## 16. Vérification du domaine
+##  Vérification du domaine
 
 Après le redémarrage, je me suis reconnecté avec le compte du domaine, car le compte local a été remplacé par celui du domaine :
 
@@ -394,7 +394,7 @@ DC300160006.local
 ```
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/2761c6e45f9a96715a7afd4c78cfd96f2740f6a4/N.Nested/300160006/images/Screenshot%202026-10-25%20204024.png)
 
-## 18. Création des utilisateurs (exercice 4)
+## . Création des utilisateurs 
 
 Pour ne pas écrire de mot de passe en clair dans mes commandes, je l'ai saisi une seule fois sous forme sécurisée :
 
@@ -446,3 +446,33 @@ Get-ADUser -Filter * -SearchBase "OU=Students,OU=OU300160006,DC=DC300160006,DC=l
 
 La liste affiche `alice.martin` et `student1` à `student10`, tous avec `Enabled = True`, et le compte est de **11 utilisateurs**.
 ![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/6c0ebaf64c179bad90e367e3be56eb35e3dc9ff6/N.Nested/300160006/images/Screenshot%202026-10-25%20204039.png)
+
+#  groupes
+$groups = "OU=Groups,OU=OU300160006,DC=DC300160006,DC=local"
+New-ADGroup -Name GG_Developers -GroupScope Global -GroupCategory Security -Path $groups
+New-ADGroup -Name UG_ContentEditors -GroupScope Universal -GroupCategory Security -Path $groups
+New-ADGroup -Name DL_ProjectFolder_Modify -GroupScope DomainLocal -GroupCategory Security -Path $groups
+New-ADGroup -Name DL_ProjectFolder_Read -GroupScope DomainLocal -GroupCategory Security -Path $groups
+
+#  AGDLP
+Add-ADGroupMember -Identity GG_Developers -Members alice.martin
+Add-ADGroupMember -Identity DL_ProjectFolder_Modify -Members GG_Developers
+
+# AGUDLP
+Add-ADGroupMember -Identity UG_ContentEditors -Members GG_Developers
+Add-ADGroupMember -Identity DL_ProjectFolder_Modify -Members UG_ContentEditors
+
+#  dossier et partage
+New-Item -Path C:\ProjectFolder -ItemType Directory
+New-SmbShare -Name ProjectFolder -Path C:\ProjectFolder -FullAccess Administrators
+
+# permissions NTFS
+$acl = Get-Acl C:\ProjectFolder
+$read = New-Object System.Security.AccessControl.FileSystemAccessRule("DL_ProjectFolder_Read","ReadAndExecute","ContainerInherit,ObjectInherit","None","Allow")
+$modify = New-Object System.Security.AccessControl.FileSystemAccessRule("DL_ProjectFolder_Modify","Modify","ContainerInherit,ObjectInherit","None","Allow")
+$acl.AddAccessRule($read)
+$acl.AddAccessRule($modify)
+Set-Acl C:\ProjectFolder $acl
+
+![images alt](
+![images alt](
