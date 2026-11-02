@@ -1,5 +1,9 @@
 # 🚀 INF1084 - Architecture simplifiée (1 étudiant = 1 forêt = 1 sous-réseau)
 
+|:hash: | Fonctions                                          |
+|-------|:---------------------------------------------------|
+| :one: | [:tada: Participation](.scripts/Participation.md)  |
+
 ## 🎯 Objectif
 
 Chaque étudiant possède :
