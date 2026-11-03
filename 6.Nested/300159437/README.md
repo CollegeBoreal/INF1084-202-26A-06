@@ -229,6 +229,8 @@ Select-Object Name, DistinguishedName
 CN=CLIENT01,OU=Workstations,DC=DC300159437,DC=local
 ```
 
+<img src="images/WhatsApp%20Image%202026-11-03%20at%2010.51.33.jpeg" width="50%" height="50%">
+
 Le déplacement de CLIENT01 vers l'OU Workstations a été effectué avec succès.
 
 ## 11. Vérification finale du canal sécurisé
