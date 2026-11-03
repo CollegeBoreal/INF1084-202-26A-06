@@ -99,6 +99,8 @@ New-VM -Name "CLIENT01" `
     -NewVHDSizeBytes 60GB `
     -SwitchName "LAB"
 ```
+<img src="images/WhatsApp%20Image%202026-11-03%20at%2009.40.48%20(8)%20-%20Copy.jpeg" width="50%" height="50%">
+
 
 ```powershell
 Set-VMProcessor -VMName "CLIENT01" -Count 2
