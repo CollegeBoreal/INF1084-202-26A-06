@@ -217,6 +217,14 @@ C:\Logs\ADLogs.csv
 
 ---
 
+
+### Vérification finale de l'infrastructure Hyper-V
+
+J'ai vérifié que les machines virtuelles DC300151722 et CLIENT01 fonctionnent simultanément, que le commutateur LAB existe et que le NAT LABNAT est actif sur le réseau privé 172.16.17.0/24.
+
+<img width="769" height="518" alt="13" src="https://github.com/user-attachments/assets/d5e5b5cf-d57c-4b5f-8e08-0af90c06d237" />
+
+
 ## Conclusion
 
 Ce laboratoire a permis d'utiliser PowerShell pour gérer les services de Windows Server 2022 et surveiller les événements Active Directory.
