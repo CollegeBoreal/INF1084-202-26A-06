@@ -1,43 +1,79 @@
-
 # Laboratoire 6 — Hyper-V imbriqué et Active Directory
 
 **Cours :** INF1084 — Administration Windows  
 **Numéro étudiant :** 300151722  
-**Environnement :** Windows Server 2022 Datacenter
+**Système d'exploitation :** Windows Server 2022 Datacenter  
+**Laboratoire :** 6.Nested
 
-## 1. Objectif
+---
 
-L'objectif de ce laboratoire est de créer une infrastructure Active Directory indépendante avec Hyper-V imbriqué, un réseau privé, un contrôleur de domaine et une machine cliente.
+## 1. Objectif du laboratoire
+
+L'objectif de ce laboratoire est de mettre en place une infrastructure réseau indépendante à l'aide d'Hyper-V imbriqué et d'Active Directory.
+
+Chaque étudiant doit disposer de son propre réseau privé, de son domaine Active Directory, de son serveur DNS et de ses machines virtuelles.
+
+Dans ce laboratoire, j'ai configuré un contrôleur de domaine nommé DC300151722 et une machine cliente nommée CLIENT01.
 
 ## 2. Architecture réseau
 
 | Élément | Configuration |
 |---|---|
-| Serveur Hyper-V | VM01 |
-| Adresse IP du serveur parent | 10.7.237.206 |
-| Commutateur virtuel | LAB |
+| Serveur principal | VM01 |
+| Adresse IP du serveur principal | 10.7.237.206 |
+| Commutateur Hyper-V | LAB |
 | Réseau privé | 172.16.17.0/24 |
 | Passerelle NAT | 172.16.17.1 |
 | Contrôleur de domaine | DC300151722 |
-| IP du contrôleur | 172.16.17.10 |
+| Adresse IP du DC | 172.16.17.10 |
 | Machine cliente | CLIENT01 |
-| IP du client | 172.16.17.20 |
-| Domaine Active Directory | DC300151722.local |
+| Adresse IP du client | 172.16.17.20 |
+| Domaine | DC300151722.local |
 | Nom NetBIOS | DC151722 |
-| Serveur DNS | 172.16.17.10 |
+| DNS | 172.16.17.10 |
 
-## 3. Création du réseau privé et du NAT
+### Schéma de l'architecture
 
-J'ai créé un commutateur Hyper-V interne nommé LAB, configuré l'adresse IP de la passerelle et créé une règle NAT.
+```text
+VM01 — 10.7.237.206
+│
+├── Hyper-V
+│
+└── LAB — Réseau privé
+    │
+    ├── Passerelle NAT
+    │   172.16.17.1
+    │
+    ├── DC300151722
+    │   172.16.17.10
+    │   DC300151722.local
+    │
+    └── CLIENT01
+        172.16.17.20
+```
+
+---
+
+## 3. Création du réseau privé Hyper-V
+
+J'ai commencé par créer un commutateur virtuel interne nommé LAB.
 
 ```powershell
 New-VMSwitch -Name LAB -SwitchType Internal
+```
 
+Ensuite, j'ai configuré l'adresse IP de la passerelle.
+
+```powershell
 New-NetIPAddress `
     -IPAddress 172.16.17.1 `
     -PrefixLength 24 `
     -InterfaceAlias "vEthernet (LAB)"
+```
 
+J'ai créé le NAT pour le réseau privé.
+
+```powershell
 New-NetNat `
     -Name LABNAT `
     -InternalIPInterfaceAddressPrefix 172.16.17.0/24
@@ -51,15 +87,20 @@ Get-NetIPAddress -InterfaceAlias "vEthernet (LAB)" -AddressFamily IPv4
 Get-NetNat
 ```
 
-Le commutateur LAB et le NAT LABNAT ont été configurés avec succès.
+**Résultat :** le commutateur LAB, l'adresse IP 172.16.17.1 et le NAT LABNAT ont été créés correctement.
 
-<img width="983" height="996" alt="1" src="https://github.com/user-attachments/assets/d78dbf09-a1a7-45ba-8571-ef2dda12ff59" />
+<img width="983" height="996" alt="1" src="https://github.com/user-attachments/assets/0409f94f-07d6-4104-810e-7797495a464f" />
 
-## 4. Création des machines virtuelles
+*Capture à insérer : `images/1.png` — Création de l'adresse IP et du NAT.*
 
-J'ai créé deux machines virtuelles de génération 2 dans Hyper-V.
 
-### Contrôleur de domaine
+*Capture à insérer : `images/2.png` — Résultats de Get-VMSwitch et Get-NetNat.*
+
+---
+
+## 4. Création du contrôleur de domaine
+
+J'ai créé la machine virtuelle DC300151722 avec Hyper-V.
 
 ```powershell
 New-VM `
@@ -71,37 +112,48 @@ New-VM `
     -SwitchName LAB
 ```
 
-### Machine cliente
-
-```powershell
-New-VM `
-    -Name CLIENT01 `
-    -Generation 2 `
-    -MemoryStartupBytes 4GB `
-    -NewVHDPath "C:\VMs\CLIENT01.vhdx" `
-    -NewVHDSizeBytes 60GB `
-    -SwitchName LAB
-```
-
-La mémoire de CLIENT01 a ensuite été ajustée à 2 Go au démarrage pour tenir compte des ressources disponibles.
-
 ### Vérification
 
 ```powershell
-Get-VM -Name DC300151722,CLIENT01
+Get-VM -Name DC300151722
 ```
 
-Les deux machines virtuelles fonctionnent dans Hyper-V.
+La machine virtuelle a été créée avec succès.
 
-<img width="712" height="669" alt="2" src="https://github.com/user-attachments/assets/c774df9f-b49b-40a6-8e01-f0685e7e1f94" />
+<img width="857" height="629" alt="3" src="https://github.com/user-attachments/assets/260be129-a140-4dca-9a3b-44d938071ca4" />
+
+*Capture à insérer : `images/3.png`.*
+
+---
 
 ## 5. Installation de Windows Server 2022
 
-J'ai installé Windows Server 2022 Datacenter (Desktop Experience) sur les machines virtuelles à partir d'un fichier ISO.
+J'ai utilisé une image ISO de Windows Server 2022 afin d'installer le système d'exploitation.
 
-J'ai ensuite configuré les noms et les adresses IP des machines.
+L'édition choisie est **Windows Server 2022 Datacenter (Desktop Experience)**.
 
-### Configuration du contrôleur de domaine
+Cette version permet d'utiliser Windows Server avec une interface graphique pour faciliter l'administration.
+
+<img width="921" height="780" alt="4" src="https://github.com/user-attachments/assets/ecf9967d-43cc-4085-8186-941a9e71f639" />
+
+*Capture à insérer : `images/4.png` — Sélection de Datacenter (Desktop Experience).*
+
+
+*Capture à insérer : `images/5.png` — Installation du système.*
+
+---
+
+## 6. Configuration du contrôleur de domaine
+
+J'ai configuré le nom et l'adresse IP du serveur.
+
+### Renommer le serveur
+
+```powershell
+Rename-Computer -NewName "DC300151722" -Restart
+```
+
+### Configuration IP
 
 ```powershell
 New-NetIPAddress `
@@ -109,21 +161,37 @@ New-NetIPAddress `
     -IPAddress 172.16.17.10 `
     -PrefixLength 24 `
     -DefaultGateway 172.16.17.1
+```
 
+### Configuration DNS
+
+```powershell
 Set-DnsClientServerAddress `
     -InterfaceAlias "Ethernet" `
     -ServerAddresses 172.16.17.10
 ```
 
-## 6. Installation d'Active Directory
+### Vérification
 
-Sur DC300151722, j'ai installé le rôle AD DS et créé une nouvelle forêt.
+```powershell
+hostname
+Get-NetIPConfiguration
+Test-Connection 172.16.17.1 -Count 2
+```
+
+**Résultat :** le serveur DC utilise l'adresse IP 172.16.17.10 et communique avec la passerelle du réseau privé.
+
+---
+
+## 7. Installation d'Active Directory Domain Services
+
+J'ai installé le rôle AD DS à l'aide de PowerShell.
 
 ```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
 
-### Création de la forêt
+### Création de la forêt Active Directory
 
 ```powershell
 Install-ADDSForest `
@@ -133,7 +201,7 @@ Install-ADDSForest `
     -Force
 ```
 
-Le nom NetBIOS DC151722 a été utilisé pour respecter la limite de 15 caractères.
+J'ai utilisé DC151722 comme nom NetBIOS afin de respecter la limite de 15 caractères.
 
 ### Vérification
 
@@ -142,17 +210,25 @@ Get-ADDomain
 Get-ADForest
 ```
 
-Le domaine DC300151722.local a été créé avec succès.
+Le domaine DC300151722.local a été créé et fonctionne correctement.
 
-<img width="857" height="629" alt="3" src="https://github.com/user-attachments/assets/f3fbaab7-22e7-4352-9168-8d1bb7e6d20a" />
+<img width="952" height="815" alt="6" src="https://github.com/user-attachments/assets/a94e5d52-47b8-44cf-8cf7-39b12b4467b8" />
 
-## 7. Création des unités d'organisation
+*Insérer une capture du résultat de Get-ADDomain et Get-ADForest.*
 
-J'ai créé une OU principale et quatre sous-OU pour organiser les objets Active Directory.
+---
+
+## 8. Création des unités d'organisation
+
+J'ai créé une unité d'organisation principale portant mon numéro étudiant.
 
 ```powershell
 New-ADOrganizationalUnit -Name "OU300151722"
+```
 
+Ensuite, j'ai créé quatre sous-OU.
+
+```powershell
 $OU = "OU=OU300151722,DC=DC300151722,DC=local"
 
 New-ADOrganizationalUnit -Name "Students" -Path $OU
@@ -168,19 +244,64 @@ Get-ADOrganizationalUnit -Filter * |
 Format-Table Name, DistinguishedName -AutoSize
 ```
 
-Les unités d'organisation ont été créées avec succès.
+**Résultat :** les unités d'organisation suivantes ont été créées : OU300151722, Students, Groups, Workstations et Servers.
 
-<img width="921" height="780" alt="4" src="https://github.com/user-attachments/assets/bbf92b9b-7acb-47ea-a2ed-1ff389c344d0" />
 
-## 8. Configuration de CLIENT01
+*Insérer la capture montrant les cinq OU.*
 
-J'ai configuré la machine CLIENT01 avec une adresse IP fixe et le DNS du contrôleur de domaine.
+---
+
+## 9. Création de la machine cliente CLIENT01
+
+J'ai créé une deuxième machine virtuelle nommée CLIENT01.
+
+```powershell
+New-VM `
+    -Name CLIENT01 `
+    -Generation 2 `
+    -MemoryStartupBytes 4GB `
+    -NewVHDPath "C:\VMs\CLIENT01.vhdx" `
+    -NewVHDSizeBytes 60GB `
+    -SwitchName LAB
+```
+
+### Ajustement de la mémoire
+
+Pour résoudre un problème de mémoire insuffisante, j'ai réduit la mémoire de démarrage de CLIENT01 à 2 Go.
+
+```powershell
+Set-VMMemory -VMName CLIENT01 `
+    -StartupBytes 2GB `
+    -DynamicMemoryEnabled $true `
+    -MinimumBytes 1GB `
+    -MaximumBytes 4GB
+```
+
+### Vérification
+
+```powershell
+Get-VM -Name DC300151722,CLIENT01
+```
+
+Les deux machines virtuelles ont pu fonctionner simultanément.
+
+<img width="1108" height="933" alt="8" src="https://github.com/user-attachments/assets/88b644ed-a6b6-4208-994a-77b0b834ad03" />
+
+*Capture à insérer : `images/7.png` — Les deux VM en état Running.*
+
+---
+
+## 10. Configuration réseau de CLIENT01
+
+J'ai configuré le nom de l'ordinateur et son adresse IP.
+
+### Renommer CLIENT01
 
 ```powershell
 Rename-Computer -NewName "CLIENT01" -Restart
 ```
 
-### Configuration IP
+### Configurer l'adresse IP
 
 ```powershell
 New-NetIPAddress `
@@ -188,32 +309,36 @@ New-NetIPAddress `
     -IPAddress 172.16.17.20 `
     -PrefixLength 24 `
     -DefaultGateway 172.16.17.1
+```
 
+### Configurer le serveur DNS
+
+```powershell
 Set-DnsClientServerAddress `
     -InterfaceAlias "Ethernet" `
     -ServerAddresses 172.16.17.10
 ```
 
-### Tests réseau
+### Vérification réseau
 
 ```powershell
+hostname
+Get-NetIPConfiguration
 Test-Connection 172.16.17.10 -Count 2
 Resolve-DnsName DC300151722.local
 ```
 
-Les tests de connectivité et de résolution DNS ont réussi.
+**Résultat :** CLIENT01 communique correctement avec le contrôleur de domaine. La résolution DNS fonctionne.
 
-### Vérification de la configuration réseau de CLIENT01
+<img width="1065" height="815" alt="9" src="https://github.com/user-attachments/assets/f22eaf60-9e69-4742-8ce7-b0b1a9319a0e" />
 
-La machine CLIENT01 possède l'adresse IP 172.16.17.20, utilise le DNS 172.16.17.10 et communique correctement avec le contrôleur de domaine.
+*Capture à insérer : `images/9.png`.*
 
-<img width="952" height="815" alt="6" src="https://github.com/user-attachments/assets/50e29c0c-6659-4c89-af04-15bb15c1b172" />
+---
 
-**Capture à insérer :** résultat de `Get-NetIPConfiguration`, `Test-Connection` et `Resolve-DnsName`.
+## 11. Intégration de CLIENT01 au domaine Active Directory
 
-## 9. Intégration de CLIENT01 au domaine
-
-J'ai joint CLIENT01 au domaine Active Directory.
+J'ai joint la machine CLIENT01 au domaine DC300151722.local.
 
 ```powershell
 Add-Computer `
@@ -222,6 +347,8 @@ Add-Computer `
     -Restart
 ```
 
+Après le redémarrage, je me suis connecté au domaine avec le compte administrateur.
+
 ### Vérification
 
 ```powershell
@@ -229,60 +356,107 @@ hostname
 Get-ComputerInfo -Property CsDomain, CsPartOfDomain
 ```
 
-Résultat :
+### Résultat
 
 ```text
 CsDomain       : DC300151722.local
 CsPartOfDomain : True
 ```
 
-CLIENT01 est membre du domaine Active Directory.
+Cela confirme que CLIENT01 appartient au domaine.
 
-<img width="933" height="782" alt="5" src="https://github.com/user-attachments/assets/04882b0c-5cfe-4b32-ba42-0a6166a805e4" />
+<img width="1185" height="733" alt="10" src="https://github.com/user-attachments/assets/411dd572-9507-49e6-9c1a-f6a5ff1952e1" />
 
-## 10. Vérification finale
+*Capture à insérer : `images/10.png`.*
 
-Sur le contrôleur de domaine, j'ai utilisé les commandes suivantes :
+---
+
+## 12. Vérification finale du laboratoire
+
+Sur le contrôleur de domaine, j'ai vérifié les informations Active Directory.
 
 ```powershell
 Get-ADDomain
 Get-ADForest
+```
 
-Get-ADOrganizationalUnit -Filter * |
-Format-Table Name, DistinguishedName -AutoSize
+### Vérification des ordinateurs
 
+```powershell
 Get-ADComputer -Filter * |
 Format-Table Name, DNSHostName -AutoSize
 ```
 
-Les ordinateurs enregistrés dans Active Directory sont :
+### Résultat obtenu
 
-- DC300151722
-- CLIENT01
+```text
+Name          DNSHostName
+----          -----------
+DC300151722   DC300151722.DC300151722.local
+CLIENT01      CLIENT01.DC300151722.local
+```
 
-### Vérification des ordinateurs dans Active Directory
+Les deux ordinateurs sont enregistrés dans Active Directory.
 
-Les deux ordinateurs DC300151722 et CLIENT01 apparaissent dans l'annuaire Active Directory du domaine DC300151722.local.
+<img width="1128" height="790" alt="11" src="https://github.com/user-attachments/assets/ba7f5bce-bdac-4236-b11d-8f5f9c3d60ad" />
 
-<img width="1049" height="826" alt="7" src="https://github.com/user-attachments/assets/bf500742-720f-4f89-947d-65d927627ffc" />
+*Capture à insérer : `images/11.png`.*
 
-**Capture à insérer :** résultat de `Get-ADComputer -Filter *`, montrant DC300151722 et CLIENT01.
+### Vérification des OU
 
-## 11. Conclusion
+```powershell
+Get-ADOrganizationalUnit -Filter * |
+Format-Table Name, DistinguishedName -AutoSize
+```
 
-Ce laboratoire m'a permis de mettre en place une infrastructure Active Directory avec Hyper-V imbriqué.
+<img width="1150" height="798" alt="12" src="https://github.com/user-attachments/assets/ca00d97d-bd01-437f-9423-4cfe7de5b35f" />
+
+*Capture à insérer : `images/12.png` — Liste des OU et des ordinateurs Active Directory.*
+
+---
+
+## 13. Difficultés rencontrées
+
+### Problème de démarrage Hyper-V
+
+Une erreur de démarrage UEFI empêchait initialement l'installation de Windows Server. Après plusieurs vérifications du fichier ISO et de la configuration Hyper-V, j'ai réussi à installer le système.
+
+### Problème de nom NetBIOS
+
+La création du domaine a échoué lors de la première tentative car un nom NetBIOS valide devait être spécifié.
+
+J'ai corrigé la commande avec `-DomainNetbiosName "DC151722"`.
+
+### Problème de mémoire RAM
+
+CLIENT01 ne pouvait pas démarrer à cause d'un manque de mémoire disponible.
+
+J'ai arrêté la machine de test TEST-BOOT et configuré la mémoire dynamique de CLIENT01.
+
+### Problème de copier-coller
+
+Le copier-coller dans Hyper-V ne fonctionnait pas initialement. J'ai configuré le mode de session améliorée pour faciliter l'administration de la VM.
+
+---
+
+## 14. Conclusion
+
+Ce laboratoire m'a permis de créer une infrastructure Active Directory indépendante à l'aide d'Hyper-V imbriqué.
 
 J'ai réussi à :
 
 - Créer un réseau privé Hyper-V.
-- Configurer une passerelle NAT.
-- Créer deux machines virtuelles.
-- Installer Windows Server 2022.
-- Installer et configurer Active Directory Domain Services.
-- Créer une forêt et un domaine.
-- Configurer le service DNS.
+- Configurer un commutateur LAB et une passerelle NAT.
+- Créer les machines virtuelles DC300151722 et CLIENT01.
+- Installer Windows Server 2022 Datacenter.
+- Installer le rôle AD DS.
+- Créer une forêt et un domaine Active Directory.
+- Configurer le serveur DNS.
 - Créer des unités d'organisation.
-- Joindre CLIENT01 au domaine.
-- Vérifier la communication et l'intégration des machines.
+- Configurer la machine cliente.
+- Intégrer CLIENT01 au domaine.
+- Vérifier la communication réseau et les objets Active Directory.
 
-**Résultat final :** le domaine DC300151722.local fonctionne et CLIENT01 y est intégré avec succès.
+**Résultat final :** le domaine `DC300151722.local` fonctionne correctement et la machine CLIENT01 est membre du domaine.
+
+**Laboratoire 6.Nested terminé avec succès.**
