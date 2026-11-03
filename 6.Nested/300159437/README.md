@@ -45,7 +45,7 @@ Ce laboratoire m'a permis de mettre en pratique mes connaissances en administrat
 
 Une machine virtuelle nommée `DC300159437` a été préparée avec Windows Server 2022.
 
-L'adresse IP statique `172.16.22.223` a été attribuée au contrôleur de domaine.
+L'adresse IP statique `172.16.22.10` a été attribuée au contrôleur de domaine.
 
 ### Installation du rôle AD DS
 
@@ -270,7 +270,7 @@ Ce résultat confirme que le canal sécurisé entre CLIENT01 et Active Directory
 **Solution :** vérification du DistinguishedName réel de l'OU Workstations, puis utilisation du chemin correct dans `Move-ADObject`.
 
 ## 13. Résultats du laboratoire
-
+<img src="images/WhatsApp%20Image%202026-11-03%20at%2011.26.15.jpeg" width="50%" height="50%">
 | Test | Résultat |
 |---|---|
 | Déploiement du contrôleur de domaine | Réussi |
