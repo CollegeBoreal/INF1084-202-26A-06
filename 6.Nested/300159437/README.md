@@ -68,6 +68,10 @@ Après le redémarrage, la création du domaine a été vérifiée avec :
 Get-ADDomain
 ```
 
+<img src="WhatsApp%20Image%202026-11-03%20at%2009.40.49%20(1)%20-%20Copy.jpeg" width="800">
+
+
+
 **Résultat :** la forêt et le domaine Active Directory ont été créés avec succès.
 
 ## 5. Création des unités d'organisation
