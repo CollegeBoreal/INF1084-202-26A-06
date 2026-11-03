@@ -33,8 +33,8 @@ Ce laboratoire m'a permis de mettre en pratique mes connaissances en administrat
 | Équipement | Rôle | Adresse IP |
 |---|---|---|
 | SRV300159437 | Serveur hôte Hyper-V | Passerelle virtuelle : 172.16.22.1 |
-| DC300159437 | Contrôleur de domaine et DNS | 172.16.22.223 |
-| CLIENT01 | Serveur membre du domaine | 172.16.22.224|
+| DC300159437 | Contrôleur de domaine et DNS | 172.16.22.10 |
+| CLIENT01 | Serveur membre du domaine | 172.16.22.20|
 
 **Réseau :** `172.16.22.0/24`  
 **Commutateur virtuel :** `LAB`  
