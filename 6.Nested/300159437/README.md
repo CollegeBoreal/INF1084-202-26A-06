@@ -104,7 +104,7 @@ Set-VMProcessor -VMName "CLIENT01" -Count 2
 
 L'image ISO de Windows Server 2022 a été connectée au lecteur DVD virtuel de CLIENT01.
 
-C est le Iso que j ai installer  sur Azure Portal : en-us_windows_server_2022_updated_july_2023_x64_dvd_541692c3.iso
+  ## en-us_windows_server_2022_updated_july_2023_x64_dvd_541692c3.iso
 
 L'édition **Windows Server 2022 Datacenter (Desktop Experience)** a été sélectionnée afin de disposer d'une interface graphique.
 
