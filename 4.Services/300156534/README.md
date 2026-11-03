@@ -1,140 +1,85 @@
-1. Objectif du laboratoire
+LABORATOIRE 4
+Gestion des services Windows
+et Active Directory
 
+
+Windows Server 2022 • PowerShell • Active Directory Domain Services
+
+ 1. Objectif du laboratoire
 L’objectif de ce laboratoire est d’explorer les principaux services Windows liés à Active Directory Domain Services (AD DS), de vérifier leur état, de consulter les événements du service Active Directory, d’exporter les journaux dans un fichier CSV et de tester l’arrêt puis le redémarrage du service DFSR.
-<img width="684" height="715" alt="image" src="https://github.com/user-attachments/assets/fcab0ba2-8bd3-4341-815b-024624ed01ba" />
-
 2. Environnement de travail
-
-Les manipulations ont été réalisées sur un serveur Windows Server avec le rôle Active Directory Domain Services installé. Les commandes ont été exécutées dans Windows PowerShell avec les droits d’administrateur.
-
+•	Système d’exploitation : Windows Server 2022
+•	Rôle du serveur : contrôleur de domaine Active Directory
+•	Outil : Windows PowerShell exécuté en tant qu’administrateur
+•	Dossier des scripts sur le serveur : C:\Users\Administrator
+•	Dossier d’exportation : C:\Logs
+•	Fichier d’exportation : C:\Logs\ADLogs.csv
 3. Services Active Directory vérifiés
-
-NTDS — Active Directory Domain Services
-
-Service principal d’Active Directory. Il gère la base de données et les objets du domaine.
-
-ADWS — Active Directory Web Services
-
-Permet aux outils d’administration de communiquer avec Active Directory.
-
-DFSR — DFS Replication
-
-Assure notamment la réplication de SYSVOL entre les contrôleurs de domaine.
-
-KDC — Kerberos Key Distribution Center
-
-Fournit les tickets Kerberos nécessaires à l’authentification.
-
-Netlogon
-
-Participe à l’authentification et à la localisation des contrôleurs de domaine.
-
-IsmServ — Intersite Messaging
-
-Participe à la communication et à la réplication entre les sites Active Directory.
-
 4. Réalisation du laboratoire
+4.1 — services1.ps1 : vérification des services
+Le premier script liste les services associés à Active Directory et vérifie leur état.
+Commande exécutée :
+.\services1.ps1
+Résultat observé : les six services NTDS, ADWS, DFSR, KDC, Netlogon et IsmServ apparaissent en état Running dans la capture.
+ 
+Capture 1 — Vérification des services Active Directory
+<img width="930" height="977" alt="image" src="https://github.com/user-attachments/assets/1caf8922-30a8-483e-816a-9b0870b46b82" />
 
-4.1 — services1.ps1
+4.2 — services2.ps1 : consultation des journaux
+Le deuxième script consulte le journal Directory Service, recherche les événements Netlogon dans le journal System et affiche des événements récents associés à NTDS.
+Commande exécutée :
+.\services2.ps1
+Résultat observé : PowerShell affiche les événements avec leur date, leur identifiant, leur niveau et leur message. La capture montre notamment des événements NTDS de type Information ainsi que des événements de niveau Warning.
+ 
+Capture 2 — Consultation des journaux Windows
+<img width="930" height="978" alt="image" src="https://github.com/user-attachments/assets/0838354c-cbc1-4f7b-bc3f-978c3868b028" />
 
-Le premier script permet de lister les services liés à Active Directory et de vérifier leur état. Les services NTDS, ADWS, DFSR, IsmServ, KDC et Netlogon sont présents et fonctionnent tous avec l’état « Running ».
+4.3 — services3.ps1 : exportation vers un fichier CSV
+Le troisième script vérifie l’existence du dossier C:\Logs et le crée si nécessaire. Il exporte ensuite les 50 derniers événements du journal Directory Service vers C:\Logs\ADLogs.csv.
+Commande exécutée :
+.\services3.ps1
+Commandes de vérification :
+Get-Item C:\Logs\ADLogs.csv
+Import-Csv C:\Logs\ADLogs.csv | Select-Object -First 5
+Résultat observé : le fichier ADLogs.csv a été créé dans C:\Logs. La capture montre une taille de 10 781 octets au moment de la vérification.
+ 
+Capture 3 — Exportation des événements au format CSV
+<img width="930" height="983" alt="image" src="https://github.com/user-attachments/assets/4dbb3e1d-cd11-488e-ad6e-da7c471e2137" />
 
-La capture montre l’exécution du script et la présence des six services AD principaux.
+4.4 — services4.ps1 : arrêt et redémarrage de DFSR
+Le quatrième script arrête temporairement le service DFSR, vérifie son état, le redémarre puis effectue une dernière vérification.
+Commande exécutée :
+.\services4.ps1
+Résultats observés pendant le test : état initial Running, état après l’arrêt Stopped et état après le redémarrage Running. La capture confirme que le service fonctionne de nouveau.
+ 
+Capture 4 — Arrêt et redémarrage du service DFSR
+<img width="930" height="984" alt="image" src="https://github.com/user-attachments/assets/5b414fc2-b4b4-4071-b014-2693b69bd3ca" />
 
-4.2 — services2.ps1
+5. Vérification des fichiers créés
+Les quatre scripts PowerShell sont présents dans C:\Users\Administrator.
+Get-ChildItem C:\Users\Administrator\services*.ps1
+ 
+Capture 5 — Présence des quatre scripts PowerShell
+<img width="930" height="1045" alt="image" src="https://github.com/user-attachments/assets/d750fe94-3d66-4c47-9a0c-d017838c9e97" />
 
-Le deuxième script permet de consulter les événements du journal « Directory Service ». Les événements affichent notamment la date, l’identifiant, le niveau et le message. Les informations provenant de NTDS permettent de vérifier l’activité du service Active Directory.
+Une vérification supplémentaire confirme que DFSR est en état Running après son redémarrage.
+Get-Service -Name DFSR
+ 
+Capture 6 — Vérification finale du service DFSR
+<img width="930" height="1076" alt="image" src="https://github.com/user-attachments/assets/47b0c707-1635-437d-b9f5-a7632c43ac62" />
 
-La capture montre les événements NTDS obtenus avec PowerShell.
-
-4.3 — services3.ps1
-
-Le troisième script récupère les 50 derniers événements du journal « Directory Service » et les exporte dans le fichier C:\Logs\ADLogs.csv. Le dossier C:\Logs a été créé avant l’exportation.
-
-La capture confirme que le fichier ADLogs.csv a été créé avec succès dans C:\Logs.
-
-4.4 — services4.ps1
-
-Le quatrième script arrête temporairement le service DFSR, vérifie son état, puis le redémarre. La sortie montre « Stopped » pendant le test et la vérification finale confirme que DFSR est de nouveau « Running ».
-
-La capture confirme que DFSR fonctionne de nouveau après le redémarrage.
-
-5. Captures d’écran
-
-Capture 1 — Vérification initiale
-<img width="699" height="725" alt="image" src="https://github.com/user-attachments/assets/7ca6b1fa-f525-42e7-a805-7be57787ed89" />
-
-Cette première capture montre les premières commandes utilisées pour vérifier les services AD. Une faute de frappe dans le nom DFSR est ensuite corrigée.
-
-
-
-Capture 2 — Services AD vérifiés
-<img width="698" height="728" alt="image" src="https://github.com/user-attachments/assets/518da23a-398b-4025-895b-cbbca10d3a38" />
-
-Après correction, les services AD demandés sont correctement identifiés sur le serveur.
-
-
-
-Capture 3 — Création de services1.ps1
-<img width="684" height="698" alt="image" src="https://github.com/user-attachments/assets/0463c7bf-becd-47c1-ade2-84b920d1f9ec" />
-
-Le fichier services1.ps1 est créé dans C:\Users\Administrator et son contenu est vérifié.
-
-
-
-Capture 4 — Exécution de services1.ps1
-<img width="717" height="736" alt="image" src="https://github.com/user-attachments/assets/feec032a-8679-48c2-8297-f6c0dcfa7bbc" />
-
-Le script affiche les six services AD et confirme leur fonctionnement.
-
-
-
-Capture 5 — Exécution de services2.ps1
-<img width="698" height="724" alt="image" src="https://github.com/user-attachments/assets/1607fc14-dfbd-4184-a9d7-c329cf241112" />
-
-Les derniers événements du journal Directory Service sont affichés avec leurs informations.
-
-
-
-Capture 6 — Exécution de services3.ps1
-<img width="675" height="708" alt="image" src="https://github.com/user-attachments/assets/09031013-d7cf-4f24-ba93-a0f295739034" />
-
-Le fichier ADLogs.csv est créé dans C:\Logs. La taille affichée est de 33 180 octets.
-
-
-
-Capture 7 — Exécution de services4.ps1
-<img width="695" height="737" alt="image" src="https://github.com/user-attachments/assets/29663432-3795-4f41-b18b-313a755f8d4f" />
-
-DFSR est arrêté, puis redémarré. La vérification finale indique Running.
-
-
-
-Capture 8 — Vérification finale
-<img width="684" height="715" alt="image" src="https://github.com/user-attachments/assets/f10590d6-0da3-40ed-af58-9a1a41721a32" />
-
-La commande Get-ChildItem .\services*.ps1 confirme la présence de services1.ps1, services2.ps1, services3.ps1 et services4.ps1.
-
-
-
-6. Fichiers créés
-
-Les quatre scripts PowerShell ont été créés dans C:\Users\Administrator :
-
-services1.ps1
-
-services2.ps1
-
-services3.ps1
-
-services4.ps1
-
-Le fichier de journal exporté se trouve dans C:\Logs\ADLogs.csv.
-
+6. Fichiers du laboratoire
+Le dossier du laboratoire contient le rapport README.md, les quatre scripts PowerShell et le dossier images avec les captures d’écran utilisées dans ce rapport. Le fichier ADLogs.csv est généré sur le serveur dans C:\Logs.
+•	services1.ps1
+•	services2.ps1
+•	services3.ps1
+•	services4.ps1
+•	README.md
+•	images/ (six captures d’écran)
 7. Résultats
-
-Les quatre parties du laboratoire ont été réalisées avec succès. Les services AD principaux ont été vérifiés, les événements Active Directory ont été consultés, les journaux ont été exportés dans un fichier CSV et le service DFSR a été arrêté puis redémarré. La vérification finale confirme que DFSR fonctionne correctement.
-
+Les quatre parties du laboratoire ont été réalisées sur le serveur de laboratoire : les services Active Directory ont été vérifiés, les journaux ont été consultés, les événements ont été exportés au format CSV et le service DFSR a été arrêté puis redémarré. La vérification finale indique que DFSR est de nouveau en état Running.
 8. Conclusion
+Ce laboratoire m’a permis de mieux comprendre les services Windows associés à Active Directory Domain Services. J’ai appris à vérifier l’état des services AD, à consulter les journaux d’événements avec PowerShell, à exporter des événements dans un fichier CSV et à gérer le service DFSR. Les captures d’écran montrent les principales étapes et les résultats observés sur le serveur.
 
-Ce laboratoire m’a permis de mieux comprendre les services Windows associés à Active Directory Domain Services. J’ai appris à vérifier l’état des services AD, à consulter les journaux d’événements avec PowerShell, à exporter des événements dans un fichier CSV et à gérer le service DFSR. Les résultats obtenus confirment que les services et les scripts fonctionnent correcte
+ 
+ 
