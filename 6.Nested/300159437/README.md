@@ -1,4 +1,4 @@
-
+m
 # Laboratoire INF1084 — Déploiement d'un domaine Active Directory avec Hyper-V
 
 **Étudiant :** Bob Adly Pierre  
@@ -68,9 +68,9 @@ Après le redémarrage, la création du domaine a été vérifiée avec :
 Get-ADDomain
 ```
 
-<img src="WhatsApp%20Image%202026-11-03%20at%2009.40.49%20(1)%20-%20Copy.jpeg" width="50%">
 
 
+<img src="images/WhatsApp%20Image%202026-11-03%20at%2009.40.49%20(1)%20-%20Copy.jpeg" width="50%" height="50%">
 
 **Résultat :** la forêt et le domaine Active Directory ont été créés avec succès.
 
