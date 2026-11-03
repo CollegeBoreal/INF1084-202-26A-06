@@ -114,6 +114,8 @@ L'image ISO de Windows Server 2022 a été connectée au lecteur DVD virtuel de 
 
 L'édition **Windows Server 2022 Datacenter (Desktop Experience)** a été sélectionnée afin de disposer d'une interface graphique.
 
+<img src="images/Screenshot%202026-11-03%20110619.png" width="50%" height="50%">
+
 L'installation s'est terminée avec succès.
 
 ## 7. Configuration réseau de CLIENT01
