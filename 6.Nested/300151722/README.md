@@ -203,6 +203,14 @@ Resolve-DnsName DC300151722.local
 
 Les tests de connectivité et de résolution DNS ont réussi.
 
+### Vérification de la configuration réseau de CLIENT01
+
+La machine CLIENT01 possède l'adresse IP 172.16.17.20, utilise le DNS 172.16.17.10 et communique correctement avec le contrôleur de domaine.
+
+<img width="952" height="815" alt="6" src="https://github.com/user-attachments/assets/50e29c0c-6659-4c89-af04-15bb15c1b172" />
+
+**Capture à insérer :** résultat de `Get-NetIPConfiguration`, `Test-Connection` et `Resolve-DnsName`.
+
 ## 9. Intégration de CLIENT01 au domaine
 
 J'ai joint CLIENT01 au domaine Active Directory.
@@ -251,6 +259,14 @@ Les ordinateurs enregistrés dans Active Directory sont :
 
 - DC300151722
 - CLIENT01
+
+### Vérification des ordinateurs dans Active Directory
+
+Les deux ordinateurs DC300151722 et CLIENT01 apparaissent dans l'annuaire Active Directory du domaine DC300151722.local.
+
+<img width="1049" height="826" alt="7" src="https://github.com/user-attachments/assets/bf500742-720f-4f89-947d-65d927627ffc" />
+
+**Capture à insérer :** résultat de `Get-ADComputer -Filter *`, montrant DC300151722 et CLIENT01.
 
 ## 11. Conclusion
 
