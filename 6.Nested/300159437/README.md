@@ -271,6 +271,10 @@ Ce résultat confirme que le canal sécurisé entre CLIENT01 et Active Directory
 
 ## 13. Résultats du laboratoire
 <img src="images/WhatsApp%20Image%202026-11-03%20at%2011.26.15.jpeg" width="50%" height="50%">
+
+<img src="images/WhatsApp%20Image%202026-11-03%20at%2011.27.15.jpeg" width="50%" height="50%">
+
+
 | Test | Résultat |
 |---|---|
 | Déploiement du contrôleur de domaine | Réussi |
