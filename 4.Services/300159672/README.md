@@ -26,8 +26,8 @@ Vérification et exécution :
 cat .\services1.ps1
 .\services1.ps1
 ```
+<img width="2048" height="1214" alt="01-services-ad" src="https://github.com/user-attachments/assets/1a7f0442-f340-496f-a858-4c8caeaf1f24" />
 
-![Liste des services AD](images/01-services1.png)
 
 NTDS, ADWS et DFSR apparaissent deux fois, car le script contient deux commandes : la première liste les services AD, la seconde vérifie ces trois services séparément. [À compléter : l'état affiché pour NTDS, ADWS, DFSR, IsmServ, Kdc et Netlogon.]
 
