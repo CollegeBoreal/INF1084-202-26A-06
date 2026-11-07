@@ -1,9 +1,14 @@
 Installation et configuration d’un domaine Active Directory (AD DS)
+
 1. Objectif du laboratoire
+
 L’objectif est de préparer et vérifier un contrôleur de domaine Active Directory sous Windows Server 2022, à l’aide de PowerShell, et de confirmer le fonctionnement du domaine, du DNS, des services et de la console d’administration.
 Remarque : au moment des vérifications, le rôle AD DS et le domaine étaient déjà installés. Les captures démontrent leur état et leur fonctionnement, mais pas une nouvelle promotion du serveur.
+
 2. Étapes de réalisation
+   
 Étape 1 — Vérification du nom du serveur et du réseau
+
 Rename-Computer -NewName "SRV300160424" -Restart
 hostname
 ipconfig /all
@@ -13,6 +18,7 @@ Le renommage n’a pas été effectué, car le serveur portait déjà le nom SRV
 Figure 1 — Configuration IP relevée avec ipconfig /all.
 
 Étape 2 — Installation du rôle Active Directory Domain Services
+
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 La commande a retourné Success = True, Restart Needed = No et Exit Code = NoChangeNeeded. Cela confirme que le rôle AD DS et les outils de gestion sont présents, sans nouvelle installation nécessaire.
  <img width="711" height="625" alt="image" src="https://github.com/user-attachments/assets/b31a8e1c-03dc-4844-8ce5-332518ac32b7" />
@@ -20,10 +26,12 @@ La commande a retourné Success = True, Restart Needed = No et Exit Code = NoCha
 Figure 2 — Vérification du rôle AD DS.
 
 Étape 3 — Promotion du serveur et création de la forêt
+
 Install-ADDSForest -DomainName "DC300160424.local" -DomainNetbiosName "DC300160424" -InstallDns:$true
 Cette commande correspond à la création d’une nouvelle forêt, mais elle n’a pas été relancée dans ce laboratoire, car le domaine existait déjà. Aucune capture ne prouve ici une nouvelle promotion ni son redémarrage.
 
 Étape 4 — Vérification du domaine et de la forêt
+
 Get-ADDomain
 Get-ADForest
 Get-ADDomain confirme le domaine DC300160424.local et son contrôleur SRV300160424.DC300160424.local. Get-ADForest confirme le domaine racine, le catalogue global et le mode Windows2016Forest.
@@ -36,6 +44,7 @@ Figure 3 — Résultat de Get-ADDomain.
 Figure 4 — Résultat de Get-ADForest.
 
 Étape 5 — Vérification des services et des partages réseau AD
+
 Get-Service NTDS,DNS,Netlogon,KDC
 net share
 Les services NTDS, DNS, Netlogon et KDC affichent tous Running. En revanche, la commande net share n’a pas été documentée : la présence des partages SYSVOL et NETLOGON reste à confirmer.
@@ -44,6 +53,7 @@ Les services NTDS, DNS, Netlogon et KDC affichent tous Running. En revanche, la 
 Figure 5 — État des quatre services Active Directory.
 
 Étape 6 — Diagnostic DNS et dossier SYSVOL
+
 nslookup DC300160424.local
 Test-Path "C:\Windows\SYSVOL\sysvol\DC300160424.local"
 La résolution DNS de DC300160424.local retourne 10.7.237.229. Le serveur DNS est affiché Unknown (::1), ce qui n’empêche pas cette résolution. Le test du dossier SYSVOL n’a pas été exécuté dans les preuves fournies et reste à vérifier.
@@ -52,12 +62,14 @@ La résolution DNS de DC300160424.local retourne 10.7.237.229. Le serveur DNS es
 Figure 6 — Résolution du domaine par nslookup.
 
 Étape 7 — Ouverture de la console d’administration
+
 Start-Process dsa.msc
 La console Utilisateurs et ordinateurs Active Directory s’ouvre correctement. Le domaine DC300160424.local et les conteneurs Builtin, Computers, Domain Controllers et Users sont visibles.
  <img width="718" height="538" alt="image" src="https://github.com/user-attachments/assets/919ecb03-187b-4f8c-8861-ae1844d443e8" />
  
 Figure 7 — Console Active Directory et dossiers du domaine.
 
-3. Conclusion 
+3. Conclusion
+   
 Le serveur SRV300160424 possède un domaine Active Directory fonctionnel nommé DC300160424.local. Les commandes de vérification du domaine et de la forêt ont réussi, les quatre services principaux sont en cours d’exécution, la résolution DNS fonctionne et la console d’administration s’ouvre correctement.
 
