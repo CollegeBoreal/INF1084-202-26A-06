@@ -7,3 +7,5 @@ Après le redémarrage du serveur, j’ai vérifié que l’installation avait b
 Ce laboratoire m’a permis d’apprendre à créer un domaine Active Directory, à comprendre le rôle du contrôleur de domaine et à utiliser PowerShell pour installer et vérifier les services nécessaires au bon fonctionnement du réseau.
 
 
+<img src="./images/1.png" alt="Capture 1" width="900">
+<img src="./images/2.png" alt="Capture 2" width="900">
