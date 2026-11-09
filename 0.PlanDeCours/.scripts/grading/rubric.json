@@ -1,0 +1,28 @@
+{
+  "assignmentId": 53,
+  "files": [
+    "./.scripts/Participation.md"
+  ],
+  "criteria": [
+    {
+      "name":        "readme",
+      "col":         3,
+      "criterionid": 232,
+      "remark":      "Quantité README.md",
+      "levels":      [562, 563, 564]
+    },
+    {
+      "name":        "image",
+      "col":         4,
+      "criterionid": 233,
+      "remark":      "Présence répertoire images",
+      "levels":      [565, 566]
+    }
+  ],
+  "impliedPass": {
+    "when":    "readme",
+    "exceeds": 564,
+    "set":     "image",
+    "levelid": 566
+  }
+}
