@@ -48,6 +48,7 @@ jobs:
         run: |
           $chapters = @(
             "0.PlanDeCours"
+            "2.ActiveDirectory"
           )
 
           foreach ($chapter in $chapters) {
