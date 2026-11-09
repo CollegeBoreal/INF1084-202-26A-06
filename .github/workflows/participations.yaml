@@ -49,6 +49,7 @@ jobs:
           $chapters = @(
             "0.PlanDeCours"
             "2.ActiveDirectory"
+            "3.Domaines"
           )
 
           foreach ($chapter in $chapters) {
