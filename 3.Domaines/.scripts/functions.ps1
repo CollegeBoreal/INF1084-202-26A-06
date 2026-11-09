@@ -1,18 +1,24 @@
-function Write-ConfigurationSection {
-    param(
-        [string]$Server
-    )
-
-    Write-Output "## :gear: Configuration"
+function Write-LabParticipationHeader {
+    Write-Output "# Participation"
     Write-Output ""
 
-    Write-Output "| Windows Server 2022 Datacenter            | User/Pwd                   |"
-    Write-Output "|-------------------------------------------|----------------------------|"
-    Write-Output "| ${Server}                                 | Administrator/Boreal@2️⃣02️⃣6 |"
+    Write-Output "| Table des matières            | Description                                             |"
+    Write-Output "|-------------------------------|---------------------------------------------------------|"
+    Write-Output "| :a: [Présence](#a-présence)   | L'étudiant.e a fait son travail    :heavy_check_mark:   |"
+    Write-Output "| :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |"
+
     Write-Output ""
+    Write-Output "## Légende"
+    Write-Output ""
+    Write-Output "| Signe              | Signification                               |"
+    Write-Output "|--------------------|----------------------------------------------|"
+    Write-Output "| ❌                 | Rien dans `README.md`                        |"
+    Write-Output "| 🥉                 | Rename-Computer -NewName 'SRV🆔'             |"
+    Write-Output "| 🥈                 | Install-WindowsFeature AD-Domain-Services    |"
+    Write-Output "| 🥇                 | Install-ADDSForest -DomainName `DC🆔.local'  |"
+    Write-Output "| 🏆                 | `README.md` impeccable                       |"
 
 }
-
 
 function Write-LabHeader {
     param(
@@ -24,8 +30,8 @@ function Write-LabHeader {
     Write-Output ""
 
     if ($FeedbackLookup.Count -gt 0) {
-        Write-Output "|:hash:| Boréal :id: | README.md | images | Appréciation | Commentaires | :link: IP |"
-        Write-Output "|------|-------------|-----------|--------|--------------|--------------|-----------|"
+        Write-Output "|:hash:| Boréal :id: | README.md | images | App | Commentaires | :link: IP |"
+        Write-Output "|------|-------------|-----------|--------|-----|--------------|-----------|"
     }
     else {
         Write-Output "|:hash:| Boréal :id: | README.md | images | :link: IP |"
