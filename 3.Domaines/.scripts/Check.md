@@ -1,55 +1,54 @@
-# Precision au 21-07-2026 09:09
+# Precision au 09-11-2026 15:41
 
-| Table des matieres            | Description                                             |
-|-------------------------------|---------------------------------------------------------|
-| :a: [Presence](#a-presence)   | L'etudiant.e a fait son travail    :heavy_check_mark:   |
-| :b: [Precision](#b-precision) | L'etudiant.e a reussi son travail  :tada:               |
-
-:bulb: Le mot de passe Administrateur (en Anglais) de la VM est **Infra@2024**
+| Table des matieres | Description |
+|--------------------|-------------|
+| :a: [Presence](#a-presence) | La VM est accessible |
+| :b: [Precision](#b-precision) | Verification des services AD |
 
 ## Legende
 
-| Signe              | Signification                 |
-|--------------------|-------------------------------|
-| :heavy_check_mark: | AD DS a ete installe          |
-| :x:                | AD DS est inexistant          |
-| :no_entry:         | Acces refuse                  |
+| Symbole | Signification |
+|----------|-------------|
+| :heavy_check_mark: | Service actif |
+| :x: | Service arrêté ou absent |
+| :no_entry: | Connexion WinRM impossible |
+| :tada: | Tous les services sont actifs |
+| :warning: | Services manquants ou arrêtés |
 
 ## :b: Precision
 
-| :hash: | Boreal :id: | :slot_machine: VM   | :tada:   |
-|--------|-------------|---------------------|----------|
-| 1 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.201 | :no_entry: |
-| 2 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.202 | :no_entry: |
-| 3 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.203 | :no_entry: |
-| 4 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.204 | :no_entry: |
-| 5 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.205 | :no_entry: |
-| 6 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.206 | :no_entry: |
-| 7 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.207 | :no_entry: |
-| 8 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.208 | :no_entry: |
-| 9 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.209 | :no_entry: |
-| 10 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.210 | :no_entry: |
-| 11 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.211 | :no_entry: |
-| 12 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.212 | :no_entry: |
-| 13 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.213 | :no_entry: |
-| 14 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.214 | :no_entry: |
-| 15 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.215 | :no_entry: |
-| 16 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.216 | :no_entry: |
-| 17 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.217 | :no_entry: |
-| 18 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.218 | :no_entry: |
-| 19 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.219 | :no_entry: |
-| 20 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.220 | :no_entry: |
-| 21 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.221 | :no_entry: |
-| 22 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.222 | :no_entry: |
-| 23 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.223 | :no_entry: |
-| 24 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.224 | :no_entry: |
-| 25 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.225 | :no_entry: |
-| 26 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.226 | :no_entry: |
-| 27 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.227 | :no_entry: |
-| 28 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.228 | :no_entry: |
-| 29 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.229 | :no_entry: |
-| 30 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.230 | :no_entry: |
-| 31 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.231 | :no_entry: |
-| 32 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.232 | :no_entry: |
-| 33 | [](..//README.md) [<image src='https://avatars0.githubusercontent.com/u/?s=460&v=4' width=20 height=20></image>](https://github.com/) | 10.7.237.233 | :no_entry: |
-| :abacus: | \$\\frac{0}{33}$ = 0% | | \$\displaystyle\sum_{i=1}^{33} s_i$ = 0 |
+| # | Boreal :id: | VM | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | Résultat |
+|---|-------------|----|------|------|------|-----|----------|---------|----------|
+| 1 | [300147253|azzed98|232965506](../300147253|azzed98|232965506/README.md) [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | 10.7.237.202 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 2 | [300147866|sofianehadjadj389|205994850](../300147866|sofianehadjadj389|205994850/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994850?s=460&v=4' width=20 height=20></image>](https://github.com/sofianehadjadj389) | 10.7.237.203 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 3 | [300147891|amadbarry96|261496046](../300147891|amadbarry96|261496046/README.md) [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | 10.7.237.204 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 4 | [300150398|iilyastp|205996142](../300150398|iilyastp|205996142/README.md) [<image src='https://avatars0.githubusercontent.com/u/205996142?s=460&v=4' width=20 height=20></image>](https://github.com/iilyastp) | 10.7.237.205 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 5 | [300151722|islamoustani5-collab|261488966](../300151722|islamoustani5-collab|261488966/README.md) [<image src='https://avatars0.githubusercontent.com/u/261488966?s=460&v=4' width=20 height=20></image>](https://github.com/islamoustani5-collab) | 10.7.237.206 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 6 | [300151863|HannibalCarthage|205994935](../300151863|HannibalCarthage|205994935/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994935?s=460&v=4' width=20 height=20></image>](https://github.com/HannibalCarthage) | 10.7.237.207 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 7 | [300152004|danielmananga|218153814](../300152004|danielmananga|218153814/README.md) [<image src='https://avatars0.githubusercontent.com/u/218153814?s=460&v=4' width=20 height=20></image>](https://github.com/danielmananga) | 10.7.237.208 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 8 | [300153405|rekaikkhaled|261492660](../300153405|rekaikkhaled|261492660/README.md) [<image src='https://avatars0.githubusercontent.com/u/261492660?s=460&v=4' width=20 height=20></image>](https://github.com/rekaikkhaled) | 10.7.237.209 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 9 | [300153416|rouabahkhalil28-crypto|262935334](../300153416|rouabahkhalil28-crypto|262935334/README.md) [<image src='https://avatars0.githubusercontent.com/u/262935334?s=460&v=4' width=20 height=20></image>](https://github.com/rouabahkhalil28-crypto) | 10.7.237.210 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 10 | [300155462|zakariamamssi05|231498971](../300155462|zakariamamssi05|231498971/README.md) [<image src='https://avatars0.githubusercontent.com/u/231498971?s=460&v=4' width=20 height=20></image>](https://github.com/zakariamamssi05) | 10.7.237.211 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 11 | [300156534|salhiwalid540-hue|261489191](../300156534|salhiwalid540-hue|261489191/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489191?s=460&v=4' width=20 height=20></image>](https://github.com/salhiwalid540-hue) | 10.7.237.212 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 12 | [300157250|jeanpi-erre01|261491627](../300157250|jeanpi-erre01|261491627/README.md) [<image src='https://avatars0.githubusercontent.com/u/261491627?s=460&v=4' width=20 height=20></image>](https://github.com/jeanpi-erre01) | 10.7.237.213 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 13 | [300157307|amaradjida7-hub|261494517](../300157307|amaradjida7-hub|261494517/README.md) [<image src='https://avatars0.githubusercontent.com/u/261494517?s=460&v=4' width=20 height=20></image>](https://github.com/amaradjida7-hub) | 10.7.237.214 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 14 | [300157423|gaya-994|261497291](../300157423|gaya-994|261497291/README.md) [<image src='https://avatars0.githubusercontent.com/u/261497291?s=460&v=4' width=20 height=20></image>](https://github.com/gaya-994) | 10.7.237.215 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 15 | [300157606|ouahiba1994|261497731](../300157606|ouahiba1994|261497731/README.md) [<image src='https://avatars0.githubusercontent.com/u/261497731?s=460&v=4' width=20 height=20></image>](https://github.com/ouahiba1994) | 10.7.237.216 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 16 | [300157727|rayan23082001|262933367](../300157727|rayan23082001|262933367/README.md) [<image src='https://avatars0.githubusercontent.com/u/262933367?s=460&v=4' width=20 height=20></image>](https://github.com/rayan23082001) | 10.7.237.217 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 17 | [300157733|albachiralmouhamad|261491303](../300157733|albachiralmouhamad|261491303/README.md) [<image src='https://avatars0.githubusercontent.com/u/261491303?s=460&v=4' width=20 height=20></image>](https://github.com/albachiralmouhamad) | 10.7.237.218 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 18 | [300158085|kevinmayele-ai|258312358](../300158085|kevinmayele-ai|258312358/README.md) [<image src='https://avatars0.githubusercontent.com/u/258312358?s=460&v=4' width=20 height=20></image>](https://github.com/kevinmayele-ai) | 10.7.237.219 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 19 | [300159180|abdenourzourane-cpu|261489848](../300159180|abdenourzourane-cpu|261489848/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489848?s=460&v=4' width=20 height=20></image>](https://github.com/abdenourzourane-cpu) | 10.7.237.220 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 20 | [300159195|islemtd3-hue|261489005](../300159195|islemtd3-hue|261489005/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489005?s=460&v=4' width=20 height=20></image>](https://github.com/islemtd3-hue) | 10.7.237.221 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 21 | [300159203|riadhsahraoui|261489597](../300159203|riadhsahraoui|261489597/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489597?s=460&v=4' width=20 height=20></image>](https://github.com/riadhsahraoui) | 10.7.237.222 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 22 | [300159437|bob19142005|203893881](../300159437|bob19142005|203893881/README.md) [<image src='https://avatars0.githubusercontent.com/u/203893881?s=460&v=4' width=20 height=20></image>](https://github.com/bob19142005) | 10.7.237.223 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 23 | [300159463|hammahichem99|261489495](../300159463|hammahichem99|261489495/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489495?s=460&v=4' width=20 height=20></image>](https://github.com/hammahichem99) | 10.7.237.224 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 24 | [300159672|1999amadou03-star|233241856](../300159672|1999amadou03-star|233241856/README.md) [<image src='https://avatars0.githubusercontent.com/u/233241856?s=460&v=4' width=20 height=20></image>](https://github.com/1999amadou03-star) | 10.7.237.225 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 25 | [300159693|mazigh-2000|288084942](../300159693|mazigh-2000|288084942/README.md) [<image src='https://avatars0.githubusercontent.com/u/288084942?s=460&v=4' width=20 height=20></image>](https://github.com/mazigh-2000) | 10.7.237.226 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 26 | [300159887|hammichebillal06-dot|261490027](../300159887|hammichebillal06-dot|261490027/README.md) [<image src='https://avatars0.githubusercontent.com/u/261490027?s=460&v=4' width=20 height=20></image>](https://github.com/hammichebillal06-dot) | 10.7.237.227 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 27 | [300160006|maimouna247|261489041](../300160006|maimouna247|261489041/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489041?s=460&v=4' width=20 height=20></image>](https://github.com/maimouna247) | 10.7.237.228 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 28 | [300160424|youcef-1994|261502136](../300160424|youcef-1994|261502136/README.md) [<image src='https://avatars0.githubusercontent.com/u/261502136?s=460&v=4' width=20 height=20></image>](https://github.com/youcef-1994) | 10.7.237.229 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 29 | [300160504|Mmounir07|261492337](../300160504|Mmounir07|261492337/README.md) [<image src='https://avatars0.githubusercontent.com/u/261492337?s=460&v=4' width=20 height=20></image>](https://github.com/Mmounir07) | 10.7.237.230 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 30 | [300160733|belhadiyanis200-a11y|261489188](../300160733|belhadiyanis200-a11y|261489188/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489188?s=460&v=4' width=20 height=20></image>](https://github.com/belhadiyanis200-a11y) | 10.7.237.231 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 31 | [300160862|cherifyamna|261494322](../300160862|cherifyamna|261494322/README.md) [<image src='https://avatars0.githubusercontent.com/u/261494322?s=460&v=4' width=20 height=20></image>](https://github.com/cherifyamna) | 10.7.237.232 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+
+| :abacus: | \$\frac{0}{31}$ = 0% | | | | | | | | \$\displaystyle\sum_{i=1}^{31} s_i$ = 0 |
