@@ -1,6 +1,6 @@
-# Laboratoire — Active Directory, partage SMB, GPO et RDP
+# Laboratoire - Active Directory, partage SMB, GPO et RDP
 
-**Collège Boréal — Techniques des systèmes informatiques**  
+**Collège Boréal - Techniques des systèmes informatiques**  
 **Cours :** INF1084 — Objets gérables par Active Directory  
 **Étudiant :** Kevin Mayele  
 **Matricule :** 300158085  
