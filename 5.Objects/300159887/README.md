@@ -69,6 +69,10 @@ Les outils et technologies utilisés pendant le laboratoire sont :
 | Accès distant | RDP |
 
 # 4. Configuration d'Active Directory
+<img width="784" height="591" alt="Capture d’écran 2026-11-03 105126" src="https://github.com/user-attachments/assets/2fb34a2b-026d-45c2-916d-3df674d88e94" />
+<img width="553" height="550" alt="Capture d’écran 2026-11-03 113134" src="https://github.com/user-attachments/assets/d9b1f215-c856-44f6-bbc1-497f212c2b5c" />
+
+
 
 La première étape consistait à configurer Active Directory Domain Services (AD DS).
 
@@ -90,6 +94,10 @@ Ces commandes permettent de vérifier les informations du domaine et de la forê
 # 5. Création des utilisateurs et du groupe Students
 
 ## 5.1 Création de l'unité organisationnelle
+<img width="891" height="553" alt="Capture d’écran 2026-11-03 113916" src="https://github.com/user-attachments/assets/bbc3e25d-a43b-4b56-b626-96486bc70a1e" />
+
+
+
 
 Nous avons créé une unité organisationnelle nommée :
 
@@ -116,6 +124,8 @@ Les propriétés du groupe sont :
 Ce groupe permet de gérer les autorisations de plusieurs utilisateurs sans devoir configurer individuellement chaque compte.
 
 ## 5.3 Création des utilisateurs
+<img width="813" height="555" alt="Capture d’écran 2026-11-03 112742" src="https://github.com/user-attachments/assets/0487d6d6-0125-48ab-be07-a3baa0ab93da" />
+
 
 Deux comptes étudiants ont été ajoutés dans l'OU Students :
 
@@ -133,6 +143,8 @@ Get-ADGroupMember Students
 Le résultat obtenu confirme la présence des comptes Etudiant1 et Etudiant2 dans le groupe Students.
 
 # 6. Création du dossier partagé
+<img width="1001" height="587" alt="Capture d’écran 2026-11-03 113731" src="https://github.com/user-attachments/assets/5b57c762-9871-4881-a1b7-62dc1b37867f" />
+
 
 Nous avons créé un dossier nommé SharedResources à la racine du disque C:.
 
@@ -198,6 +210,8 @@ Le résultat confirme la présence de la GPO MapSharedFolder dans les stratégie
 Cette stratégie permet de centraliser les paramètres et de faciliter la configuration des utilisateurs.
 
 # 9. Configuration du lecteur réseau Z:
+<img width="662" height="708" alt="Capture d’écran 2026-11-03 115559" src="https://github.com/user-attachments/assets/4dc484e4-c379-4428-8801-ab39773c446b" />
+
 
 Dans l'éditeur de gestion des stratégies de groupe, nous avons accédé à :
 
