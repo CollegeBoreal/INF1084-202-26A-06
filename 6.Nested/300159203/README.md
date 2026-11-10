@@ -371,4 +371,14 @@ Ce laboratoire m'a permis de pratiquer l'administration d'un environnement Windo
 
 J'ai appris à configurer un domaine, organiser les utilisateurs et les groupes, créer un partage réseau et appliquer des permissions adaptées aux différents profils.
 
-Les tests effectués depuis CLIENT01 confirment que les utilisateurs peuvent accéder aux ressources selon les permissions attribuées à leurs groupes.
+Les tests effectués depuis CLIENT01 confirment que les utilisateurs peuvent accéder aux ressources selon les permissions attribuées à leurs groupes.  
+
+<img width="2686" height="2070" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/d48eb0ad-b5ce-41a9-bb94-bcb1cff3c308" />  
+
+Ce que le schéma démontre
+- Infrastructure : Hyper-V, switch interne, NAT et deux machines virtuelles.
+- Services : Active Directory Domain Services et DNS.
+- Organisation : OU, utilisateurs et groupes de sécurité.
+- Sécurité : groupes imbriqués, permissions SMB et NTFS.
+- Validation : Messi peut modifier les fichiers, tandis que Salah peut lire, mais pas créer de fichiers.
+
