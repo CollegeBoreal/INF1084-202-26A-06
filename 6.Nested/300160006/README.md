@@ -546,6 +546,15 @@ Le `whoami` en `ad300160006\...` confirme que CLIENT01 appartient au domaine de 
 
 ---
 
+## Modification des mots de passe
+
+Les mots de passe des comptes suivants ont été changés :
+
+- CLIENT01
+- DC
+- Student
+  ### mot de passe: Boreal@2026
+
 ## Bilan final
 
 | Étape | Résultat |
