@@ -1,6 +1,8 @@
 # 🧪 Active Directory Lab
 
 Dans ce laboratoire, j’ai créé un utilisateur local hammichebillal06-dot avec l’ID étudiant 300159887 sur un serveur Windows Server 2022 Datacenter à l’aide de PowerShell.
+<img width="996" height="356" alt="image" src="https://github.com/user-attachments/assets/bc6ed49f-33ce-4174-b311-7034e4e473ae" />
+
 
 Les principales étapes réalisées sont :
    - Ouvrir PowerShell en tant qu’administrateur.
