@@ -236,7 +236,7 @@ Le compte **Kevin mayele**, de type **User**, apparaissait ensuite dans l’OU `
 
 La capture suivante met en évidence l’OU principale, l’OU Students, le nom du compte et son type.
 
-![Compte Kevin Mayele dans Students](images/14-utilisateur-kevin-mayele-Students.png)
+![Compte Kevin Mayele dans Students](images/14-utilisateur-kevin-mayele-Students.jpg)
 
 Dans les propriétés du compte, l’onglet **Account** confirmait les identifiants suivants :
 
@@ -271,7 +271,7 @@ Ce résultat confirme que la session ouverte sur CLIENT01 utilisait bien le comp
 
 La capture suivante met en évidence le nom de la machine, la commande utilisée et l’identité de l’utilisateur connecté.
 
-![Connexion au domaine sur CLIENT01](images/16-connexion-CLIENT01-kevin-mayele.png)
+![Connexion au domaine sur CLIENT01](images/16-connexion-CLIENT01-kevin-mayele.jpg)
 
 ## 12. Difficultés rencontrées
 
