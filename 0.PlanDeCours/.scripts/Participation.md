@@ -16,7 +16,7 @@
 
 |:hash:| Boréal :id: | README.md | images |
 |------|-------------|-----------|--------|
-| 0 | [300147253](../300147253/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | :x: | :x: |
+| 0 | [300147253](../300147253/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | :2nd_place_medal: | :heavy_check_mark: |
 | 1 | [300147866](../300147866/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994850?s=460&v=4' width=20 height=20></image>](https://github.com/sofianehadjadj389) | :x: | :x: |
 | 2 | [300147891](../300147891/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | :1st_place_medal: | :heavy_check_mark: |
 | 3 | [300150398](../300150398/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205996142?s=460&v=4' width=20 height=20></image>](https://github.com/iilyastp) | :x: | :x: |
@@ -47,4 +47,4 @@
 | 28 | [300160504](../300160504/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261492337?s=460&v=4' width=20 height=20></image>](https://github.com/Mmounir07) | :x: | :x: |
 | 29 | [300160733](../300160733/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261489188?s=460&v=4' width=20 height=20></image>](https://github.com/belhadiyanis200-a11y) | :1st_place_medal: | :heavy_check_mark: |
 | 30 | [300160862](../300160862/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261494322?s=460&v=4' width=20 height=20></image>](https://github.com/cherifyamna) | :x: | :heavy_check_mark: |
-| :abacus: | \$\frac{21}{31}\$ = 67.74% | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 21 |
+| :abacus: | \$\frac{22}{31}\$ = 70.97% | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 22 |
