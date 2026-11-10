@@ -6,10 +6,14 @@ Configuration
 - Domaine : DC300159180.local
 - NetBIOS : DOM300159180
 Étapes principales
-1. Renommer le serveur :
-Rename-Computer -NewName "SRV300159180" -Restart
 
-2. Installer AD DS :
+### 1. Renommer le serveur :
+
+```powershell
+Rename-Computer -NewName "SRV300159180" -Restart
+```
+
+### 2. Installer AD DS :
 
 ```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
