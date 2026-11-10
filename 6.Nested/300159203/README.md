@@ -4,29 +4,7 @@
 **Cours :** INF1084 — Administration Windows  
 **Environnement :** Windows Server 2022, Hyper-V, PowerShell et Active Directory Domain Services
 
-SRV300159203
-Windows Server 2022
-      |
-      |  Hyper-V
-      |
-   Switch LAB
-   (Internal)
-      |
-    LABNAT
-      |
-172.16.21.0/24
-      |
-      +---- DC300159203
-      |     IP : 172.16.21.10
-      |     DNS : 127.0.0.1
-      |     Domaine : DC300159203.local
-      |     Active Directory + DNS
-      |
-      +---- CLIENT01
-            IP : 172.16.21.20
-            Passerelle : 172.16.21.1
-            DNS : 172.16.21.10
-            Domaine : DC300159203.local
+
 
 ## 1. Présentation du projet
 
