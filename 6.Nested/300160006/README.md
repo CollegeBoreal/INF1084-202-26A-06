@@ -20,6 +20,14 @@
 | Client | CLIENT01 (172.16.27.20) |
 
 ---
+## Modification des mots de passe
+
+Les mots de passe des comptes suivants ont été changés :
+
+- CLIENT01
+- DC
+- Student
+  ### mot de passe: Boreal@2026
 
 ##  Vérification de Hyper-V
 
@@ -545,15 +553,6 @@ nltest /dsgetdc:DC300160006.local
 Le `whoami` en `ad300160006\...` confirme que CLIENT01 appartient au domaine de mon DC imbriqué et non à celui de SRV27.
 
 ---
-
-## Modification des mots de passe
-
-Les mots de passe des comptes suivants ont été changés :
-
-- CLIENT01
-- DC
-- Student
-  ### mot de passe: Boreal@2026
 
 ## Bilan final
 
