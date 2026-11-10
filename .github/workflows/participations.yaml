@@ -27,6 +27,7 @@ jobs:
             "3.Domaines"
             "4.Services"
             "5.Objects"
+            "6.Nested"
           )
 
           foreach ($chapter in $chapters) {
