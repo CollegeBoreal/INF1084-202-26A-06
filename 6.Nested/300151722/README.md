@@ -437,6 +437,31 @@ J'ai arrêté la machine de test TEST-BOOT et configuré la mémoire dynamique d
 
 Le copier-coller dans Hyper-V ne fonctionnait pas initialement. J'ai configuré le mode de session améliorée pour faciliter l'administration de la VM.
 
+
+### Connexion avec un utilisateur Active Directory
+
+J'ai créé un utilisateur nommé Etudiant1 dans l'unité d'organisation Students du domaine DC300151722.local.
+
+J'ai ensuite autorisé cet utilisateur à se connecter à distance à CLIENT01 en l'ajoutant au groupe Remote Desktop Users.
+
+La connexion avec DC151722\Etudiant1 a réussi.
+
+Les commandes de vérification sont :
+
+```powershell
+whoami
+hostname
+```
+
+Résultats obtenus :
+
+```text
+dc151722\etudiant1
+CLIENT01
+```
+
+<img width="1195" height="738" alt="1111111111111111111111111111111" src="https://github.com/user-attachments/assets/eb0a549c-4724-4b67-bbd3-590ecc13dbcf" />
+
 ---
 
 ## 14. Conclusion
