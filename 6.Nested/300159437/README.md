@@ -38,7 +38,7 @@ ping 172.16.22.10
 ping DC300159437
 
 # test 
-## User : DC300159437/Bob
+## User : DC300159437.local/Boby
 ## password : Infra@2024
 
 
