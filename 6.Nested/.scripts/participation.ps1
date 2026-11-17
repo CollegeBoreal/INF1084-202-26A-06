@@ -24,7 +24,7 @@
 
 $FeedbackLookup = Get-FeedbackLookup -Students $Students
 
-Write-ParticipationHeader
+Write-LabParticipationHeader
 Write-LabHeader -FeedbackLookup $FeedbackLookup
 
 $s = 0
@@ -32,10 +32,10 @@ $s = 0
 for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
     $parts = $STUDENTS[$i] -split '\|'
-    
+
     $StudentID = $parts[0]
-    $GitHubID  = $parts[1]
-    $AvatarID  = $parts[2]
+    $GitHubID = $parts[1]
+    $AvatarID = $parts[2]
 
     $paths  = Get-StudentPaths -StudentID $StudentID
     $checks = Get-StudentChecks -Paths $paths
@@ -61,3 +61,4 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 }
 
 Write-Summary -SuccessCount $s -TotalCount $i
+
