@@ -25,8 +25,8 @@
 Les mots de passe des comptes suivants ont été changés :
 
 - CLIENT01
-- DC
-- Student
+- DC300160006
+- AD300160006/Student1
   ### mot de passe: Boreal@2026
 
 ##  Vérification de Hyper-V
