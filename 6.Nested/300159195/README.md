@@ -7,6 +7,20 @@
 
 ---
 
+## Informations de connexion
+
+Pour les comptes créés dans le cadre de ce laboratoire, le mot de passe utilisé est :
+
+*Mot de passe : Floro@1234*
+
+Ce mot de passe a été utilisé pour les différents comptes créés pendant la réalisation du laboratoire, notamment :
+
+- "LAB300159195\Etudiant1"
+- "LAB300159195\Etudiant2"
+- les comptes administratifs utilisés pour la configuration des machines virtuelles et du domaine.
+
+«Cette information concerne uniquement les comptes utilisés dans le cadre de ce laboratoire.»
+
 ## Objectif
 
 L'objectif de ce laboratoire est de construire une architecture Active Directory indépendante dans Hyper-V.
