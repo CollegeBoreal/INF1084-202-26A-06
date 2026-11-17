@@ -1,7 +1,7 @@
 # Architecture simplifiée 
 # 300152004
 
-**Serveur parent :** `SRVB300152004` — **Domaine :** `DC300152004.local` — **Réseau privé :** `172.16.17.0/24` — **NetBIOS :** `AD300152004` — **Password :** `Dqniel2026`
+**Serveur parent :** `SRVB300152004` — **Domaine :** `DC300152004.local` — **Réseau privé :** `172.16.17.0/24` — **NetBIOS :** `AD300152004` — **Password :** `Daniel2026`
 
 
 Étape 1 Réseau privé et passerelle NAT
