@@ -26,6 +26,10 @@ Je configure d'abord un redirecteur DNS avec `Add-DnsServerForwarder` pour que l
 
 Étape 6 Création du client
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/06-creation-client.png?raw=true" />
+Depuis le contrôleur de domaine, je vérifie avec `Get-DnsServerForwarder` que le redirecteur DNS `8.8.8.8` est bien configuré. Je lance ensuite `Test-Connection 8.8.8.8` et j'obtiens quatre réponses, ce qui confirme que mon DC accède à Internet en passant par la passerelle NAT.
+
+Étape 6 Création du client
+<img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/06-creation-client.png?raw=true" />
 Je crée la VM `CLIENT01` avec `New-VM` : génération 2, 4 Go de mémoire, un disque de 60 Go (`C:\VMs\CLIENT01.vhdx`) et le commutateur `LAB`. Elle apparaît à l'état `Off`, prête à être démarrée. Sur la même capture, je force aussi le DVD comme premier périphérique de démarrage du contrôleur de domaine avec `Set-VMFirmware`, puis je relance cette VM et je revérifie le NAT avec `Get-NetNat`.
 
 Étape 7 Accès en écriture au partage
