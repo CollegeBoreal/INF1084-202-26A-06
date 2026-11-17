@@ -8,6 +8,43 @@ m
 
 ---
 
+## Pour Pouvoir tester le Client : Tests de validation depuis CLIENT01 – DC300151722.local
+🎯 Objectif
+Valider, à partir du poste CLIENT01, que le laboratoire fonctionne de bout en bout : configuration IP, passerelle NAT, DNS, contrôleur de domaine, jonction au domaine, ouverture de session et application des GPO. Toutes les commandes sont exécutées dans PowerShell (administrateur) sur CLIENT01, sauf indication contraire.
+📋 Rappel du plan d'adressage
+Élément
+Configuration
+🖥️ Serveur parent
+SRV17 (10.7.237.218)
+🌐 Réseau privé
+172.16.17.0/24
+🚪 Passerelle NAT
+172.16.17.1
+🏢 Contrôleur de domaine
+DC300151722 – 172.16.22.10
+💻 Client
+CLIENT01 – 172.16.22.20
+🌲 Domaine AD DS
+DC300151722.local
+🧪 Test 1 – Configuration IP du client
+ipconfig /all
+Get-NetIPConfiguration
+Résultat attendu : IPv4 = 172.16.22.20, masque = 255.255.255.0, passerelle = 172.16.22.1, DNS = 172.16.22.10, suffixe DNS = DC300159437.local.
+🧪 Test 2 – Connectivité vers la passerelle NAT
+ping 172.16.22.1
+Résultat attendu : 4 réponses, 0 % de perte. Confirme que le commutateur interne LAB et l'interface vEthernet (LAB) de SRV17 fonctionnent.
+🧪 Test 3 – Connectivité vers le contrôleur de domaine
+ping 172.16.22.10
+ping DC300159437
+
+# test 
+## User : DC300159437/Bob
+## password : Infra@2024
+
+
+
+
+
 ## 1. Introduction
 
 Dans le cadre du cours INF1084, ce laboratoire avait pour objectif de déployer une infrastructure Active Directory dans un environnement virtualisé avec Hyper-V.
@@ -298,3 +335,5 @@ J'ai également rencontré plusieurs difficultés, notamment au niveau du démar
 La résolution de ces problèmes m'a aidé à développer mes compétences en dépannage, en administration système et en utilisation de PowerShell.
 
 **Le laboratoire s'est terminé avec succès, comme le confirme le résultat `True` de la commande `Test-ComputerSecureChannel`.**
+
+
