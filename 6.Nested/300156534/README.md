@@ -1,4 +1,6 @@
-LABORATOIRE 6.Nested | COMPTE RENDU TECHNIQUE
+# LABORATOIRE 6.Nested | COMPTE RENDU TECHNIQUE
+
+```
 Étudiant : Oualid Salhi
 Matricule : 300156534
 Date : 17 novembre 2026
@@ -12,7 +14,10 @@ Client : CLIENT01 — 172.16.26.20
 Compte administrateur : Administrator
 Mot de passe : walid@2026
 CONFIDENTIEL — Le mot de passe est inscrit à la demande de l’étudiant. Ne pas publier ce document sur GitHub. Modifier ce mot de passe avant toute diffusion.
-1. Objectif et architecture
+```
+
+## 1. Objectif et architecture
+
 Créer une infrastructure indépendante comprenant un commutateur Hyper-V interne, une passerelle NAT, un contrôleur de domaine AD DS et DNS, quatre sous-unités organisationnelles et un client membre du domaine.
 SRV300156534 (10.7.237.212)
   LAB / LABNAT — 172.16.26.0/24
