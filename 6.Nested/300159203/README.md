@@ -2,7 +2,13 @@
 
 **Numéro étudiant :** 300159203  
 **Cours :** INF1084 — Administration Windows  
-**Environnement :** Windows Server 2022, Hyper-V, PowerShell et Active Directory Domain Services
+**Environnement :** Windows Server 2022, Hyper-V, PowerShell et Active Directory Domain Services  
+
+## 0. Informations de connexion du laboratoire
+
+Pour les comptes créés dans le cadre de ce laboratoire, le mot de passe utilisé est :
+
+**Mot de passe :** `Infra@2024`
 
 
 
@@ -340,15 +346,8 @@ Cela confirme que Salah possède uniquement les permissions de lecture.
 
 <img width="788" height="479" alt="Refus modification Salah" src="https://github.com/user-attachments/assets/770d6bbc-4c4a-46a5-8f09-99999d9ec30b" />
 
-## 10. Informations de connexion du laboratoire
 
-Pour les comptes créés dans le cadre de ce laboratoire, le mot de passe utilisé est :
-
-**Mot de passe :** `Infra@2024`
-
-Cette information concerne les comptes du laboratoire et ne doit pas être réutilisée pour des comptes personnels ou des services externes.
-
-## 11. Résultats obtenus
+## 10. Résultats obtenus
 
 Les objectifs principaux du laboratoire ont été réalisés :
 
@@ -367,7 +366,7 @@ Les objectifs principaux du laboratoire ont été réalisés :
 - Vérification des accès en lecture et en modification.
 - Vérification du refus des opérations non autorisées.
 
-## 12. Conclusion
+## 11. Conclusion
 
 Ce laboratoire m'a permis de pratiquer l'administration d'un environnement Windows Server avec Hyper-V et Active Directory.
 
