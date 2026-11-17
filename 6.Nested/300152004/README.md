@@ -37,3 +37,4 @@ Je crée la VM `CLIENT01` avec `New-VM` : génération 2, 4 Go de mémoire, un d
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/07-verification-ou-ordinateurs.png?raw=true" />
 Avec `Get-ADComputer`, je vois deux ordinateurs dans l'annuaire : `DC300152004`, dans l'OU `Domain Controllers`, et `CLIENT01`, dans l'OU `Workstations` de `OU300152004`. Cela confirme que le client est bien enregistré dans mon domaine.
 
+<img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/Screenshot%202026-11-17%20130903.png?raw=true" />
