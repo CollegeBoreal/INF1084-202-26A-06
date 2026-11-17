@@ -19,6 +19,8 @@ J'installe le rôle AD DS avec `Install-WindowsFeature AD-Domain-Services -Inclu
 Avec `Get-ADForest`, je vérifie que la forêt s'appelle `DC300152004.local`, qu'elle contient un seul domaine et que le contrôleur de domaine `DC300152004` est le catalogue global et détient les rôles de maître de schéma et de maître de nommage.
 
 
+
+
 Étape 5 Structure Active Directory
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/05-creation-ou.png?raw=true" />
 Je configure d'abord un redirecteur DNS avec `Add-DnsServerForwarder` pour que le contrôleur de domaine puisse résoudre les noms externes. Je crée ensuite l'OU principale `OU300152004`, puis une boucle `foreach` crée les sous-OU `Students`, `Groups`, `Workstations` et `Servers` dans cette OU. `Get-ADOrganizationalUnit -Filter *` me montre toute la structure, avec en plus l'OU `Domain Controllers` créée par défaut.
