@@ -1,7 +1,8 @@
 # Architecture simplifiée 
 # 300152004
 
-**Serveur parent :** `SRVB300152004` — **Domaine :** `DC300152004.local` — **Réseau privé :** `172.16.17.0/24`
+**Serveur parent :** `SRVB300152004` — **Domaine :** `DC300152004.local` — **Réseau privé :** `172.16.17.0/24` — **NetBIOS :** `AD300152004` — **Password :** `Daniel2026`
+
 
 Étape 1 Réseau privé et passerelle NAT
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/01-reseau-prive-nat.png?raw=true" />
