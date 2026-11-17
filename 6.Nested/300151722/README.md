@@ -15,6 +15,19 @@ Chaque étudiant doit disposer de son propre réseau privé, de son domaine Acti
 
 Dans ce laboratoire, j'ai configuré un contrôleur de domaine nommé DC300151722 et une machine cliente nommée CLIENT01.
 
+## 🔐 Informations de connexion
+
+| Machine | Nom d'utilisateur | Mot de passe |
+|---|---|---|
+| DC300151722 | DC151722\Administrator | Boreal@....|
+| CLIENT01 — Administrateur | DC151722\Administrator | Boreal@.... |
+| CLIENT01 — Étudiant | DC151722\Etudiant1 | Boreal@.... |
+
+**Domaine :** DC300151722.local
+
+---
+
+
 ## 2. Architecture réseau
 
 | Élément | Configuration |
