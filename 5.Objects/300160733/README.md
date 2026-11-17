@@ -6,9 +6,7 @@
 **Domaine :** DC300160733.local  
 **Environnement :** Windows Server 2022, Active Directory, PowerShell et stratégies de groupe (GPO)
 
-## Introduction
 
-Dans ce laboratoire, j'ai configuré des utilisateurs et un groupe dans Active Directory. J'ai aussi préparé un dossier partagé et deux GPO pour le lecteur réseau Z: et le Bureau à distance. Les images ci-dessous sont des captures de mes vérifications et des résultats obtenus.
 
 ## 1. Domaine Active Directory, utilisateurs et groupe Students
 
