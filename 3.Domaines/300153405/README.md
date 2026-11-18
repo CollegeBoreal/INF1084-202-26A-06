@@ -165,11 +165,3 @@ Ce laboratoire m'a permis de mettre en place et de comprendre les principaux él
 
 Même si les captures réalisées pendant l'installation ont été perdues, j'ai pu **documenter la configuration existante sans la modifier** en exécutant `hostname`, `Get-WindowsFeature AD-Domain-Services`, `Get-ADDomain` et `Get-ADForest`.
 
-## 6. Référence
-
-- [Consignes officielles du laboratoire 3 — Domaines (INF1084)](https://github.com/CollegeBoreal/INF1084-202-26A-06/tree/main/3.Domaines)
-
----
-
-**Organisation des preuves :** les captures sont enregistrées dans le sous-dossier [`images/`](images/) de ce README. Sur GitHub, elles s'afficheront automatiquement si le README et ce dossier sont téléversés ensemble.
-
