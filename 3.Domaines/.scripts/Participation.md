@@ -4,14 +4,14 @@
 |-------------------------------|---------------------------------------------------------|
 | :a: [Présence](#a-présence)   | L'étudiant.e a fait son travail    :heavy_check_mark:   |
 | :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |
+## Légende
+
 | Colonne   | Signification              |
 |-----------|----------------------------|
 | 📑        | Fichier README.md         |
 | 🖼️        | Répertoire images         |
 | 💯        | Appréciation              |
 | 💬        | Commentaires              |
-
-## Légende
 
 | Signe              | Signification                               |
 |--------------------|----------------------------------------------|
