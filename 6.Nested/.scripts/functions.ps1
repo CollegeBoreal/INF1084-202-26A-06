@@ -7,6 +7,7 @@ function Write-LabParticipationHeader {
     Write-Output "| :a: [Présence](#a-présence)   | L'étudiant.e a fait son travail    :heavy_check_mark:   |"
     Write-Output "| :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |"
 
+    Write-Output ""
     Write-Output "| Colonne   | Signification              |"
     Write-OUtput "|-----------|----------------------------|"
     Write-OUtput "| 📑        | Fichier README.md         |"
