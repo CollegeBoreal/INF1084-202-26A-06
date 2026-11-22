@@ -24,7 +24,6 @@ function Write-LabParticipationHeader {
     Write-Output "| 🥈                 | Get-LocalUser -Name :id:                     |"
     Write-Output "| 🥇                 | Get-LocalGroupMember -Group 'Administrators' |"
     Write-Output "| 🏆                 | `README.md` impeccable                       |"
-
 }
 
 function Write-LabHeader {
