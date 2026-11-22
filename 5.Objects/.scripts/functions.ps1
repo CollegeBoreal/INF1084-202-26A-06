@@ -8,6 +8,13 @@ function Write-LabParticipationHeader {
     Write-Output "| :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |"
 
     Write-Output ""
+    Write-Output "| Colonne   | Signification              |"
+    Write-OUtput "|-----------|----------------------------|"
+    Write-OUtput "| 📑        | Fichier README.md         |"
+    Write-OUtput "| 🖼️        | Répertoire images         |"
+    Write-OUtput "| 💯        | Appréciation              |"
+    Write-OUtput "| 💬        | Commentaires              |"
+
     Write-Output "## Légende"
     Write-Output ""
     Write-Output "| Signe              | Signification                               |"
