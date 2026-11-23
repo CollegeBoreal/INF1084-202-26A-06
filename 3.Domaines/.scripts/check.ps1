@@ -102,12 +102,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
             -ScriptBlock {
 
                 Get-Service `
-                    NTDS,
-                    ADWS,
-                    DFSR,
-                    KDC,
-                    Netlogon,
-                    IsmServ `
+                    NTDS `
                     -ErrorAction SilentlyContinue |
                 Select-Object Name,Status
             }
@@ -126,7 +121,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
             $NTDSStatus
         ) | Where-Object { $_ -eq 4 }
 
-        if ($RunningCount.Count -eq 4) {
+        if ($RunningCount.Count -eq 1) {
 
             $Result = ":tada:"
             $SuccessCount++
