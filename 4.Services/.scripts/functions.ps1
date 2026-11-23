@@ -44,7 +44,7 @@ function Write-LabHeader {
     }
     else {
         Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :wavy_dash: IP |"
-        Write-Output "|------|-------------|----|---|"
+        Write-Output "|------|-------------|----|---|---|"
     }
 }
 
