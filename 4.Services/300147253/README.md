@@ -43,3 +43,13 @@ Compte rendu basé sur les consignes du professeur et les résultats PowerShell 
 <img width="593" height="535" alt="L1" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/4.Services/300147253/images/Capture.PNG?raw=true" />
 https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/4.Services/300147253/images/Capture%202.PNG
 https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/4.Services/300147253/images/Capture%203.PNG
+<img width="960" height="540" alt="Capture 2" src="https://github.com/user-attachments/assets/869cc735-d81a-41a9-9298-9d408b6aff87" />
+<img width="960" height="540" alt="Capture 3" src="https://github.com/user-attachments/assets/ce8b4dfc-4951-4549-b707-ee49f7c06477" />
+<img width="960" height="540" alt="Capture 4" src="https://github.com/user-attachments/assets/5b80bfad-e730-45a8-b1f2-2b2950e2172a" />
+<img width="960" height="540" alt="Capture 5" src="https://github.com/user-attachments/assets/69e34ff5-1318-4896-a8d0-2677d67925d0" />
+<img width="960" height="540" alt="Capture 6" src="https://github.com/user-attachments/assets/3287b6ea-d711-4317-be50-0a436546428c" />
+<img width="960" height="540" alt="Capture7" src="https://github.com/user-attachments/assets/ea7f2e31-4172-4a8b-a45a-2fc9c84ae1a1" />
+<img width="960" height="540" alt="Capture 8" src="https://github.com/user-attachments/assets/0f9c8f69-4c97-46c4-bf22-9bc668513301" />
+<img width="960" height="540" alt="Capture 9" src="https://github.com/user-attachments/assets/7377527b-c991-4c53-a53a-0f7cdcbf2492" />
+<img width="960" height="540" alt="Capture 10" src="https://github.com/user-attachments/assets/2c9bfa5d-3f9d-468b-a23c-b37c02d23c7e" />
+<img width="960" height="540" alt="Capture 11" src="https://github.com/user-attachments/assets/ab56a3b7-63d1-4b75-addb-1dd93ac9b4f2" />
