@@ -40,6 +40,8 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
     $paths  = Get-StudentPaths -StudentID $StudentID
     $checks = Get-StudentChecks -Paths $paths
+    $labPaths  = Get-LabStudentPaths -StudentID $StudentID
+    $Labchecks = Get-LabStudentChecks -Paths $labPaths
     $url    = Get-GitHubAvatarLink -GitHubID $GitHubID -AvatarID $AvatarID
 
     $ServerIP = $SERVERS[$i]
@@ -52,6 +54,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
         -GitHubLink $url `
         -ReadmePath $Paths.README `
         -Checks $Checks `
+        -LabChecks $LabChecks `
         -FeedbackLookup $FeedbackLookup `
         -Server "$RdpStatus $ServerIP "
 
