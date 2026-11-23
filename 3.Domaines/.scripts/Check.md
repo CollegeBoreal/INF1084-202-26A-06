@@ -1,4 +1,4 @@
-﻿# Precision au 23-11-2026 15:07
+﻿# Precision au 23-11-2026 15:15
 
 | Table des matieres | Description |
 |--------------------|-------------|
@@ -17,8 +17,8 @@
 
 ## :b: Precision
 
-| # | Boreal :id: | :slot_machine: VM | :loop: NTDS | :white_check_mark: Check |
-|---|-----------|-------------------|-------------|--------------------|
+| # | Boreal :id: | :link: IP | :loop: NTDS | :white_check_mark: Check |
+|---|-------------|-----------|-------------|--------------------------|
 | 1 | [300147253](../300147253/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | 10.7.237.202 | :heavy_check_mark: | :tada: |
 | 2 | [300147866](../300147866/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994850?s=460&v=4' width=20 height=20></image>](https://github.com/sofianehadjadj389) | 10.7.237.203 | :x: | :warning: |
 | 3 | [300147891](../300147891/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | 10.7.237.204 | :heavy_check_mark: | :tada: |

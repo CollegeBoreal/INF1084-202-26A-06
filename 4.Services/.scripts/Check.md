@@ -1,4 +1,4 @@
-﻿# Precision au 23-11-2026 15:09
+﻿# Precision au 23-11-2026 15:16
 
 | Table des matieres | Description |
 |--------------------|-------------|
@@ -17,8 +17,8 @@
 
 ## :b: Precision
 
-| # | Boreal ID | VM | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | Resultat |
-|---|-----------|----|------|------|------|-----|----------|---------|----------|
+| # | Boreal ID | :link: IP | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | :white_check_mark: Check |
+|---|-----------|-----------|------|------|------|-----|----------|---------|--------------------------|
 | 1 | [300147253](../300147253/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | 10.7.237.202 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :tada: |
 | 2 | [300147866](../300147866/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994850?s=460&v=4' width=20 height=20></image>](https://github.com/sofianehadjadj389) | 10.7.237.203 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
 | 3 | [300147891](../300147891/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | 10.7.237.204 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :tada: |
