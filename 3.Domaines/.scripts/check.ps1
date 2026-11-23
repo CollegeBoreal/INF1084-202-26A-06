@@ -162,7 +162,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
         Write-Host "Échec de connexion à $ServerIP : $($_.Exception.Message)" -ForegroundColor Red
 
-        $md += "| $Counter | [$StudentID](../$StudentID/README.md) | $ServerIP | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |"
+        $md += "| $Counter | [$StudentID](../$StudentID/README.md) :point_right: $url | $ServerIP | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |"
     }
 
     $Counter++
