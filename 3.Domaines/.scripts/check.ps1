@@ -68,8 +68,8 @@ $md += "| :warning: | Au moins un service est arrete |"
 $md += ""
 $md += "## :b: Precision"
 $md += ""
-$md += "| # | Boreal ID | VM | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | Resultat |"
-$md += "|---|-----------|----|------|------|------|-----|----------|---------|----------|"
+$md += "| # | Boreal :id: | :slot_machine: VM | :loop: NTDS | :white_check_mark: Check |"
+$md += "|---|-----------|-------------------|-------------|--------------------|"
 
 # --------------------------------------
 # Validation
@@ -117,36 +117,16 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
         }
 
         $NTDSStatus     = ($Services | Where-Object Name -eq "NTDS").Status
-        $ADWSStatus     = ($Services | Where-Object Name -eq "ADWS").Status
-        $DFSRStatus     = ($Services | Where-Object Name -eq "DFSR").Status
-        $KDCStatus      = ($Services | Where-Object Name -eq "KDC").Status
-        $NetlogonStatus = ($Services | Where-Object Name -eq "Netlogon").Status
-        $IsmServStatus  = ($Services | Where-Object Name -eq "IsmServ").Status
 
         Write-Host "NTDS     : $NTDSStatus"
-        Write-Host "ADWS     : $ADWSStatus"
-        Write-Host "DFSR     : $DFSRStatus"
-        Write-Host "KDC      : $KDCStatus"
-        Write-Host "Netlogon : $NetlogonStatus"
-        Write-Host "IsmServ  : $IsmServStatus"
 
         $NTDS     = if ($NTDSStatus     -eq 4) { ":heavy_check_mark:" } else { ":x:" }
-        $ADWS     = if ($ADWSStatus     -eq 4) { ":heavy_check_mark:" } else { ":x:" }
-        $DFSR     = if ($DFSRStatus     -eq 4) { ":heavy_check_mark:" } else { ":x:" }
-        $KDC      = if ($KDCStatus      -eq 4) { ":heavy_check_mark:" } else { ":x:" }
-        $Netlogon = if ($NetlogonStatus -eq 4) { ":heavy_check_mark:" } else { ":x:" }
-        $IsmServ  = if ($IsmServStatus  -eq 4) { ":heavy_check_mark:" } else { ":x:" }
 
         $RunningCount = @(
-            $NTDSStatus,
-            $ADWSStatus,
-            $DFSRStatus,
-            $KDCStatus,
-            $NetlogonStatus,
-            $IsmServStatus
+            $NTDSStatus
         ) | Where-Object { $_ -eq 4 }
 
-        if ($RunningCount.Count -eq 6) {
+        if ($RunningCount.Count -eq 4) {
 
             $Result = ":tada:"
             $SuccessCount++
@@ -156,13 +136,13 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
             $Result = ":warning:"
         }
 
-        $md += "| $Counter | [$StudentID](../$StudentID/README.md) :point_right: $url | $ServerIP | $NTDS | $ADWS | $DFSR | $KDC | $Netlogon | $IsmServ | $Result |"
+        $md += "| $Counter | [$StudentID](../$StudentID/README.md) :point_right: $url | $ServerIP | $NTDS | $Result |"
     }
     catch {
 
         Write-Host "Échec de connexion à $ServerIP : $($_.Exception.Message)" -ForegroundColor Red
 
-        $md += "| $Counter | [$StudentID](../$StudentID/README.md) :point_right: $url | $ServerIP | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |"
+        $md += "| $Counter | [$StudentID](../$StudentID/README.md) :point_right: $url | $ServerIP | :no_entry: | :no_entry: |"
     }
 
     $Counter++
