@@ -7,7 +7,7 @@
 $PSDefaultParameterValues['Set-Content:Encoding'] = 'utf8'
 
 # Autoriser les connexions WinRM
-Set-Item WSMan:\localhost\Client\TrustedHosts -Value "10.7.236.*" -Force
+# Set-Item WSMan:\localhost\Client\TrustedHosts -Value "10.7.236.*" -Force
 
 #!/usr/bin/env pwsh
 # --------------------------------------
@@ -22,10 +22,6 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value "10.7.236.*" -Force
 # VALIDATION
 # --------------------------------------
 
-# Importer les fonctions
-. ../.scripts/functions.ps1
-. ../.scripts/commons.ps1
-
 if (-not $SERVERS) {
     Write-Host "La variable `$SERVERS n'a pas été trouvée dans students.ps1" -ForegroundColor Red
     exit
@@ -34,7 +30,7 @@ if (-not $SERVERS) {
 # Compte administrateur
 $User = "Administrator"
 
-$plain = "Boreal@2026"
+$plain = "Infra@2024"
 $Password = ConvertTo-SecureString $plain -AsPlainText -Force
 
 # --------------------------------------
@@ -71,11 +67,10 @@ $md += "|---|-------------|----|------|------|------|-----|----------|---------|
 # Validation
 # --------------------------------------
 
-$i = 0
 $s = 0
-$counter = 1
+$counter = 0
 
-foreach ($VM in $SERVERS) {
+for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
     $parts = $STUDENTS[$i] -split '\|'
     
@@ -83,22 +78,19 @@ foreach ($VM in $SERVERS) {
     $GitHubID  = $parts[1]
     $AvatarID  = $parts[2]
 
-    $paths  = Get-StudentPaths -StudentID $StudentID
-    $checks = Get-StudentChecks -Paths $paths
-    $url    = Get-GitHubAvatarLink -GitHubID $GitHubID -AvatarID $AvatarID
 
-    $id = $STUDENTS[$i]
+    $id = $StudentID
+    $FILE = "$StudentID/README.md"
+    $ServerIP = $SERVERS[$i]
 
-    $FILE = "$id/README.md"
-
-    Write-Host "Connexion à $VM ..." -ForegroundColor Cyan
+    Write-Host "Connexion à $ServerIP ..." -ForegroundColor Cyan
 
     try {
 
         $Credential = New-Object PSCredential ($User, $Password)
 
         $Session = New-PSSession `
-            -ComputerName $VM `
+            -ComputerName $ServerIP `
             -Credential $Credential
 
         $Services = Invoke-Command -Session $Session -ScriptBlock {
@@ -192,7 +184,7 @@ foreach ($VM in $SERVERS) {
             $Result = ":warning:"
         }
 
-        $md += "| $counter | [$id](../$FILE) $URL | $VM | $NTDS | $ADWS | $DFSR | $KDC | $Netlogon | $IsmServ | $Result |"
+        $md += "| $counter | [$id](../$FILE) $URL | $ServerIP | $NTDS | $ADWS | $DFSR | $KDC | $Netlogon | $IsmServ | $Result |"
 
         Remove-PSSession $Session
     }
@@ -203,11 +195,10 @@ foreach ($VM in $SERVERS) {
         $md += "| $counter | [$id](../$FILE) $URL | $VM | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |"
     }
 
-    $i++
     $counter++
 
     $COUNT = "\$\frac{$s}{$i}$"
-    $STATS = [math]::Round(($s * 100) / $i, 2)
+    $STATS = [math]::Round(($s * 100) / $counter, 2)
     $SUM = "\$\displaystyle\sum_{i=1}^{$i} s_i$"
 }
 

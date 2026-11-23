@@ -1,4 +1,4 @@
-# Precision au 09-11-2026 15:41
+﻿# Precision au 23-11-2026 11:07
 
 | Table des matieres | Description |
 |--------------------|-------------|
@@ -10,45 +10,45 @@
 | Symbole | Signification |
 |----------|-------------|
 | :heavy_check_mark: | Service actif |
-| :x: | Service arrêté ou absent |
+| :x: | Service arrÃªtÃ© ou absent |
 | :no_entry: | Connexion WinRM impossible |
 | :tada: | Tous les services sont actifs |
-| :warning: | Services manquants ou arrêtés |
+| :warning: | Services manquants ou arrÃªtÃ©s |
 
 ## :b: Precision
 
-| # | Boreal :id: | VM | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | Résultat |
+| # | Boreal :id: | VM | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | RÃ©sultat |
 |---|-------------|----|------|------|------|-----|----------|---------|----------|
-| 1 | [300147253|azzed98|232965506](../300147253|azzed98|232965506/README.md) [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | 10.7.237.202 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 2 | [300147866|sofianehadjadj389|205994850](../300147866|sofianehadjadj389|205994850/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994850?s=460&v=4' width=20 height=20></image>](https://github.com/sofianehadjadj389) | 10.7.237.203 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 3 | [300147891|amadbarry96|261496046](../300147891|amadbarry96|261496046/README.md) [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | 10.7.237.204 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 4 | [300150398|iilyastp|205996142](../300150398|iilyastp|205996142/README.md) [<image src='https://avatars0.githubusercontent.com/u/205996142?s=460&v=4' width=20 height=20></image>](https://github.com/iilyastp) | 10.7.237.205 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 5 | [300151722|islamoustani5-collab|261488966](../300151722|islamoustani5-collab|261488966/README.md) [<image src='https://avatars0.githubusercontent.com/u/261488966?s=460&v=4' width=20 height=20></image>](https://github.com/islamoustani5-collab) | 10.7.237.206 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 6 | [300151863|HannibalCarthage|205994935](../300151863|HannibalCarthage|205994935/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994935?s=460&v=4' width=20 height=20></image>](https://github.com/HannibalCarthage) | 10.7.237.207 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 7 | [300152004|danielmananga|218153814](../300152004|danielmananga|218153814/README.md) [<image src='https://avatars0.githubusercontent.com/u/218153814?s=460&v=4' width=20 height=20></image>](https://github.com/danielmananga) | 10.7.237.208 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 8 | [300153405|rekaikkhaled|261492660](../300153405|rekaikkhaled|261492660/README.md) [<image src='https://avatars0.githubusercontent.com/u/261492660?s=460&v=4' width=20 height=20></image>](https://github.com/rekaikkhaled) | 10.7.237.209 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 9 | [300153416|rouabahkhalil28-crypto|262935334](../300153416|rouabahkhalil28-crypto|262935334/README.md) [<image src='https://avatars0.githubusercontent.com/u/262935334?s=460&v=4' width=20 height=20></image>](https://github.com/rouabahkhalil28-crypto) | 10.7.237.210 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 10 | [300155462|zakariamamssi05|231498971](../300155462|zakariamamssi05|231498971/README.md) [<image src='https://avatars0.githubusercontent.com/u/231498971?s=460&v=4' width=20 height=20></image>](https://github.com/zakariamamssi05) | 10.7.237.211 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 11 | [300156534|salhiwalid540-hue|261489191](../300156534|salhiwalid540-hue|261489191/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489191?s=460&v=4' width=20 height=20></image>](https://github.com/salhiwalid540-hue) | 10.7.237.212 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 12 | [300157250|jeanpi-erre01|261491627](../300157250|jeanpi-erre01|261491627/README.md) [<image src='https://avatars0.githubusercontent.com/u/261491627?s=460&v=4' width=20 height=20></image>](https://github.com/jeanpi-erre01) | 10.7.237.213 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 13 | [300157307|amaradjida7-hub|261494517](../300157307|amaradjida7-hub|261494517/README.md) [<image src='https://avatars0.githubusercontent.com/u/261494517?s=460&v=4' width=20 height=20></image>](https://github.com/amaradjida7-hub) | 10.7.237.214 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 14 | [300157423|gaya-994|261497291](../300157423|gaya-994|261497291/README.md) [<image src='https://avatars0.githubusercontent.com/u/261497291?s=460&v=4' width=20 height=20></image>](https://github.com/gaya-994) | 10.7.237.215 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 15 | [300157606|ouahiba1994|261497731](../300157606|ouahiba1994|261497731/README.md) [<image src='https://avatars0.githubusercontent.com/u/261497731?s=460&v=4' width=20 height=20></image>](https://github.com/ouahiba1994) | 10.7.237.216 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 16 | [300157727|rayan23082001|262933367](../300157727|rayan23082001|262933367/README.md) [<image src='https://avatars0.githubusercontent.com/u/262933367?s=460&v=4' width=20 height=20></image>](https://github.com/rayan23082001) | 10.7.237.217 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 17 | [300157733|albachiralmouhamad|261491303](../300157733|albachiralmouhamad|261491303/README.md) [<image src='https://avatars0.githubusercontent.com/u/261491303?s=460&v=4' width=20 height=20></image>](https://github.com/albachiralmouhamad) | 10.7.237.218 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 18 | [300158085|kevinmayele-ai|258312358](../300158085|kevinmayele-ai|258312358/README.md) [<image src='https://avatars0.githubusercontent.com/u/258312358?s=460&v=4' width=20 height=20></image>](https://github.com/kevinmayele-ai) | 10.7.237.219 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 19 | [300159180|abdenourzourane-cpu|261489848](../300159180|abdenourzourane-cpu|261489848/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489848?s=460&v=4' width=20 height=20></image>](https://github.com/abdenourzourane-cpu) | 10.7.237.220 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 20 | [300159195|islemtd3-hue|261489005](../300159195|islemtd3-hue|261489005/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489005?s=460&v=4' width=20 height=20></image>](https://github.com/islemtd3-hue) | 10.7.237.221 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 21 | [300159203|riadhsahraoui|261489597](../300159203|riadhsahraoui|261489597/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489597?s=460&v=4' width=20 height=20></image>](https://github.com/riadhsahraoui) | 10.7.237.222 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 22 | [300159437|bob19142005|203893881](../300159437|bob19142005|203893881/README.md) [<image src='https://avatars0.githubusercontent.com/u/203893881?s=460&v=4' width=20 height=20></image>](https://github.com/bob19142005) | 10.7.237.223 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 23 | [300159463|hammahichem99|261489495](../300159463|hammahichem99|261489495/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489495?s=460&v=4' width=20 height=20></image>](https://github.com/hammahichem99) | 10.7.237.224 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 24 | [300159672|1999amadou03-star|233241856](../300159672|1999amadou03-star|233241856/README.md) [<image src='https://avatars0.githubusercontent.com/u/233241856?s=460&v=4' width=20 height=20></image>](https://github.com/1999amadou03-star) | 10.7.237.225 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 25 | [300159693|mazigh-2000|288084942](../300159693|mazigh-2000|288084942/README.md) [<image src='https://avatars0.githubusercontent.com/u/288084942?s=460&v=4' width=20 height=20></image>](https://github.com/mazigh-2000) | 10.7.237.226 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 26 | [300159887|hammichebillal06-dot|261490027](../300159887|hammichebillal06-dot|261490027/README.md) [<image src='https://avatars0.githubusercontent.com/u/261490027?s=460&v=4' width=20 height=20></image>](https://github.com/hammichebillal06-dot) | 10.7.237.227 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 27 | [300160006|maimouna247|261489041](../300160006|maimouna247|261489041/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489041?s=460&v=4' width=20 height=20></image>](https://github.com/maimouna247) | 10.7.237.228 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 28 | [300160424|youcef-1994|261502136](../300160424|youcef-1994|261502136/README.md) [<image src='https://avatars0.githubusercontent.com/u/261502136?s=460&v=4' width=20 height=20></image>](https://github.com/youcef-1994) | 10.7.237.229 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 29 | [300160504|Mmounir07|261492337](../300160504|Mmounir07|261492337/README.md) [<image src='https://avatars0.githubusercontent.com/u/261492337?s=460&v=4' width=20 height=20></image>](https://github.com/Mmounir07) | 10.7.237.230 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 30 | [300160733|belhadiyanis200-a11y|261489188](../300160733|belhadiyanis200-a11y|261489188/README.md) [<image src='https://avatars0.githubusercontent.com/u/261489188?s=460&v=4' width=20 height=20></image>](https://github.com/belhadiyanis200-a11y) | 10.7.237.231 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
-| 31 | [300160862|cherifyamna|261494322](../300160862|cherifyamna|261494322/README.md) [<image src='https://avatars0.githubusercontent.com/u/261494322?s=460&v=4' width=20 height=20></image>](https://github.com/cherifyamna) | 10.7.237.232 | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 0 | [300147253](../300147253/README.md)  | 10.7.237.202 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 1 | [300147866](../300147866/README.md)  | 10.7.237.203 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 2 | [300147891](../300147891/README.md)  | 10.7.237.204 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 3 | [300150398](../300150398/README.md)  | 10.7.237.205 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 4 | [300151722](../300151722/README.md)  | 10.7.237.206 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 5 | [300151863](../300151863/README.md)  | 10.7.237.207 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 6 | [300152004](../300152004/README.md)  | 10.7.237.208 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 7 | [300153405](../300153405/README.md)  | 10.7.237.209 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 8 | [300153416](../300153416/README.md)  | 10.7.237.210 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 9 | [300155462](../300155462/README.md)  | 10.7.237.211 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 10 | [300156534](../300156534/README.md)  | 10.7.237.212 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 11 | [300157250](../300157250/README.md)  | 10.7.237.213 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 12 | [300157307](../300157307/README.md)  | 10.7.237.214 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 13 | [300157423](../300157423/README.md)  | 10.7.237.215 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 14 | [300157606](../300157606/README.md)  | 10.7.237.216 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 15 | [300157727](../300157727/README.md)  | 10.7.237.217 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 16 | [300157733](../300157733/README.md)  |  | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 17 | [300158085](../300158085/README.md)  | 10.7.237.219 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 18 | [300159180](../300159180/README.md)  | 10.7.237.220 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 19 | [300159195](../300159195/README.md)  | 10.7.237.221 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 20 | [300159203](../300159203/README.md)  | 10.7.237.222 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 21 | [300159437](../300159437/README.md)  | 10.7.237.223 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 22 | [300159463](../300159463/README.md)  | 10.7.237.224 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 23 | [300159672](../300159672/README.md)  | 10.7.237.225 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 24 | [300159693](../300159693/README.md)  |  | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
+| 25 | [300159887](../300159887/README.md)  | 10.7.237.227 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 26 | [300160006](../300160006/README.md)  | 10.7.237.228 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 27 | [300160424](../300160424/README.md)  | 10.7.237.229 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 28 | [300160504](../300160504/README.md)  | 10.7.237.230 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 29 | [300160733](../300160733/README.md)  | 10.7.237.231 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
+| 30 | [300160862](../300160862/README.md)  | 10.7.237.232 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
 
-| :abacus: | \$\frac{0}{31}$ = 0% | | | | | | | | \$\displaystyle\sum_{i=1}^{31} s_i$ = 0 |
+| :abacus: | \$\frac{0}{30}$ = 0% | | | | | | | | \$\displaystyle\sum_{i=1}^{30} s_i$ = 0 |
