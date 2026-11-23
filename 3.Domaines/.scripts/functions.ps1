@@ -37,11 +37,11 @@ function Write-LabHeader {
     Write-Output ""
 
     if ($FeedbackLookup.Count -gt 0) {
-        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :100: | :speech_balloon: | :oil_drum:|"
+        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :100: | :speech_balloon: | :link: IP |"
         Write-Output "|------|-------------|----|---|----|----|---|"
     }
     else {
-        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :oil_drum: |"
+        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :link: IP |"
         Write-Output "|------|-------------|----|---|---|"
     }
 }
