@@ -61,7 +61,6 @@ $md += "|--------|-------------|-----------------------------|------------------
 # ------------------------------
 # Boucle sur chaque étudiant
 # ------------------------------
-$Counter = 1
 
 for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
@@ -115,7 +114,9 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
     # ------------------------------
     # Ligne Markdown
     # ------------------------------
-    $md += "| $Counter | [$StudentID](../$StudentID/README.md) $url | \\\\$ServerIP\\SharedResources | $statusIcon | $($NETBIOS[$i]) | $rdpIcon |"
+    $md += "| $i + 1 | [$StudentID](../$StudentID/README.md) $url | \\\\$ServerIP\\SharedResources | $statusIcon | $($NETBIOS[$i]) | $rdpIcon |"
+    
+    $Counter
 }
 
 # ------------------------------
