@@ -1,4 +1,4 @@
-﻿# Precision au 23-11-2026 12:07
+﻿# Precision au 23-11-2026 12:11
 
 | Table des matieres | Description |
 |--------------------|-------------|
@@ -50,4 +50,4 @@
 | 29 | [300160504](../300160504/README.md) | 10.7.237.230 | :x: | :x: | :x: | :x: | :x: | :x: | :warning: |
 | 30 | [300160733](../300160733/README.md) | 10.7.237.231 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :tada: |
 | 31 | [300160862](../300160862/README.md) | 10.7.237.232 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :tada: |
-| :abacus: | $\frac{22}{31}$ = 70.97% | | | | | | | | $\displaystyle\sum_{i=1}^{31} s_i$ = 22 |
+| :abacus: | $\displaystyle\sum_{i=1}^{31} s_i$ = 22 :chart_with_upwards_trend: = 70.97% | | | | | | | | |

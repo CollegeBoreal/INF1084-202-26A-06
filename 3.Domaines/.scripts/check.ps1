@@ -175,7 +175,7 @@ else {
     $Percentage = 0
 }
 
-$md += "| :abacus: | `$\frac{$SuccessCount}{$TotalStudents}$ = $Percentage% | | | | | | | | `$\displaystyle\sum_{i=1}^{$TotalStudents} s_i$ = $SuccessCount |"
+$md += "| :abacus: | `$\displaystyle\sum_{i=1}^{$TotalStudents} s_i$ = $SuccessCount :chart_with_upwards_trend: = $Percentage% | | | | | | | | |"
 
 # --------------------------------------
 # Export
