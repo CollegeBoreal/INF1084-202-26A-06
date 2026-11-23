@@ -74,8 +74,13 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
     $parts = $STUDENTS[$i] -split '\|'
 
-    $StudentID = $parts[0]
     $ServerIP  = $SERVERS[$i]
+
+    $StudentID = $parts[0]
+    $GitHubID  = $parts[1]
+    $AvatarID  = $parts[2]
+
+    $url    = Get-GitHubAvatarLink -GitHubID $GitHubID -AvatarID $AvatarID
 
     Write-Host ""
     Write-Host "Connexion à $ServerIP ..." -ForegroundColor Cyan
@@ -143,7 +148,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
             $Result = ":warning:"
         }
 
-        $md += "| $Counter | [$StudentID](../$StudentID/README.md) | $ServerIP | $NTDS | $ADWS | $DFSR | $KDC | $Netlogon | $IsmServ | $Result |"
+        $md += "| $Counter | [$StudentID](../$StudentID/README.md) :point_right: $url | $ServerIP | $NTDS | $ADWS | $DFSR | $KDC | $Netlogon | $IsmServ | $Result |"
     }
     catch {
 
