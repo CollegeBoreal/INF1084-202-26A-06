@@ -82,7 +82,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
     # ------------------------------
     $rdpIcon = ":x:"   # valeur par défaut
     try {
-        if (Test-RDPSession -ComputerName $vm -Username "$($NETBIOS[$i])\Etudiant1" -Password $plainPassword) {
+        if (Test-RDPSession -ComputerName $ServerIP -Username "$($NETBIOS[$i])\Etudiant1" -Password $plainPassword) {
             $rdpIcon = ":heavy_check_mark:"
         } else {
             $rdpIcon = ":x:"
@@ -90,13 +90,13 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
     }
     catch {
         $rdpIcon = ":no_entry:"
-        Write-Host "Erreur RDP pour $id@$vm" -ForegroundColor Red
+        Write-Host "Erreur RDP pour $StudentID@$ServerIP" -ForegroundColor Red
     }
 
     # ------------------------------
     # Test SMB
     # ------------------------------
-    $sharePath = "\\$vm\SharedResources"
+    $sharePath = "\\$ServerIP\SharedResources"
     $CredsSMB = New-Object System.Management.Automation.PSCredential ("Etudiant1", $Password)
     $driveName = "S"
     $statusIcon = ":x:"
@@ -115,7 +115,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
     # ------------------------------
     # Ligne Markdown
     # ------------------------------
-    $md += "| $i | [$id](../$FILE) $URL | \\\\$vm\\SharedResources | $statusIcon | $($NETBIOS[$i]) | $rdpIcon |"
+    $md += "| $Counter | [$StudentID](../$StudentID/README.md) $url | \\\\$ServerIP\\SharedResources | $statusIcon | $($NETBIOS[$i]) | $rdpIcon |"
 }
 
 # ------------------------------
