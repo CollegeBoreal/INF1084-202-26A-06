@@ -85,6 +85,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
         $Services = Invoke-Command `
             -ComputerName $ServerIP `
             -Credential $Credential `
+            -ErrorAction Stop `
             -ScriptBlock {
 
                 Get-Service `
@@ -95,15 +96,12 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
                     Netlogon,
                     IsmServ `
                     -ErrorAction SilentlyContinue |
-                Select-Object Name, Status
+                Select-Object Name,Status
             }
 
-        # --------------------------------------
-        # Conversion des statuts
-        #
-        # 1 = Stopped
-        # 4 = Running
-        # --------------------------------------
+        if (-not $Services) {
+            throw "Aucun service retourné."
+        }
 
         $NTDSStatus     = ($Services | Where-Object Name -eq "NTDS").Status
         $ADWSStatus     = ($Services | Where-Object Name -eq "ADWS").Status
