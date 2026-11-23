@@ -102,7 +102,8 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
             -ScriptBlock {
 
                 Get-Service `
-                    NTDS `
+                    NTDS,
+                    Netlogon `
                     -ErrorAction SilentlyContinue |
                 Select-Object Name,Status
             }
@@ -112,16 +113,20 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
         }
 
         $NTDSStatus     = ($Services | Where-Object Name -eq "NTDS").Status
+        $NetlogonStatus = ($Services | Where-Object Name -eq "Netlogon").Status
 
         Write-Host "NTDS     : $NTDSStatus"
+        Write-Host "Netlogon : $NetlogonStatus"
 
         $NTDS     = if ($NTDSStatus     -eq 4) { ":heavy_check_mark:" } else { ":x:" }
+        $Netlogon = if ($NetlogonStatus -eq 4) { ":heavy_check_mark:" } else { ":x:" }
 
         $RunningCount = @(
-            $NTDSStatus
+            $NTDSStatus,
+            $NetlogonStatus
         ) | Where-Object { $_ -eq 4 }
 
-        if ($RunningCount.Count -eq 1) {
+        if ($RunningCount.Count -eq 2) {
 
             $Result = ":tada:"
             $SuccessCount++
