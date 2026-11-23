@@ -2,36 +2,35 @@
 # Validation INF1084 - Services Windows et AD DS
 # --------------------------------------
 
-# Forcer UTF-8 dans tout le script
+# Forcer UTF-8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $PSDefaultParameterValues['Set-Content:Encoding'] = 'utf8'
 
-# Autoriser les connexions WinRM
-# Set-Item WSMan:\localhost\Client\TrustedHosts -Value "10.7.236.*" -Force
-
-#!/usr/bin/env pwsh
-# --------------------------------------
-# Dynamic participation script
-# --------------------------------------
-
-
-# Pass parameter to students.ps1
+# Charger les étudiants
 . ../.scripts/students.ps1
-
-# --------------------------------------
-# VALIDATION
-# --------------------------------------
 
 if (-not $SERVERS) {
     Write-Host "La variable `$SERVERS n'a pas été trouvée dans students.ps1" -ForegroundColor Red
     exit
 }
 
-# Compte administrateur
+# --------------------------------------
+# Authentification
+# --------------------------------------
+
 $User = "Administrator"
 
 $plain = "Infra@2024"
-$Password = ConvertTo-SecureString $plain -AsPlainText -Force
+
+$Password = ConvertTo-SecureString `
+    $plain `
+    -AsPlainText `
+    -Force
+
+$Credential = New-Object System.Management.Automation.PSCredential (
+    $User,
+    $Password
+)
 
 # --------------------------------------
 # README
@@ -53,126 +52,82 @@ $md += ""
 $md += "| Symbole | Signification |"
 $md += "|----------|-------------|"
 $md += "| :heavy_check_mark: | Service actif |"
-$md += "| :x: | Service arrêté ou absent |"
+$md += "| :x: | Service arrete ou absent |"
 $md += "| :no_entry: | Connexion WinRM impossible |"
 $md += "| :tada: | Tous les services sont actifs |"
-$md += "| :warning: | Services manquants ou arrêtés |"
+$md += "| :warning: | Services manquants ou arretes |"
 $md += ""
 $md += "## :b: Precision"
 $md += ""
-$md += "| # | Boreal :id: | VM | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | Résultat |"
-$md += "|---|-------------|----|------|------|------|-----|----------|---------|----------|"
+$md += "| # | Boreal ID | VM | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | Resultat |"
+$md += "|---|-----------|----|------|------|------|-----|----------|---------|----------|"
 
 # --------------------------------------
 # Validation
 # --------------------------------------
 
 $s = 0
-$counter = 0
+$counter = 1
 
 for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
     $parts = $STUDENTS[$i] -split '\|'
-    
+
     $StudentID = $parts[0]
-    $GitHubID  = $parts[1]
-    $AvatarID  = $parts[2]
-
-
-    $id = $StudentID
-    $FILE = "$StudentID/README.md"
     $ServerIP = $SERVERS[$i]
 
+    Write-Host ""
     Write-Host "Connexion à $ServerIP ..." -ForegroundColor Cyan
 
     try {
 
-        $Credential = New-Object PSCredential ($User, $Password)
-
-        $Session = New-PSSession `
+        $Services = Invoke-Command `
             -ComputerName $ServerIP `
-            -Credential $Credential
+            -Credential $Credential `
+            -ScriptBlock {
 
-        $Services = Invoke-Command -Session $Session -ScriptBlock {
-
-            $List = @(
-                "NTDS",
-                "ADWS",
-                "DFSR",
-                "KDC",
-                "Netlogon",
-                "IsmServ"
-            )
-
-            $Results = @{}
-
-            foreach ($Service in $List) {
-
-                $Obj = Get-Service `
-                    -Name $Service `
-                    -ErrorAction SilentlyContinue
-
-                if ($null -eq $Obj) {
-                    $Results[$Service] = "Missing"
-                }
-                else {
-                    $Results[$Service] = $Obj.Status
-                }
+                Get-Service `
+                    NTDS,
+                    ADWS,
+                    DFSR,
+                    KDC,
+                    Netlogon,
+                    IsmServ `
+                    -ErrorAction SilentlyContinue |
+                Select-Object Name,Status
             }
 
-            return $Results
-        }
+        $NTDSStatus     = ($Services | Where-Object Name -eq "NTDS").Status
+        $ADWSStatus     = ($Services | Where-Object Name -eq "ADWS").Status
+        $DFSRStatus     = ($Services | Where-Object Name -eq "DFSR").Status
+        $KDCStatus      = ($Services | Where-Object Name -eq "KDC").Status
+        $NetlogonStatus = ($Services | Where-Object Name -eq "Netlogon").Status
+        $IsmServStatus  = ($Services | Where-Object Name -eq "IsmServ").Status
 
-        $NTDS = if ($Services["NTDS"] -eq "Running") {
-            ":heavy_check_mark:"
-        }
-        else {
-            ":x:"
-        }
+        Write-Host "NTDS     : $NTDSStatus"
+        Write-Host "ADWS     : $ADWSStatus"
+        Write-Host "DFSR     : $DFSRStatus"
+        Write-Host "KDC      : $KDCStatus"
+        Write-Host "Netlogon : $NetlogonStatus"
+        Write-Host "IsmServ  : $IsmServStatus"
 
-        $ADWS = if ($Services["ADWS"] -eq "Running") {
-            ":heavy_check_mark:"
-        }
-        else {
-            ":x:"
-        }
-
-        $DFSR = if ($Services["DFSR"] -eq "Running") {
-            ":heavy_check_mark:"
-        }
-        else {
-            ":x:"
-        }
-
-        $KDC = if ($Services["KDC"] -eq "Running") {
-            ":heavy_check_mark:"
-        }
-        else {
-            ":x:"
-        }
-
-        $Netlogon = if ($Services["Netlogon"] -eq "Running") {
-            ":heavy_check_mark:"
-        }
-        else {
-            ":x:"
-        }
-
-        $IsmServ = if ($Services["IsmServ"] -eq "Running") {
-            ":heavy_check_mark:"
-        }
-        else {
-            ":x:"
-        }
+        $NTDS = if ($NTDSStatus -eq "Running") { ":heavy_check_mark:" } else { ":x:" }
+        $ADWS = if ($ADWSStatus -eq "Running") { ":heavy_check_mark:" } else { ":x:" }
+        $DFSR = if ($DFSRStatus -eq "Running") { ":heavy_check_mark:" } else { ":x:" }
+        $KDC = if ($KDCStatus -eq "Running") { ":heavy_check_mark:" } else { ":x:" }
+        $Netlogon = if ($NetlogonStatus -eq "Running") { ":heavy_check_mark:" } else { ":x:" }
+        $IsmServ = if ($IsmServStatus -eq "Running") { ":heavy_check_mark:" } else { ":x:" }
 
         $RunningCount = @(
-            $Services["NTDS"],
-            $Services["ADWS"],
-            $Services["DFSR"],
-            $Services["KDC"],
-            $Services["Netlogon"],
-            $Services["IsmServ"]
-        ) | Where-Object { $_ -eq "Running" }
+            $NTDSStatus,
+            $ADWSStatus,
+            $DFSRStatus,
+            $KDCStatus,
+            $NetlogonStatus,
+            $IsmServStatus
+        ) | Where-Object {
+            $_ -eq "Running"
+        }
 
         if ($RunningCount.Count -eq 6) {
 
@@ -184,23 +139,40 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
             $Result = ":warning:"
         }
 
-        $md += "| $counter | [$id](../$FILE) $URL | $ServerIP | $NTDS | $ADWS | $DFSR | $KDC | $Netlogon | $IsmServ | $Result |"
-
-        Remove-PSSession $Session
+        $md += "| $counter | [$StudentID](../$StudentID/README.md) | $ServerIP | $NTDS | $ADWS | $DFSR | $KDC | $Netlogon | $IsmServ | $Result |"
     }
     catch {
 
-        Write-Host "Échec de connexion à $VM : $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "Échec de connexion à $ServerIP : $($_.Exception.Message)" -ForegroundColor Red
 
-        $md += "| $counter | [$id](../$FILE) $URL | $VM | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |"
+        $md += "| $counter | [$StudentID](../$StudentID/README.md) | $ServerIP | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |"
     }
 
     $counter++
-
-    $COUNT = "\$\frac{$s}{$i}$"
-    $STATS = [math]::Round(($s * 100) / $counter, 2)
-    $SUM = "\$\displaystyle\sum_{i=1}^{$i} s_i$"
 }
+
+# --------------------------------------
+# Sommaire
+# --------------------------------------
+
+$TotalStudents = $counter - 1
+
+if ($TotalStudents -gt 0) {
+
+    $COUNT = "\$\frac{$s}{$TotalStudents}$"
+
+    $STATS = [math]::Round(
+        ($s * 100) / $TotalStudents,
+        2
+    )
+}
+else {
+
+    $COUNT = "\$\frac{0}{0}$"
+    $STATS = 0
+}
+
+$SUM = "\$\displaystyle\sum_{i=1}^{$TotalStudents} s_i$"
 
 $md += ""
 $md += "| :abacus: | $COUNT = $STATS% | | | | | | | | $SUM = $s |"
@@ -213,4 +185,6 @@ $md | Set-Content `
     -Path ".scripts/Check.md" `
     -Encoding UTF8
 
+Write-Host ""
 Write-Host "README.md généré avec succès !" -ForegroundColor Green
+Write-Host "$s / $TotalStudents étudiants ont tous les services AD actifs." -ForegroundColor Green
