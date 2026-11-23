@@ -175,7 +175,6 @@ else {
     $Percentage = 0
 }
 
-$md += ""
 $md += "| :abacus: | `$\frac{$SuccessCount}{$TotalStudents}$ = $Percentage% | | | | | | | | `$\displaystyle\sum_{i=1}^{$TotalStudents} s_i$ = $SuccessCount |"
 
 # --------------------------------------
