@@ -4,27 +4,28 @@
 |-------------------------------|---------------------------------------------------------|
 | :a: [Présence](#a-présence)   | L'étudiant.e a fait son travail    :heavy_check_mark:   |
 | :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |
+
 ## Légende
 
-| Colonne   | Signification              |
-|-----------|----------------------------|
-| 📑        | Fichier README.md         |
-| 🖼️        | Répertoire images         |
-| 💯        | Appréciation              |
-| 💬        | Commentaires              |
+| Colonne           | Signification              |
+|-------------------|----------------------------|
+| :bookmark_tabs:   | Fichier README.md         |
+| :framed_picture:  | Répertoire images         |
+| :100:             | Appréciation              |
+| :speech_balloon:  | Commentaires              |
 
 | Signe              | Signification                               |
 |--------------------|----------------------------------------------|
-| ❌                 | Rien dans README.md                        |
-| 🥉                 | Fichiers services:hash:.ps1 présents       |
-| 🥈                 | Fichiers services:hash:.ps1 Exécutés       |
-| 🥇                 | Répertoire et fichier C:\Logs présents     |
-| 🏆                 | README.md impeccable                       |
+| :x:                | Rien dans README.md                        |
+| :3rd_place_medal:  | Fichiers services:hash:.ps1 présents       |
+| :2nd_place_medal:  | Fichiers services:hash:.ps1 Exécutés.      |
+| :1st_place_medal:  | Répertoire et fichier C:\Logs présents.    |
+| :trophy:           | README.md impeccable                       |
 
 ## :a: Présence
 
-|:hash:| Boréal :id: | README.md | images | App | Commentaires | :link: IP |
-|------|-------------|-----------|--------|-----|--------------|-----------|
+|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :100: | :speech_balloon: | :wavy_dash: IP |
+|------|-------------|----|---|----|----|
 | 1 | [300147253](../300147253/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | :1st_place_medal: | :heavy_check_mark: | :x: | :x: à corriger | :wavy_dash: 10.7.237.202  |
 | 2 | [300147866](../300147866/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994850?s=460&v=4' width=20 height=20></image>](https://github.com/sofianehadjadj389) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.203  |
 | 3 | [300147891](../300147891/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | :1st_place_medal: | :heavy_check_mark: | :x: | :x: à corriger | :wavy_dash: 10.7.237.204  |

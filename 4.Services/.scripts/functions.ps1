@@ -7,23 +7,25 @@ function Write-LabParticipationHeader {
     Write-Output "| :a: [Présence](#a-présence)   | L'étudiant.e a fait son travail    :heavy_check_mark:   |"
     Write-Output "| :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |"
 
+
+    Write-Output ""
     Write-Output "## Légende"
     Write-Output ""
-    Write-Output "| Colonne   | Signification              |"
-    Write-OUtput "|-----------|----------------------------|"
-    Write-OUtput "| 📑        | Fichier README.md         |"
-    Write-OUtput "| 🖼️        | Répertoire images         |"
-    Write-OUtput "| 💯        | Appréciation              |"
-    Write-OUtput "| 💬        | Commentaires              |"
+    Write-Output "| Colonne           | Signification              |"
+    Write-OUtput "|-------------------|----------------------------|"
+    Write-OUtput "| :bookmark_tabs:   | Fichier README.md         |"
+    Write-OUtput "| :framed_picture:  | Répertoire images         |"
+    Write-OUtput "| :100:             | Appréciation              |"
+    Write-OUtput "| :speech_balloon:  | Commentaires              |"
 
     Write-Output ""
     Write-Output "| Signe              | Signification                               |"
     Write-Output "|--------------------|----------------------------------------------|"
-    Write-Output "| ❌                 | Rien dans `README.md`                        |"
-    Write-Output "| 🥉                 | Fichiers `services:hash:.ps1` présents       |"
-    Write-Output "| 🥈                 | Fichiers `services:hash:.ps1` Exécutés       |"
-    Write-Output "| 🥇                 | Répertoire et fichier `C:\Logs` présents     |"
-    Write-Output "| 🏆                 | `README.md` impeccable                       |"
+    Write-Output "| :x:                | Rien dans `README.md`                        |"
+    Write-Output "| :3rd_place_medal:  | Fichiers `services:hash:.ps1` présents       |"
+    Write-Output "| :2nd_place_medal:  | Fichiers `services:hash:.ps1` Exécutés.      |"
+    Write-Output "| :1st_place_medal:  | Répertoire et fichier `C:\Logs` présents.    |"
+    Write-Output "| :trophy:           | `README.md` impeccable                       |"
 
 }
 
@@ -37,12 +39,12 @@ function Write-LabHeader {
     Write-Output ""
 
     if ($FeedbackLookup.Count -gt 0) {
-        Write-Output "|:hash:| Boréal :id: | README.md | images | App | Commentaires | :link: IP |"
-        Write-Output "|------|-------------|-----------|--------|-----|--------------|-----------|"
+        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :100: | :speech_balloon: | :wavy_dash: IP |"
+        Write-Output "|------|-------------|----|---|----|----|"
     }
     else {
-        Write-Output "|:hash:| Boréal :id: | README.md | images | :link: IP |"
-        Write-Output "|------|-------------|-----------|--------|-----------|"
+        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :wavy_dash: IP |"
+        Write-Output "|------|-------------|----|---|"
     }
 }
 
