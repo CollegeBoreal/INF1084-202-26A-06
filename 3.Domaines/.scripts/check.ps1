@@ -6,11 +6,19 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $PSDefaultParameterValues['Set-Content:Encoding'] = 'utf8'
 
+# Pass parameter to students.ps1
+. ../.scripts/students.ps1
+
 # --------------------------------------
-# Chargement des étudiants
+# VALIDATION
 # --------------------------------------
 
-. ../.scripts/students.ps1
+# Importer les fonctions
+. ../.scripts/functions.ps1
+. ../.scripts/commons.ps1
+
+# Importer les fonctions du lab
+. .scripts/functions.ps1
 
 if (-not $SERVERS) {
     Write-Host "La variable `$SERVERS n'a pas été trouvée dans students.ps1" -ForegroundColor Red
