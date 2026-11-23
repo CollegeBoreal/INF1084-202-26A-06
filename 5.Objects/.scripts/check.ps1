@@ -23,8 +23,8 @@ $PSDefaultParameterValues['Set-Content:Encoding'] = 'utf8'
 # Charger la fonction si ce n'est pas déjà fait
 . .\.scripts\Test-RDPSession.ps1
 
-if (-not $SERVERS -or -not $ETUDIANTS) {
-    Write-Host "Les variables `$SERVERS ou `$ETUDIANTS n'ont pas été trouvées dans students.ps1" -ForegroundColor Red
+if (-not $SERVERS -or -not $STUDENTS) {
+    Write-Host "Les variables `$SERVERS ou `$STUDENTS n'ont pas été trouvées dans students.ps1" -ForegroundColor Red
     exit
 }
 
