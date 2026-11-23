@@ -1,7 +1,9 @@
 # 🌐 **Domaines - Active Directory (AD)**
 
-
-[:tada: Participation](.scripts/Participation.md)
+|:hash: | Fonctions                                          |
+|-------|:---------------------------------------------------|
+| :one: | [:tada: Participation](.scripts/Participation.md)  |
+| :two: | [:checkered_flag: Verification](.scripts/Check.md) |
 
 <details>
 <summary>📚 Table des matières</summary>
