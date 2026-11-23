@@ -6,8 +6,19 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $PSDefaultParameterValues['Set-Content:Encoding'] = 'utf8'
 
-# Charger la liste des étudiants et serveurs depuis students.ps1
+# Pass parameter to students.ps1
 . ../.scripts/students.ps1
+
+# --------------------------------------
+# VALIDATION
+# --------------------------------------
+
+# Importer les fonctions
+. ../.scripts/functions.ps1
+. ../.scripts/commons.ps1
+
+# Importer les fonctions du lab
+. .scripts/functions.ps1
 
 # Charger la fonction si ce n'est pas déjà fait
 . .\.scripts\Test-RDPSession.ps1
@@ -50,14 +61,21 @@ $md += "|--------|-------------|-----------------------------|------------------
 # ------------------------------
 # Boucle sur chaque étudiant
 # ------------------------------
+$Counter = 1
+
 for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 
-    $URL = "[<image src='https://avatars0.githubusercontent.com/u/$($AVATARS[$i])?s=460&v=4' width=20 height=20></image>](https://github.com/$($IDS[$i]))"    
-    $id = $STUDENTS[$i]
-    $FILE = "$id/README.md"
-    $vm = $SERVERS[$i]
+    $parts = $STUDENTS[$i] -split '\|'
 
-    Write-Host "Test pour $id sur $vm..." -ForegroundColor Cyan
+    $ServerIP  = $SERVERS[$i]
+
+    $StudentID = $parts[0]
+    $GitHubID  = $parts[1]
+    $AvatarID  = $parts[2]
+
+    $url    = Get-GitHubAvatarLink -GitHubID $GitHubID -AvatarID $AvatarID
+
+    Write-Host "Test pour $StudentID sur $ServerIP..." -ForegroundColor Cyan
 
     # ------------------------------
     # Test RDP GUI avec Test-RDPSession
