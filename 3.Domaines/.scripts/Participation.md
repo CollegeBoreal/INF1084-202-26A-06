@@ -6,25 +6,25 @@
 | :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |
 ## Légende
 
-| Colonne   | Signification              |
-|-----------|----------------------------|
-| 📑        | Fichier README.md         |
-| 🖼️        | Répertoire images         |
-| 💯        | Appréciation              |
-| 💬        | Commentaires              |
+| Colonne           | Signification              |
+|-------------------|----------------------------|
+| :bookmark_tabs:   | Fichier README.md         |
+| :framed_picture:  | Répertoire images         |
+| :100:             | Appréciation              |
+| :speech_balloon:  | Commentaires              |
 
 | Signe              | Signification                               |
 |--------------------|----------------------------------------------|
-| ❌                 | Rien dans README.md                        |
-| 🥉                 | Rename-Computer -NewName 'SRV🆔'             |
-| 🥈                 | Install-WindowsFeature AD-Domain-Services    |
-| 🥇                 | Install-ADDSForest -DomainName DC🆔.local'  |
-| 🏆                 | README.md impeccable                       |
+| :x:                 | Rien dans README.md                        |
+| :3rd_place_medal:                 | Rename-Computer -NewName 'SRV:id:'             |
+| :2nd_place_medal:                 | Install-WindowsFeature AD-Domain-Services    |
+| :1st_place_medal:                | Install-ADDSForest -DomainName DC:id:.local'  |
+| :trophy:                 | README.md impeccable                       |
 
 ## :a: Présence
 
-|:hash:| Boréal :id: | 📑 | 🖼️ | 💯 | 💬 | :link: IP |
-|------|-------------|----|----|-----|----|-----------|
+|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :100: | :speech_balloon: |
+|------|-------------|----|---|----|----|
 | 1 | [300147253](../300147253/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | :2nd_place_medal: | :heavy_check_mark: | 🥇 | 1️⃣ Soigner la documentation | :wavy_dash: 10.7.237.202  |
 | 2 | [300147866](../300147866/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994850?s=460&v=4' width=20 height=20></image>](https://github.com/sofianehadjadj389) | :x: | :x: | :x: | 1️⃣ Rien à corriger | :wavy_dash: 10.7.237.203  |
 | 3 | [300147891](../300147891/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | :1st_place_medal: | :heavy_check_mark: | 🏆 | 1️⃣ Bien | :wavy_dash: 10.7.237.204  |
@@ -56,4 +56,4 @@
 | 29 | [300160504](../300160504/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261492337?s=460&v=4' width=20 height=20></image>](https://github.com/Mmounir07) | :x: | :x: | :x: | 1️⃣ Rien à corriger | :wavy_dash: 10.7.237.230  |
 | 30 | [300160733](../300160733/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261489188?s=460&v=4' width=20 height=20></image>](https://github.com/belhadiyanis200-a11y) | :1st_place_medal: | :heavy_check_mark: | 🏆 | 1️⃣ Bien | :wavy_dash: 10.7.237.231  |
 | 31 | [300160862](../300160862/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261494322?s=460&v=4' width=20 height=20></image>](https://github.com/cherifyamna) | :1st_place_medal: | :heavy_check_mark: | 🏆 | 1️⃣ Bien | :wavy_dash: 10.7.237.232  |
-| :abacus: | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 23 📈 74.19% |
+| :abacus: | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 23 :chart_with_upwards_trend: 74.19% |

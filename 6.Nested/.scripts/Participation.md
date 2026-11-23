@@ -57,4 +57,4 @@
 | 29 | [300160504](../300160504/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261492337?s=460&v=4' width=20 height=20></image>](https://github.com/Mmounir07) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.230  |
 | 30 | [300160733](../300160733/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261489188?s=460&v=4' width=20 height=20></image>](https://github.com/belhadiyanis200-a11y) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.231  |
 | 31 | [300160862](../300160862/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261494322?s=460&v=4' width=20 height=20></image>](https://github.com/cherifyamna) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.232  |
-| :abacus: | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 11 📈 35.48% |
+| :abacus: | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 11 :chart_with_upwards_trend: 35.48% |

@@ -9,21 +9,21 @@ function Write-LabParticipationHeader {
 
     Write-Output "## Légende"
     Write-Output ""
-    Write-Output "| Colonne   | Signification              |"
-    Write-OUtput "|-----------|----------------------------|"
-    Write-OUtput "| 📑        | Fichier README.md         |"
-    Write-OUtput "| 🖼️        | Répertoire images         |"
-    Write-OUtput "| 💯        | Appréciation              |"
-    Write-OUtput "| 💬        | Commentaires              |"
+    Write-Output "| Colonne           | Signification              |"
+    Write-OUtput "|-------------------|----------------------------|"
+    Write-OUtput "| :bookmark_tabs:   | Fichier README.md         |"
+    Write-OUtput "| :framed_picture:  | Répertoire images         |"
+    Write-OUtput "| :100:             | Appréciation              |"
+    Write-OUtput "| :speech_balloon:  | Commentaires              |"
 
     Write-Output ""
     Write-Output "| Signe              | Signification                               |"
     Write-Output "|--------------------|----------------------------------------------|"
-    Write-Output "| ❌                 | Rien dans `README.md`                        |"
-    Write-Output "| 🥉                 | Rename-Computer -NewName 'SRV🆔'             |"
-    Write-Output "| 🥈                 | Install-WindowsFeature AD-Domain-Services    |"
-    Write-Output "| 🥇                 | Install-ADDSForest -DomainName `DC🆔.local'  |"
-    Write-Output "| 🏆                 | `README.md` impeccable                       |"
+    Write-Output "| :x:                 | Rien dans `README.md`                        |"
+    Write-Output "| :3rd_place_medal:                 | Rename-Computer -NewName 'SRV:id:'             |"
+    Write-Output "| :2nd_place_medal:                 | Install-WindowsFeature AD-Domain-Services    |"
+    Write-Output "| :1st_place_medal:                | Install-ADDSForest -DomainName `DC:id:.local'  |"
+    Write-Output "| :trophy:                 | `README.md` impeccable                       |"
 
 }
 
@@ -37,12 +37,12 @@ function Write-LabHeader {
     Write-Output ""
 
     if ($FeedbackLookup.Count -gt 0) {
-        Write-Output "|:hash:| Boréal :id: | 📑 | 🖼️ | 💯 | 💬 | :link: IP |"
-        Write-Output "|------|-------------|----|----|-----|----|-----------|"
+        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :100: | :speech_balloon: |"
+        Write-Output "|------|-------------|----|---|----|----|"
     }
     else {
-        Write-Output "|:hash:| Boréal :id: | 📑 | 🖼️ | :link: IP |"
-        Write-Output "|------|-------------|----|----|-----------|"
+        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: |"
+        Write-Output "|------|-------------|----|---|"
     }
 }
 
