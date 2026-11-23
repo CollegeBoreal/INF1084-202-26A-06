@@ -68,8 +68,8 @@ $md += "| :warning: | Au moins un service est arrete |"
 $md += ""
 $md += "## :b: Precision"
 $md += ""
-$md += "| # | Boreal ID | VM | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | Resultat |"
-$md += "|---|-----------|----|------|------|------|-----|----------|---------|----------|"
+$md += "| # | Boreal ID | :link: IP | NTDS | ADWS | DFSR | KDC | Netlogon | IsmServ | :white_check_mark: Check |"
+$md += "|---|-----------|-----------|------|------|------|-----|----------|---------|--------------------------|"
 
 # --------------------------------------
 # Validation
