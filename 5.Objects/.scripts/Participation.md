@@ -4,24 +4,33 @@
 |-------------------------------|---------------------------------------------------------|
 | :a: [Présence](#a-présence)   | L'étudiant.e a fait son travail    :heavy_check_mark:   |
 | :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |
+
 ## Légende
 
-| Colonne   | Signification              |
-|-----------|----------------------------|
-| 📑        | Fichier README.md         |
-| 🖼️        | Répertoire images         |
-| 💯        | Appréciation              |
-| 💬        | Commentaires              |
+| Colonne           | Signification              |
+|-------------------|----------------------------|
+| :bookmark_tabs:   | Fichier README.md         |
+| :framed_picture:  | Répertoire images         |
+| :100:             | Appréciation              |
+| :speech_balloon:  | Commentaires              |
 
 | Signe              | Signification                               |
 |--------------------|----------------------------------------------|
-| ❌                 | Rien dans README.md                        |
-| 🥉                 | Fichiers \utilisateurs#️⃣.ps1 présents       |
-| 🥈                 | Fichiers \utilisateurs#️⃣.ps1 Exécutés       |
-| 🥇                 | Répertoire et fichier partagés               |
-| 🏆                 | README.md impeccable                       |
+| :x:                | Rien dans README.md                        |
+| :3rd_place_medal:  | Fichiers services:hash:.ps1 présents       |
+| :2nd_place_medal:  | Fichiers services:hash:.ps1 Exécutés.      |
+| :1st_place_medal:  | Répertoire et fichier C:\Logs présents.    |
+| :trophy:           | README.md impeccable      
 
-## :a: Présence
+}
+
+function Write-LabHeader {
+    param(
+        [hashtable]System.Collections.Hashtable = @{}
+    )
+
+    Write-Output "
+    Write-Output 
 
 |:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :100: | :speech_balloon: | :link: IP |
 |------|-------------|----|---|----|----|---|
