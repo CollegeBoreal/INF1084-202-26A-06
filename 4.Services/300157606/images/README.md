@@ -1,12 +1,19 @@
 
 
 INF1084 – Administration Windows
+
 TP04 – Les services Windows et AD DS
+
 Nom et prénom : Bouzidi Ouahiba
+
 Matricule : 300157606
+
 Date : 24 novembre 2026
+
 Serveur : SRV300157606
+
 Domaine : DC300157606.local
+
 
 INTRODUCTION
 	Dans ce travail pratique, j’utilise Windows PowerShell en mode administrateur pour identifier les services Active Directory, consulter et exporter les journaux d’événements, vérifier les dépendances et effectuer un arrêt suivi d’un redémarrage du service DFSR.
