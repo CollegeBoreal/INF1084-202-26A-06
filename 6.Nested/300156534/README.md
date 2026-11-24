@@ -27,12 +27,17 @@ SRV300156534 (10.7.237.212)
   └─ CLIENT01 — 172.16.26.20
 ```
 
-2. Création du réseau privé Hyper-V
+## 2. Création du réseau privé Hyper-V
+
 Création du commutateur interne LAB et vérification des commutateurs disponibles.
-Commandes PowerShell utilisées
+Commandes PowerShell utilisées:
+
+```powershell
 Get-VMSwitch
 New-VMSwitch -Name LAB -SwitchType Internal
 Get-VMSwitch
+```
+
 Capture 01 — Commutateur virtuel et état initial
  <img width="893" height="864" alt="image" src="https://github.com/user-attachments/assets/efd279ee-351f-4f3f-973d-40a9b80a9750" />
 
