@@ -49,7 +49,7 @@ J'ai donné l'adresse **172.16.24.1/24** à la carte `vEthernet (LAB)` : c'est l
 
 **Capture 1/5 – Réseau :** le commutateur `LAB`, l'adresse 172.16.24.1 et le NAT `LABNAT`.
 
-<img width="1512" height="982" alt="Capture d’écran 2026-11-17 à 12 19 13" src="https://github.com/user-attachments/assets/cff8847a-9691-4d21-853c-353edd51a6d4" />
+<img width="1512" height="982" alt="Capture d’écran 2026-11-17 à 12 19 13" src="https://github.com/user-attachments/assets/cc19e56c-b172-47a8-bdb6-d1aea01ff355" />
 
 
 ---
@@ -66,7 +66,7 @@ J'ai créé la VM **DC300159672** : génération 2, 4 Go de RAM, disque de 60 Go
 
 **Capture 2/5 – VM du contrôleur de domaine :** la VM `DC300159672` créée.
 
-<img width="1512" height="982" alt="Capture d’écran 2026-11-17 à 12 34 23" src="https://github.com/user-attachments/assets/9e07c846-bc55-4769-80e2-c883e6b6079e" />
+<img width="1512" height="982" alt="Capture d’écran 2026-11-17 à 12 34 23" src="https://github.com/user-attachments/assets/0b0de559-154d-4b80-88bc-d4318f1e17d5" />
 
 
 **Écart par rapport au lab :** le lab place les disques dans `D:\VMs`. Sur mon serveur, le lecteur `D:` est un lecteur DVD en lecture seule, j'ai donc utilisé le dossier `C:\VMs`.
@@ -151,12 +151,11 @@ J'ai créé la forêt `DC300159672.local` et promu la VM en contrôleur de domai
 
 **Capture 3/5 – Forêt :** la création de la forêt `DC300159672.local`.
 
-<img width="1512" height="982" alt="Capture d’écran 2026-11-23 à 16 52 13" src="https://github.com/user-attachments/assets/947d708b-6c1d-4c59-a3a3-ba3c965bc39a" />
-
+<img width="1512" height="982" alt="Capture d’écran 2026-11-23 à 16 52 13" src="https://github.com/user-attachments/assets/c93a2d72-178d-4af8-ab44-4a9f8f523ae8" />
 
 **Écart par rapport au lab :** j'ai ajouté `-DomainNetbiosName "AD300159672"`. Sans ce paramètre, le nom NetBIOS proposé (`DC300159672`) est identique au nom de l'ordinateur et la promotion échoue. Le nom NetBIOS du domaine ne peut pas être le même que celui de la machine.
 
-Après le redémarrage, je me suis reconnecté avec le compte du domaine (`Administrator@DC300159672.local`), car le compte local a été remplacé par celui du domaine.
+Après le redémarrage, je me suis reconnecté avec le compte du domaine (`AD300159672\Administrator`), car le compte local a été remplacé par celui du domaine.
 
 ---
 
@@ -198,8 +197,20 @@ DC300159672.local
 
 **Capture 4/5 – Unités d'organisation :** l'OU `OU300159672` et ses 4 sous-OU.
 
-<img width="1009" height="331" alt="Capture d’écran 2026-11-23 à 21 27 59" src="https://github.com/user-attachments/assets/b43b8e7e-bf87-45de-9092-fa0160651ac9" />
+<img width="1009" height="331" alt="Capture d’écran 2026-11-23 à 21 27 59" src="https://github.com/user-attachments/assets/3a3ecf1a-74aa-4d34-aaa7-4a8adf018b8d" />
 
+
+### Comptes étudiants (ajout demandé par le prof)
+
+Le prof a demandé de voir des comptes `student1`, `student2`, etc. dans le domaine. Je les ai créés dans l'OU `Students`, depuis le serveur avec PowerShell Direct (session ouverte dans le DC) :
+
+```powershell
+$motDePasse = Read-Host "Mot de passe des étudiants" -AsSecureString
+$ou = "OU=Students,OU=OU300159672,DC=DC300159672,DC=local"
+1..3 | ForEach-Object { New-ADUser -Name "student$_" -SamAccountName "student$_" -AccountPassword $motDePasse -Path $ou -Enabled $true }
+```
+
+Le mot de passe est saisi sans être affiché et n'est écrit nulle part. J'ai testé la connexion sur `CLIENT01` avec `student1` (écran « Other user », domaine `AD300159672`) : l'ouverture de session a réussi.
 
 ---
 
@@ -246,7 +257,7 @@ J'ai ajouté CLIENT01 au domaine `DC300159672.local` avec le compte Administrate
 
 **Capture 5/5 – CLIENT01 dans le domaine :** le Gestionnaire de serveur (Serveur local) montre CLIENT01 membre du domaine `DC300159672.local`.
 
-![Uploading Capture d’écran 2026-11-23 à 22.20.02.png…]()
+<img width="1015" height="754" alt="Capture d’écran 2026-11-23 à 22 20 02" src="https://github.com/user-attachments/assets/146c401b-329b-43f7-a9fd-f6cfa706542b" />
 
 
 ---
@@ -278,4 +289,45 @@ SRV300159672 (SRV24)
 
 | # | Écart | Raison |
 |---|---|---|
-| 1 | Disques virtuels dans `C:\VMs` au lieu de `D:\VMs` | Le lecteur
+| 1 | Disques virtuels dans `C:\VMs` au lieu de `D:\VMs` | Le lecteur `D:` du serveur est un DVD en lecture seule |
+| 2 | ISO créé à partir du lecteur `D:` | Il n'y avait pas de fichier ISO fourni |
+| 3 | Nom, IP et DNS des VM configurés avec des commandes PowerShell | Le lab donne seulement les valeurs, pas les commandes |
+| 4 | `-DomainNetbiosName "AD300159672"` | Le nom NetBIOS `DC300159672` est identique au nom de la VM |
+| 5 | Identifiant `AD300159672\Administrator` | Conséquence du nom NetBIOS choisi |
+| 6 | `Get-ADOrganizationalUnit -Filter *` | Commande de lecture seule ajoutée pour afficher les OU dans la capture |
+| 7 | Création de `student1` à `student3` | Demande du prof, pour pouvoir tester une connexion avec un compte étudiant |
+
+---
+
+## Bilan
+
+| Étape | Résultat |
+|---|---|
+| Commutateur LAB, passerelle 172.16.24.1 et NAT LABNAT | Réussi |
+| VM DC300159672 créée et Windows Server 2022 installé | Réussi |
+| IP, passerelle et DNS du DC (172.16.24.10) | Réussi |
+| Installation d'AD DS | Réussi |
+| Forêt DC300159672.local (NetBIOS AD300159672) | Réussi |
+| OU OU300159672 et 4 sous-OU | Réussi |
+| Comptes student1 à student3 (demandés par le prof) | Réussi |
+| VM CLIENT01 (172.16.24.20) | Réussi |
+| CLIENT01 membre du domaine | Réussi |
+| Connexion à CLIENT01 avec student1 | Réussi |
+
+---
+
+## Conclusion
+
+L'architecture est en place : un réseau privé `172.16.24.0/24` avec NAT, un contrôleur de domaine `DC300159672` qui héberge la forêt `DC300159672.local` et sa structure d'OU, et un poste client `CLIENT01` joint au domaine. À la demande du prof, j'ai aussi créé des comptes `student1` à `student3` et vérifié qu'on peut ouvrir une session avec l'un d'eux sur `CLIENT01`. Chaque étudiant a ainsi sa propre forêt, son propre DNS et son propre sous-réseau, sans conflit avec les autres. Les deux principaux écarts par rapport au lab sont l'emplacement des VM (`C:\VMs`, car `D:` est un DVD) et le nom NetBIOS du domaine (`AD300159672`, car `DC300159672` était déjà le nom de la machine).
+
+---
+
+## Fichiers du dossier
+
+- `README.md`
+- `images/`
+  - `01-reseau.png`
+  - `02-vm-dc.png`
+  - `03-foret.png`
+  - `04-ou.png`
+  - `05-client-domaine.png`
