@@ -1,4 +1,5 @@
-Installation Active Directory – Windows Server 2022
+# 🧪 Installation Active Directory – Windows Server 2022
+
 Objectif
 Installer un contrôleur de domaine Active Directory avec PowerShell.
 Configuration
@@ -6,17 +7,24 @@ Configuration
 - Domaine : DC300159180.local
 - NetBIOS : DOM300159180
 Étapes principales
-1. Renommer le serveur :
+
+### 1. Renommer le serveur :
+
+```powershell
 Rename-Computer -NewName "SRV300159180" -Restart
+```
 
-2. Installer AD DS :
+### 2. Installer AD DS :
+
+```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+```
 
-3. Créer le domaine :
+4. Créer le domaine :
 Install-ADDSForest -DomainName "DC300159180.local" -DomainNetbiosName "DOM300159180" -InstallDns:$true -Force
 
-4. Le serveur redémarre automatiquement.
-5. Vérifier l’installation :
+5. Le serveur redémarre automatiquement.
+6. Vérifier l’installation :
 Get-ADDomain
 Get-ADForest
 Get-ADDomainController

@@ -26,8 +26,8 @@ Vérification et exécution :
 cat .\services1.ps1
 .\services1.ps1
 ```
+<img width="2048" height="1214" alt="01-services-ad" src="https://github.com/user-attachments/assets/1a7f0442-f340-496f-a858-4c8caeaf1f24" />
 
-![Liste des services AD](images/01-services1.png)
 
 NTDS, ADWS et DFSR apparaissent deux fois, car le script contient deux commandes : la première liste les services AD, la seconde vérifie ces trois services séparément. [À compléter : l'état affiché pour NTDS, ADWS, DFSR, IsmServ, Kdc et Netlogon.]
 
@@ -53,7 +53,8 @@ cat .\services2.ps1
 .\services2.ps1
 ```
 
-![Événements du journal Directory Service](images/02-services2.png)
+<img width="2048" height="1214" alt="02-evenements-export" src="https://github.com/user-attachments/assets/04f712bf-6599-4a09-b945-08f3fc5ead8f" />
+
 
 [À compléter : le niveau des événements affichés, et si le filtre Netlogon a renvoyé un résultat ou rien.]
 
@@ -74,7 +75,8 @@ cat .\services3.ps1
 .\services3.ps1
 ```
 
-![Export des événements dans un fichier CSV](images/03-services3.png)
+<img width="2048" height="1214" alt="02-evenements-export" src="https://github.com/user-attachments/assets/60d4cd33-1389-4642-b66f-7807aabca615" />
+
 
 Le script n'affiche rien quand il réussit. La commande `Get-Item C:\Logs\ADLogs.csv` confirme que le fichier `ADLogs.csv` a été créé (environ 33 Ko).
 
@@ -95,7 +97,8 @@ cat .\services4.ps1
 .\services4.ps1
 ```
 
-![Arrêt et redémarrage de DFSR](images/04-services4.png)
+<img width="2048" height="1214" alt="03-dfsr-verification" src="https://github.com/user-attachments/assets/43d4e734-1e34-42df-abf9-24faf96d01da" />
+
 
 Le script affiche `Stopped` après l'arrêt de DFSR, puis relance le service. La commande `Get-Service -Name DFSR` affiche ensuite `Running`.
 

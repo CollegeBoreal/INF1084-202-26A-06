@@ -220,7 +220,30 @@ Get-GPO -All | Format-Table DisplayName, Owner, GpoStatus, CreationTime
 * Module GroupPolicy disponible (`Import-Module GroupPolicy`)
 * VM membre pour tester le partage et RDP
 
-- [ ] Utiliser le fichier `4.OUs/bootstrap.ps1` concernant vos informations. (utiliser dot-sourcing )
+- [ ] Créer un fichier `bootstrap.ps1` oû vous mettrez les informations concernant vos informations. (utiliser dot-sourcing )
+
+```powershell
+# vos informations
+$studentNumber = 300098957
+$studentInstance = 40
+
+# les noms respectifs
+$domainName = "DC$studentNumber-$studentInstance.local"
+$netbiosName = "DC$studentNumber-$studentInstance"
+
+# les informations de sécurité
+$plain = 'Infra@2024'
+$secure = ConvertTo-SecureString $plain -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential("Administrator@$domainName", $secure)
+```
+
+---
+
+:key: Pour les operations néscessitant les informations sécurisées de l'administrateur
+
+```powershell
+$cred = Get-Credential  # entrer Administrator@$domainName et le mot de passe
+```
 
 ---
 

@@ -35,7 +35,36 @@ J'ai suivi les étapes dans Group policy Management
 <img width="2048" height="1152" alt="image" src="https://github.com/user-attachments/assets/c8a3fcd5-e1f1-434d-818e-09efdf48547e" />
 <img width="1259" height="875" alt="image" src="https://github.com/user-attachments/assets/cbc018e0-b557-406f-a62a-cb0c35e661ae" />
 
-6 
+ 6 Correction de l'accès au dossier partagé
+
+J’ai corrigé les autorisations de partage en accordant le contrôle total à l’administrateur, tout en conservant les droits de modification pour le groupe Students.
+
+Lien d’accès au dossier partagé :
+
+`\\10.7.237.204\SharedResources`
+
+Accès par le nom du serveur :
+
+`\\SRV300147891\SharedResources`
+
+Les deux chemins ont été testés avec la commande `Test-Path` et retournent `True` avec le compte administrateur.
+
+
+PS C:\Scripts> Test-Path "\\10.7.237.204\SharedResources"
+True
+
+PS C:\Scripts> Get-Content C:\Scripts\MapDrive.ps1
+New-PSDrive -Name "Z" -PSProvider FileSystem -Root "\\SRV300147891\SharedResources" -Persist
+
+PS C:\Scripts> hostname
+SRV300147891
+
+PS C:\Scripts> Test-Path "\\SRV300147891\SharedResources"
+True
+
+La GPO MapSharedFolder est activée et le lecteur réseau Z: est correctement configuré.
+
+
 
 
 

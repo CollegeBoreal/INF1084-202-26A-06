@@ -1,18 +1,31 @@
-function Write-ConfigurationSection {
-    param(
-        [string]$Server
-    )
-
-    Write-Output "## :gear: Configuration"
+function Write-LabParticipationHeader {
+    Write-Output "# Participation"
     Write-Output ""
 
-    Write-Output "| Windows Server 2022 Datacenter            | User/Pwd                   |"
-    Write-Output "|-------------------------------------------|----------------------------|"
-    Write-Output "| ${Server}                                 | Administrator/Boreal@2️⃣02️⃣6 |"
+    Write-Output "| Table des matières            | Description                                             |"
+    Write-Output "|-------------------------------|---------------------------------------------------------|"
+    Write-Output "| :a: [Présence](#a-présence)   | L'étudiant.e a fait son travail    :heavy_check_mark:   |"
+    Write-Output "| :b: [Précision](#b-précision) | L'étudiant.e a réussi son travail  :tada:               |"
+
+    Write-Output "## Légende"
     Write-Output ""
+    Write-Output "| Colonne           | Signification              |"
+    Write-OUtput "|-------------------|----------------------------|"
+    Write-OUtput "| :bookmark_tabs:   | Fichier README.md         |"
+    Write-OUtput "| :framed_picture:  | Répertoire images         |"
+    Write-OUtput "| :100:             | Appréciation              |"
+    Write-OUtput "| :speech_balloon:  | Commentaires              |"
+
+    Write-Output ""
+    Write-Output "| Signe              | Signification                               |"
+    Write-Output "|--------------------|----------------------------------------------|"
+    Write-Output "| :x:                 | Rien dans `README.md`                        |"
+    Write-Output "| :3rd_place_medal:                 | Rename-Computer -NewName 'SRV:id:'             |"
+    Write-Output "| :2nd_place_medal:                 | Install-WindowsFeature AD-Domain-Services    |"
+    Write-Output "| :1st_place_medal:                | Install-ADDSForest -DomainName `DC:id:.local'  |"
+    Write-Output "| :trophy:                 | `README.md` impeccable                       |"
 
 }
-
 
 function Write-LabHeader {
     param(
@@ -24,12 +37,12 @@ function Write-LabHeader {
     Write-Output ""
 
     if ($FeedbackLookup.Count -gt 0) {
-        Write-Output "|:hash:| Boréal :id: | README.md | images | Appréciation | Commentaires | :link: IP |"
-        Write-Output "|------|-------------|-----------|--------|--------------|--------------|-----------|"
+        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :100: | :speech_balloon: | :link: IP |"
+        Write-Output "|------|-------------|----|---|----|----|---|"
     }
     else {
-        Write-Output "|:hash:| Boréal :id: | README.md | images | :link: IP |"
-        Write-Output "|------|-------------|-----------|--------|-----------|"
+        Write-Output "|:hash:| Boréal :id: | :bookmark_tabs: | :framed_picture: | :link: IP |"
+        Write-Output "|------|-------------|----|---|---|"
     }
 }
 
