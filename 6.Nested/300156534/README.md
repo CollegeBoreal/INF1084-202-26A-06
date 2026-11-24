@@ -26,8 +26,7 @@ Client : CLIENT01 — 172.16.26.20
 
 Compte administrateur : Administrator
 
-Mot de passe administrateur : voir section 10.7 (à confirmer : deux valeurs différentes figurent dans les versions du rapport).
-
+Mot de passe administrateur : Infra@2024
 Compte étudiant : AD300156534\etudiant01
 
 Nouveau mot de passe étudiant : walid@2027
