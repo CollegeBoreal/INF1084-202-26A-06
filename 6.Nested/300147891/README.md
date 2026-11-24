@@ -13,6 +13,7 @@ L'objectif de ce laboratoire est de mettre en place un environnement Active Dire
 Sur mon serveur parent SRV300147891, j'ai utilisé deux machines virtuelles :
 
 **SRV01** : contrôleur de domaine qui permet de gérer les utilisateurs, les ordinateurs et le service DNS.
+
 **CLIENT01** : machine cliente utilisée pour tester l'intégration au domaine et la connexion à distance.
 
 Les deux machines communiquent sur un réseau privé grâce au commutateur virtuel LAB. Le NAT leur permet d'accéder au réseau extérieur.
