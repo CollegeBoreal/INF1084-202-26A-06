@@ -1,5 +1,9 @@
-Rapport de Laboratoire :
-  Objets Active Directory, Partage de Ressources et GPO (TP 5)1. Objectif du laboratoire :L'objectif de ce TP est de manipuler les objets Active Directory via PowerShell (Unités d'Organisation, Groupes, Utilisateurs), de configurer un partage de fichiers SMB sécurisé, d'automatiser le mappage d'un lecteur réseau à l'aide d'une stratégie de groupe (GPO), et d'activer l'accès à distance (RDP).2. Environnement de travail :Contrôleur de domaine : SRV300153416.boreal.local (10.7.237.210)   Domaine / NetBIOS : boreal.local / BOREAL   Dossier partagé : C:\SharedResources3. Réalisation et Scripts PowerShell :Étape 1 : Création de la structure organisationnelle, du groupe et des utilisateurs (utilisateurs1.ps1)Création de l'OU Students, du groupe global Students, des comptes utilisateurs (Etudiant1, Etudiant2) et configuration du partage SMB avec un accès total pour le groupe.PowerShell# Créer l'Unité d'Organisation (OU) Students
+# Rapport de Laboratoire :
+  Objets Active Directory, Partage de Ressources et GPO (TP 5)
+  
+## 1. Objectif du laboratoire :
+
+L'objectif de ce TP est de manipuler les objets Active Directory via PowerShell (Unités d'Organisation, Groupes, Utilisateurs), de configurer un partage de fichiers SMB sécurisé, d'automatiser le mappage d'un lecteur réseau à l'aide d'une stratégie de groupe (GPO), et d'activer l'accès à distance (RDP).2. Environnement de travail :Contrôleur de domaine : SRV300153416.boreal.local (10.7.237.210)   Domaine / NetBIOS : boreal.local / BOREAL   Dossier partagé : C:\SharedResources3. Réalisation et Scripts PowerShell :Étape 1 : Création de la structure organisationnelle, du groupe et des utilisateurs (utilisateurs1.ps1)Création de l'OU Students, du groupe global Students, des comptes utilisateurs (Etudiant1, Etudiant2) et configuration du partage SMB avec un accès total pour le groupe.PowerShell# Créer l'Unité d'Organisation (OU) Students
 if (-not (Get-ADOrganizationalUnit -Filter "Name -eq 'Students'")) {
     New-ADOrganizationalUnit -Name "Students" -Path "DC=boreal,DC=local"
 }
