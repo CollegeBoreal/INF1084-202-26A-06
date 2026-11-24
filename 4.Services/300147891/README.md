@@ -32,22 +32,30 @@ J’ai créé le script services2.ps1 pour consulter les 20 derniers événement
 Get-WinEvent -LogName "Directory Service" -MaxEvents 20 |
     Format-Table TimeCreated, Id, LevelDisplayName, Message -AutoSize
 
+
 Résultat : Les événements ont été affichés avec leur date, leur identifiant, leur niveau et leur message.
 
-📸 Capture 2 : <img width="550" height="805" alt="image" src="https://github.com/user-attachments/assets/f809d995-9041-4cda-8fb3-e47ec9b8b645" />
+Capture 2 : <img width="550" height="805" alt="image" src="https://github.com/user-attachments/assets/f809d995-9041-4cda-8fb3-e47ec9b8b645" />
 
 
 3. Exporter les événements dans un fichier CSV
 
 J’ai créé le script services3.ps1 pour exporter les 50 derniers événements Active Directory dans un fichier CSV.
 
+New-Item -Path "C:\Logs" -ItemType Directory -Force
+
+Get-WinEvent -LogName "Directory Service" -MaxEvents 50 |
+Export-Csv -Path "C:\Logs\ADLogs.csv" -NoTypeInformation
+
+
 Le fichier a été enregistré dans :
 
 C:\Logs\ADLogs.csv
 
+
 Résultat : Le fichier a été créé avec succès. Sa taille est de 39 660 octets.
 
-📸 Capture 3 : <img width="748" height="623" alt="image" src="https://github.com/user-attachments/assets/64b66959-ebc3-46b7-bfbd-f17f7e0f8303" />
+Capture 3 : <img width="748" height="623" alt="image" src="https://github.com/user-attachments/assets/64b66959-ebc3-46b7-bfbd-f17f7e0f8303" />
 
 
 4. Arrêter et redémarrer le service DFSR
