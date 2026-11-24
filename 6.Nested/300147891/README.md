@@ -1,20 +1,24 @@
-INF1084 – Laboratoire Nested Hyper-V
+**INF1084 – Laboratoire Nested Hyper-V**
+**Nom** : BARRY
+**Prénom** : Amadou
+**ID** : 300147891
 
-1. Plan d'adressage
+1. **Présentation du laboratoire**
 
-Élément | Configuration |
+L'objectif de ce laboratoire est de mettre en place un environnement Active Directory à l'aide de la virtualisation Hyper-V.
 
-Serveur parent | SRV300147891 |
-IP du serveur parent | 10.7.237.204 |
-Réseau privé | 172.16.18.0/24 |
-Passerelle NAT | 172.16.18.1 |
-Contrôleur de domaine | SRV01 |
-IP du DC et DNS | 172.16.18.10 |
-Client | CLIENT01 |
-IP du client | 172.16.18.20 |
-Domaine | DC300147891.local |
+Sur mon serveur parent SRV300147891, j'ai utilisé deux machines virtuelles :
 
-2. Création du réseau privé et du NAT
+**SRV01** : contrôleur de domaine qui permet de gérer les utilisateurs, les ordinateurs et le service DNS.
+**CLIENT01** : machine cliente utilisée pour tester l'intégration au domaine et la connexion à distance.
+
+Les deux machines communiquent sur un réseau privé grâce au commutateur virtuel LAB. Le NAT leur permet d'accéder au réseau extérieur.
+
+Le domaine DC300147891.local permet de centraliser la gestion des utilisateurs et des ordinateurs du laboratoire.
+
+
+
+2. **Création du réseau privé et du NAT**
 
 Sur le serveur parent :
 
@@ -61,9 +65,9 @@ Get-Service DNS
 
 
 
-4. Création des unités organisationnelles
+4. **Création des unités organisationnelles**
 
-Sur SRV01 :
+**Sur le SRV01** :
 
 ```powershell
 New-ADOrganizationalUnit -Name "OU300147891"
@@ -77,7 +81,7 @@ New-ADOrganizationalUnit -Name "Workstations" -Path "OU=OU300147891,DC=DC3001478
 New-ADOrganizationalUnit -Name "Servers" -Path "OU=OU300147891,DC=DC300147891,DC=local"
 ```
 
-Vérification :
+**Vérification** :
 
 ```powershell
 Get-ADOrganizationalUnit -Filter * | Select-Object Name
@@ -88,7 +92,7 @@ Get-ADOrganizationalUnit -Filter * | Select-Object Name
 <img width="752" height="422" alt="image" src="https://github.com/user-attachments/assets/4aa29843-9877-42d5-a38c-30e29a2c672b" />
 
 
-5. Création de CLIENT01
+5. **Création de CLIENT01**
 
 Sur le serveur parent :
 
@@ -114,7 +118,7 @@ New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 172.16.18.20 -PrefixLengt
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 172.16.18.10
 ```
 
-6. Intégration du client au domaine
+6. **Intégration du client au domaine**
 
 Sur CLIENT01 :
 
