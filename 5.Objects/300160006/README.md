@@ -79,6 +79,47 @@ Dans la session, la commande whoami affiche dc300160006\etudiant1, la commande n
 | Test RDP | Connexion réussie avec DC300160006\Etudiant1 | `whoami` |
 | Test lecteur Z: | SharedResources (Z:) visible dans l'Explorateur | Capture d'écran |
 
+## Test avec un utilisateur hors du groupe Students
+
+Pour vérifier que seuls les membres du groupe `Students` peuvent se connecter à distance, j'ai créé un compte `Visiteur` qui n'appartient pas à ce groupe.
+
+### Création du compte
+
+J'ai créé le compte avec PowerShell, puis j'ai vérifié son existence et son état.
+
+```powershell
+New-ADUser -Name "Visiteur" -SamAccountName "Visiteur" -AccountPassword (Read-Host -AsSecureString "Mot de passe") -Enabled $true
+Get-ADUser -Identity Visiteur
+```
+
+La commande `Get-ADUser` confirme que le compte existe et qu'il est activé (`Enabled : True`).
+
+![Création du compte Visiteur](images/creation-visiteur.png)
+
+### Vérification de l'appartenance au groupe
+
+```powershell
+Get-ADGroupMember -Identity Students | Select-Object Name
+```
+
+Le résultat affiche seulement `Etudiant1` et `Etudiant2`. Le compte `Visiteur` n'est donc pas membre du groupe `Students`.
+
+![Membres du groupe Students](images/membres-students.png)
+
+### Test de connexion RDP
+
+Depuis mon ordinateur, j'ai ouvert une connexion Bureau à distance (`mstsc`) vers l'adresse `10.7.237.228` avec le compte `DC300160006\Visiteur`.
+
+La connexion a été refusée avec le message suivant :
+
+> The connection was denied because the user account is not authorized for remote login.
+
+![Refus RDP du compte Visiteur](images/refus-visiteur.png)
+
+### Résultat
+
+Le refus de connexion confirme que le droit « Allow log on through Remote Desktop Services » est limité aux groupes `Students` et `Administrators`. Un compte qui n'est pas dans le groupe `Students` ne peut pas ouvrir de session à distance sur le serveur. De la même façon, le lecteur `Z:` n'est mappé que pour les utilisateurs de l'OU `Students`, car la GPO `MapSharedFolder` est liée à cette OU.
+
 ## Conclusion
 
 Ce laboratoire m'a permis de manipuler plusieurs objets Active Directory uniquement avec PowerShell : une unité d'organisation, un groupe de sécurité, des comptes utilisateurs, un dossier partagé SMB, une GPO et l'accès Bureau à distance.
