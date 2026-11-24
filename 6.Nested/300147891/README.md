@@ -186,6 +186,8 @@ Connexion avec Etudiant1, puis vérification :
 whoami
 whoami /groups
 ```
+<img width="612" height="465" alt="image" src="https://github.com/user-attachments/assets/246b9237-cfe0-41ec-97bd-a766618c1384" />
+
 <img width="710" height="555" alt="image" src="https://github.com/user-attachments/assets/bee0b2f3-12a1-41f1-9879-f07a2e6cbc3e" />
 
 
