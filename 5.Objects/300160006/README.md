@@ -94,7 +94,7 @@ Get-ADUser -Identity Visiteur
 
 La commande `Get-ADUser` confirme que le compte existe et qu'il est activé (`Enabled : True`).
 
-![Création du compte Visiteur](images/creation-visiteur.png)
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/9351b44cfe70191a4fb78eff86990478cfddf12a/5.Objects/300160006/images/Screenshot%202026-11-24%20145831.png)
 
 ### Vérification de l'appartenance au groupe
 
