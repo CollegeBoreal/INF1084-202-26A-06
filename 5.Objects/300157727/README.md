@@ -1,3 +1,29 @@
+Objectif du laboratoire
+
+L'objectif était de configurer un environnement Active Directory, de créer des utilisateurs et des groupes, de mettre en place un dossier partagé et de permettre aux étudiants d'y accéder à l'aide d'un lecteur réseau.
+
+🔧 Travaux réalisés
+
+Au cours de ce laboratoire, j'ai réalisé les étapes suivantes :
+
+🖥️ Configuration du serveur Windows Server 2022 et vérification du domaine Active Directory.
+
+👥 Création des comptes Etudiant1 et Etudiant2 ainsi que du groupe Students.
+
+📁 Création du dossier partagé SharedResources et configuration des permissions.
+
+⚙️ Configuration de la stratégie de groupe (GPO) MapSharedFolder.
+
+🔗 Configuration du mappage du lecteur réseau Z:.
+
+🔐 Activation du Bureau à distance (RDP) et configuration des autorisations.
+
+✅ Tests de connexion et de fonctionnement avec les deux comptes étudiants.
+
+📸 Présentation des captures d'écran
+
+Pour faciliter la lecture du travail, j'ai regroupé les différentes vérifications en sept parties. Chaque partie présente les configurations réalisées et les résultats obtenus.
+
 <img width="825" height="627" alt="Capture d&#39;écran 2026-11-24 100030" src="https://github.com/user-attachments/assets/909d6eef-6cfb-4a4e-8679-f74dd724b736" />
 <img width="829" height="625" alt="Capture d&#39;écran 2026-11-24 100137" src="https://github.com/user-attachments/assets/8c0a0f18-45a5-4705-b676-5f2c9614d25a" />
 <img width="847" height="602" alt="Capture d&#39;écran 2026-11-24 100219" src="https://github.com/user-attachments/assets/ce47eb38-5f58-45cc-bd84-2677c321a729" />
@@ -34,5 +60,15 @@ Ces capture montre l'activation du Bureau à distance, les règles du pare-feu e
 <img width="835" height="608" alt="Capture d&#39;écran 2026-11-24 105744" src="https://github.com/user-attachments/assets/e8d202f0-d89d-427b-a8e5-109e45f00082" />
 <img width="842" height="609" alt="Capture d&#39;écran 2026-11-24 113551" src="https://github.com/user-attachments/assets/9db10f3b-65a9-4749-87b6-a0f1e14b8521" />
 Ces capture présente les tests de connexion avec Etudiant1 et Etudiant2. Elle confirme que les utilisateurs peuvent accéder au partage réseau et utiliser le lecteur Z:.
+
+Conclusion
+
+Ce laboratoire m'a permis de mieux comprendre la gestion des utilisateurs et des groupes dans Active Directory, le partage des ressources réseau, les stratégies de groupe et l'accès à distance.
+
+Les tests réalisés avec Etudiant1 et Etudiant2 ont permis de vérifier l'accès au dossier partagé et le fonctionnement du lecteur réseau Z:.
+
+Merci pour votre attention et pour votre accompagnement.
+
+Bonne correction ! 😊
 
 
