@@ -339,23 +339,14 @@ dcdiag /q
 ```
 
 | Élément | Résultat |
-
 |---|---|
-
 | Domaine | DC300156534.local |
-
 | Niveau fonctionnel du domaine | Windows2016Domain |
-
 | Niveau fonctionnel de la forêt | Windows2016Forest |
-
 | Catalogue global | True |
-
 | NTDS, DNS, Netlogon | Running |
-
 | Zones DNS du domaine et _msdcs | Intégrées à AD |
-
 | GPO | Deux stratégies par défaut actives |
-
 | dcdiag /q | Aucune erreur affichée |
 
 ![Capture complémentaire 27](images/27.png)
