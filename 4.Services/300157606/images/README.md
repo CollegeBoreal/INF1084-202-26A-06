@@ -16,6 +16,7 @@ Domaine : DC300157606.local
 
 
 INTRODUCTION
+
 	Dans ce travail pratique, j’utilise Windows PowerShell en mode administrateur pour identifier les services Active Directory, consulter et exporter les journaux d’événements, vérifier les dépendances et effectuer un arrêt suivi d’un redémarrage du service DFSR.
 
 PARTIE 1 – Préparation et identification des services
@@ -25,7 +26,6 @@ Capture 1 – Préparation du serveur
 <img width="2000" height="1500" alt="1" src="https://github.com/user-attachments/assets/33cae675-be9f-45fe-9bcb-d2163c1d903b" />
 
 Je vérifie le nom du serveur avec hostname et l’état du service NTDS avec Get-Service -Name NTDS. Le service est Running. Je crée ensuite le dossier C:\TP04 avec mkdir C:\TP04 et je m’y déplace avec cd C:\TP04.
-
 
 
 
