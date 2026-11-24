@@ -15,6 +15,8 @@ INF 1084-202 Administration Windows
 | :four:  | 13-oct | [5.Objects](5.Objects)                   | [🎉](5.Objects/.scripts/Participation.md)           | [:checkered_flag:](5.Objects/.scripts/Check.md) |  2️⃣0️⃣
 | :three: | 03-nov | [6.Nested](6.Nested)                     | [🎉](6.Nested/.scripts/Participation.md)            | |  2️⃣0️⃣
 
+# 📚 References
+
 ```
 =[[1]]*,02+[[2]]*,08+[[3]]*,20+[[4]]*,20+[[5]]*,20+[[6]]*,20
 ```
