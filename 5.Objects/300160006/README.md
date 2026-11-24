@@ -104,7 +104,7 @@ Get-ADGroupMember -Identity Students | Select-Object Name
 
 Le résultat affiche seulement `Etudiant1` et `Etudiant2`. Le compte `Visiteur` n'est donc pas membre du groupe `Students`.
 
-![Membres du groupe Students](images/membres-students.png)
+
 
 ### Test de connexion RDP
 
