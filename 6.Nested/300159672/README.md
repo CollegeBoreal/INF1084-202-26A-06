@@ -45,7 +45,9 @@ New-NetNat -Name LABNAT -InternalIPInterfaceAddressPrefix 172.16.24.0/24
 
 **Capture 1/5 – Réseau :** le commutateur `LAB`, l'adresse 172.16.24.1 et le NAT `LABNAT`.
 
-![Capture 1 – Réseau](images/01-reseau.png)
+<img width="1512" height="982" alt="Capture d’écran 2026-11-17 à 12 19 13" src="https://github.com/user-attachments/assets/1af52004-2ee9-4025-8c5a-a34ced16e1d4" />
+
+
 
 ---
 
@@ -57,7 +59,8 @@ New-VM -Name DC300159672 -Generation 2 -MemoryStartupBytes 4GB -NewVHDPath "C:\V
 
 **Capture 2/5 – VM du contrôleur de domaine :** la VM `DC300159672` créée.
 
-![Capture 2 – VM DC300159672](images/02-vm-dc.png)
+<img width="1512" height="982" alt="Capture d’écran 2026-11-17 à 12 34 23" src="https://github.com/user-attachments/assets/09695e40-ed16-4d46-9b3a-d992923440b0" />
+
 
 **Écart par rapport au lab :** les disques virtuels sont dans `C:\VMs` et non `D:\VMs`, car le lecteur `D:` de mon serveur est un lecteur DVD.
 
@@ -93,7 +96,9 @@ Install-ADDSForest -DomainName "DC300159672.local" -DomainNetbiosName "AD3001596
 
 **Capture 3/5 – Forêt :** la création de la forêt `DC300159672.local`.
 
-![Capture 3 – Forêt](images/03-foret.png)
+<img width="1512" height="982" alt="Capture d’écran 2026-11-23 à 16 52 13" src="https://github.com/user-attachments/assets/dc857da4-171a-465b-b2ed-69a27acca440" />
+
+
 
 **Écart par rapport au lab :** j'ai ajouté `-DomainNetbiosName "AD300159672"`. Sans cela, le nom NetBIOS proposé (`DC300159672`) est identique au nom de l'ordinateur et la commande refuse de continuer.
 
@@ -124,7 +129,8 @@ Get-ADOrganizationalUnit -Filter *
 
 **Capture 4/5 – Unités d'organisation :** l'OU `OU300159672` et ses 4 sous-OU.
 
-![Capture 4 – Unités d'organisation](images/04-ou.png)
+<img width="1009" height="331" alt="Capture d’écran 2026-11-23 à 21 27 59" src="https://github.com/user-attachments/assets/8134052a-4c2e-4b09-a0a8-3f6c5d080d17" />
+
 
 ---
 
@@ -156,7 +162,8 @@ Add-Computer -DomainName DC300159672.local -Credential AD300159672\Administrator
 
 **Capture 5/5 – CLIENT01 dans le domaine :** le Gestionnaire de serveur (Serveur local) montre CLIENT01 membre du domaine `DC300159672.local`.
 
-![Capture 5 – CLIENT01 dans le domaine](images/05-client-domaine.png)
+<img width="1015" height="754" alt="Capture d’écran 2026-11-23 à 22 20 02" src="https://github.com/user-attachments/assets/fdd617ad-c810-4392-a07f-0f3a98768ea3" />
+
 
 ---
 
