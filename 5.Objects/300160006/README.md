@@ -114,7 +114,7 @@ La connexion a été refusée avec le message suivant :
 
 > The connection was denied because the user account is not authorized for remote login.
 
-![Refus RDP du compte Visiteur](images/refus-visiteur.png)
+![images alt](https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/3f2123a4897f431aa3a6da17688416ba8e55d24b/5.Objects/300160006/images/Screenshot%202026-11-24%20150054.png)
 
 ### Résultat
 
