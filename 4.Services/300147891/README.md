@@ -53,19 +53,27 @@ Le fichier a été enregistré dans :
 C:\Logs\ADLogs.csv
 
 
-Résultat : Le fichier a été créé avec succès. Sa taille est de 39 660 octets.
-
-Capture 3 : <img width="748" height="623" alt="image" src="https://github.com/user-attachments/assets/64b66959-ebc3-46b7-bfbd-f17f7e0f8303" />
+Résultat : Le fichier a été créé avec succès. Sa taille est de 33 207 octets,
 
 
 4. Arrêter et redémarrer le service DFSR
 
 J’ai créé le script services4.ps1 pour arrêter et redémarrer le service DFSR.
 
+Stop-Service -Name DFSR
+
+(Get-Service -Name DFSR).Status
+
+Start-Service -Name DFSR
+
+Get-Service -Name DFSR
+
 Résultat :
 
 * Après l’arrêt : Stopped
 * Après le redémarrage : Running
+
+ <img width="748" height="623" alt="image" src="https://github.com/user-attachments/assets/64b66959-ebc3-46b7-bfbd-f17f7e0f8303" />  
 
 Le service DFSR a été arrêté puis redémarré correctement.
 
