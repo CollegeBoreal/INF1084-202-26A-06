@@ -19,10 +19,14 @@ CONFIDENTIEL — Le mot de passe est inscrit à la demande de l’étudiant. Ne 
 ## 1. Objectif et architecture
 
 Créer une infrastructure indépendante comprenant un commutateur Hyper-V interne, une passerelle NAT, un contrôleur de domaine AD DS et DNS, quatre sous-unités organisationnelles et un client membre du domaine.
+
+```
 SRV300156534 (10.7.237.212)
   LAB / LABNAT — 172.16.26.0/24
   ├─ SRV01 : DC300156534 — 172.16.26.10
   └─ CLIENT01 — 172.16.26.20
+```
+
 2. Création du réseau privé Hyper-V
 Création du commutateur interne LAB et vérification des commutateurs disponibles.
 Commandes PowerShell utilisées
