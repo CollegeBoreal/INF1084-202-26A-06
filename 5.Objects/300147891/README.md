@@ -62,7 +62,7 @@ SRV300147891
 PS C:\Scripts> Test-Path "\\SRV300147891\SharedResources"
 True
 
-La GPO MapSharedFolder est activée et le lecteur réseau Z: est correctement configuré. Le montage automatique avec un compte étudiant reste à vérifier.
+La GPO MapSharedFolder est activée et le lecteur réseau Z: est correctement configuré.
 
 
 
