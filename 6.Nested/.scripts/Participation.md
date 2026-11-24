@@ -28,7 +28,7 @@
 |------|-------------|----|---|----|----|---|
 | 1 | [300147253](../300147253/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232965506?s=460&v=4' width=20 height=20></image>](https://github.com/azzed98) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.202  |
 | 2 | [300147866](../300147866/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994850?s=460&v=4' width=20 height=20></image>](https://github.com/sofianehadjadj389) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.203  |
-| 3 | [300147891](../300147891/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | :1st_place_medal: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.204  |
+| 3 | [300147891](../300147891/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261496046?s=460&v=4' width=20 height=20></image>](https://github.com/amadbarry96) | :1st_place_medal: | :heavy_check_mark: | :x: | :x: à corriger | :wavy_dash: 10.7.237.204  |
 | 4 | [300150398](../300150398/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205996142?s=460&v=4' width=20 height=20></image>](https://github.com/iilyastp) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.205  |
 | 5 | [300151722](../300151722/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261488966?s=460&v=4' width=20 height=20></image>](https://github.com/islamoustani5-collab) | :1st_place_medal: | :heavy_check_mark: | 🏆 | 1️⃣ Trés bien - Bonne documentation 🎉 | :wavy_dash: 10.7.237.206  |
 | 6 | [300151863](../300151863/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994935?s=460&v=4' width=20 height=20></image>](https://github.com/HannibalCarthage) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.207  |
@@ -57,4 +57,4 @@
 | 29 | [300160504](../300160504/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261492337?s=460&v=4' width=20 height=20></image>](https://github.com/Mmounir07) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.230  |
 | 30 | [300160733](../300160733/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261489188?s=460&v=4' width=20 height=20></image>](https://github.com/belhadiyanis200-a11y) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.231  |
 | 31 | [300160862](../300160862/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/261494322?s=460&v=4' width=20 height=20></image>](https://github.com/cherifyamna) | :x: | :x: | :x: | :x: à corriger | :wavy_dash: 10.7.237.232  |
-| :abacus: | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 13 :chart_with_upwards_trend: 41.94% |
+| :abacus: | \$\displaystyle\sum_{i=1}^{31} s_i\$ = 14 :chart_with_upwards_trend: 45.16% |
