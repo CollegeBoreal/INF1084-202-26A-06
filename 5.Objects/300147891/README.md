@@ -52,10 +52,13 @@ Les deux chemins ont été testés avec la commande `Test-Path` et retournent `T
 
 PS C:\Scripts> Test-Path "\\10.7.237.204\SharedResources"
 True
+
 PS C:\Scripts> Get-Content C:\Scripts\MapDrive.ps1
 New-PSDrive -Name "Z" -PSProvider FileSystem -Root "\\SRV300147891\SharedResources" -Persist
+
 PS C:\Scripts> hostname
 SRV300147891
+
 PS C:\Scripts> Test-Path "\\SRV300147891\SharedResources"
 True
 
