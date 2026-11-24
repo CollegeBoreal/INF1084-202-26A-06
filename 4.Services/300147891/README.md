@@ -12,6 +12,11 @@ L’objectif de ce laboratoire est d’utiliser PowerShell pour gérer et survei
 1. Afficher les services Active Directory
 
 J’ai créé le script services1.ps1 pour afficher les principaux services Active Directory et vérifier leur état.
+Avec le script : Get-Service | Where-Object {
+    $_.DisplayName -like "*Directory*" -or $_.Name -match "NTDS|ADWS|DFSR|kdc|Netlogon|IsmServ"
+} | Sort-Object DisplayName
+
+Get-Service -Name NTDS,ADWS,DFSR
 
 Résultat : Les services NTDS, ADWS, DFSR, IsmServ, Kdc et Netlogon sont en état Running.
 
