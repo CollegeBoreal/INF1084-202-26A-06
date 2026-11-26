@@ -14,3 +14,4 @@ Ensuite, j'ai ajouté cet utilisateur au groupe local Administrators avec la com
 Enfin, j'ai utilisé la commande `net localgroup Administrators` pour vérifier les membres du groupe. Le résultat confirme que l'utilisateur 300147253 possède les droits d'administration locaux.
 
 **Conclusion :** Le compte utilisateur 300147253 a été créé avec succès et ajouté au groupe des administrateurs de Windows Server 2022.
+https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/2.ActiveDirectory/300147253/images/Capture%201.PNG
