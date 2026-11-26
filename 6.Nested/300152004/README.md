@@ -1,7 +1,7 @@
 # Architecture simplifiée 
 # 300152004
 
-**Serveur parent :** `SRVB300152004` — **Domaine :** `DC300152004.local` — **Réseau privé :** `172.16.17.0/24` — **NetBIOS :** `AD300152004` — **Password :** `Daniel2026`
+**Serveur parent :** `SRVB300152004` — **Domaine :** `DC300152004.local` — **Réseau privé :** `172.16.17.0/24` — **NetBIOS :** `AD300152004` — **Password :** `Daniel2026` **User :** `etudiant01` — **Password :** `Daniel2026`
 
 
 Étape 1 Réseau privé et passerelle NAT
@@ -38,3 +38,10 @@ Je crée la VM `CLIENT01` avec `New-VM` : génération 2, 4 Go de mémoire, un d
 Avec `Get-ADComputer`, je vois deux ordinateurs dans l'annuaire : `DC300152004`, dans l'OU `Domain Controllers`, et `CLIENT01`, dans l'OU `Workstations` de `OU300152004`. Cela confirme que le client est bien enregistré dans mon domaine.
 
 <img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/Screenshot%202026-11-17%20130903.png?raw=true" />
+
+Étape 8 Création d'un utilisateur et connexion sur le client
+<img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/09-creation-utilisateur.png?raw=true" />
+Je crée un utilisateur de test dans l'OU `Students` avec `New-ADUser` : son nom est `Etudiant1`, son identifiant de connexion (`SamAccountName`) est `etudiant01` et il est placé dans `OU=Students,OU=OU300152004,DC=DC300152004,DC=local`. Avec `Get-ADUser -Identity "etudiant01"`, je vérifie que le compte existe et qu'il est activé (`Enabled : True`).
+
+<img width="3840" height="2877" alt="225547c6-30d0-4d3c-9def-288f2ce3d170" src="https://github.com/CollegeBoreal/INF1084-202-26A-06/blob/main/6.Nested/300152004/images/10-connexion-etudiant01.png?raw=true" />
+Sur l'écran de connexion de `CLIENT01`, je choisis « Other user » et je saisis l'identifiant `etudiant01` ainsi que son mot de passe, afin d'ouvrir une session avec ce compte du domaine plutôt qu'avec `Administrator`.
