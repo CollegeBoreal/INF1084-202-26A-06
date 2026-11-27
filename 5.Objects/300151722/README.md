@@ -227,6 +227,27 @@ Le lecteur `Z:` permet aux utilisateurs concernés d'accéder au partage :
 
 ---
 
+
+### Vérification du lecteur réseau Z:
+
+J'ai configuré le partage SMB SharedResources sur le serveur VM01 (10.7.237.206).
+
+Depuis CLIENT01, j'ai réussi à connecter le lecteur réseau Z: au partage à l'aide du compte local VM01\LabShare.
+
+Les commandes de vérification sont :
+
+```powershell
+Test-NetConnection 10.7.237.206 -Port 445
+net use Z: \\10.7.237.206\SharedResources /user:VM01\LabShare *
+Get-PSDrive Z
+dir Z:\
+```
+
+**Résultat :** le lecteur Z: est connecté et le dossier partagé est accessible.
+
+<img width="982" height="530" alt="Screenshot 2026-11-27 133441" src="https://github.com/user-attachments/assets/85e59775-5943-4cb9-8724-c90415f301c5" />
+
+
 ## 6. Activation de Remote Desktop
 
 Remote Desktop a été activé sur le serveur avec PowerShell :
