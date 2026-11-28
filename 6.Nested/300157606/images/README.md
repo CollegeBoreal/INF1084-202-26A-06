@@ -12,6 +12,14 @@ Introduction
 	Ce travail pratique consiste à configurer un environnement de virtualisation imbriquée avec Hyper-V, un réseau privé et un contrôleur de domaine Active Directory. L’objectif final est de joindre CLIENT01 au domaine DC300157606.local et de vérifier son inscription dans Active Directory.
 
 
+Schéma de l’architecture réseau 
+
+	Ce schéma représente l’architecture de mon environnement virtualisé sous Hyper-V. Le réseau privé 172.16.17.0/24 relie le contrôleur de domaine DC300157606, qui assure les services AD DS et DNS, à la machine CLIENT01 intégrée au domaine DC300157606.local. La passerelle NAT 172.16.17.1 permet l’accès au réseau externe.
+
+
+<img width="296" height="274" alt="0" src="https://github.com/user-attachments/assets/16d42ccc-b33e-45be-b270-933346798f16" />
+
+
 Configuration du laboratoire
 
 Serveur hôte : 10.7.237.216
