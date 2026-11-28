@@ -20,6 +20,7 @@ Schéma de l’architecture réseau
 <img width="2000" height="1500" alt="0" src="https://github.com/user-attachments/assets/16d42ccc-b33e-45be-b270-933346798f16" />
 
 
+
 Configuration du laboratoire
 
 Serveur hôte : 10.7.237.216
